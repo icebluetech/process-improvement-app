@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -21,7 +23,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     RouterModule.forRoot([]),
     SidebarModule,
     NavbarModule,
-    DashboardModule
+    DashboardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

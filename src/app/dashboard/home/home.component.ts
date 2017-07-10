@@ -1,6 +1,5 @@
 import {Component, OnInit,trigger,state,style,transition,animate,keyframes, group} from '@angular/core';
-//import initDemo = require('../../../assets/js/charts.js');
-//import initNotify = require('../../../assets/js/notify.js');
+import initDemo = require('../../../assets/js/charts.js');
 
 
 declare var $:any;
@@ -93,8 +92,8 @@ declare var $:any;
 
 export class HomeComponent implements OnInit{
     ngOnInit() {
-        // $.getScript('../../../assets/js/bootstrap-checkbox-radio-switch.js');
-        // $.getScript('../../../assets/js/light-bootstrap-dashboard.js');
+        $.getScript('../../../assets/js/bootstrap-checkbox-radio-switch.js');
+        $.getScript('../../../assets/js/light-bootstrap-dashboard.js');
 
         $('[data-toggle="checkbox"]').each(function () {
             if($(this).data('toggle') == 'switch') return;
@@ -102,7 +101,6 @@ export class HomeComponent implements OnInit{
             var $checkbox = $(this);
             $checkbox.checkbox();
         });
-        //initDemo();
-        //initNotify();
+        initDemo();
     }
 }

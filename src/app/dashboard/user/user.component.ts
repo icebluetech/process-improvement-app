@@ -41,7 +41,7 @@ import { Component,state,style,animate,transition, trigger, keyframes } from '@a
                         '-o-transform':'translate3D(0px, 150px, 0px)',
                         transform:'translate3D(0px, 150px, 0px)',
                     }),
-                    animate('0.3s 0.25s ease-out')
+                    animate('0.3s 0.25s ease-in')
                 ])
             ])
         ]
