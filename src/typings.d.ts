@@ -12,3 +12,4 @@ interface JQueryStatic {
 }
 
 declare let Chartist: any;
+

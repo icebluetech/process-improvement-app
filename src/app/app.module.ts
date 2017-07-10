@@ -12,6 +12,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

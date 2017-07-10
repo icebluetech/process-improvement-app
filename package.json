@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod":"ng build --prod --aot"
+    "build-prod": "ng build --prod --aot"
   },
   "private": true,
   "dependencies": {
@@ -22,15 +22,19 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
-    "angular2-google-maps": "^0.16.0",
-    "animate.css": "^3.5.2",
-    "bootstrap": "^3.3.5",
-    "chartist": "^0.9.4",
-    "jquery": "^1.12.4",
-    "web-animations-js": "^2.2.2"
+    "angular2-chartist": "~0.10.1",
+    "chartist": "~0.9.8",
+    "compression": "^1.6.2",
+    "core-js": "2.4.1",
+    "jquery": "~3.1.1",
+    "ng2-bootstrap": "~1.1.16",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "5.0.0-rc.5",
+    "systemjs": "~0.19.41",
+    "systemjs-builder": "^0.15.17",
+    "typescript": "^2.0.3",
+    "yargs": "^4.7.1",
+    "zone.js": "0.7.2"
   },
   "devDependencies": {
     "@angular/cli": "1.1.3",
