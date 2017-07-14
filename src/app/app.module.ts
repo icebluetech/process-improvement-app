@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { FooterModule} from './shared/footer/footer.module';
 
 import { Safe } from './services/data/data'
 
@@ -27,7 +28,8 @@ import { Safe } from './services/data/data'
     SidebarModule,
     NavbarModule,
     DashboardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
