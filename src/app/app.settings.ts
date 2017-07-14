@@ -20,4 +20,8 @@ export class AppSettings {
         return window.location.origin;
     }
 
+    public static SIDEBAR_COLOR: string;
+
+
 }
+

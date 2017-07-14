@@ -12,12 +12,14 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+import { Safe } from './services/data/data'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
-    
+    DashboardComponent,
+    Safe
   ],
   imports: [
     BrowserModule,

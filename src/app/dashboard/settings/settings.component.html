@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card" [@cardnotifications]>
+            <div class="header">
+                <h4 class="title">SideBar Color</h4>
+                <p class="category">Click on preferred theme color </p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div (click)="setSideColor('blue')" class="color-picker" data-color="blue"></div>
+                        <div (click)="setSideColor('azure')" class="color-picker" data-color="azure"></div>
+                        <div (click)="setSideColor('green')" class="color-picker" data-color="green"></div>
+                        <div (click)="setSideColor('orange')" class="color-picker" data-color="orange"></div>
+                        <div (click)="setSideColor('red')" class="color-picker" data-color="red"></div>
+                        <div (click)="setSideColor('purple')" class="color-picker" data-color="purple"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+   
+    <div class="card" [@cardnotifications]>
+            <div class="header">
+                <h4 class="title">SideBar Image</h4>
+                <p class="category">Change theme background </p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img (click)="setSideImage('sidebar-1')" class="image-picker" src="../../../assets/img/sidebar-1.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-2')" class="image-picker" src="../../../assets/img/sidebar-2.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-3')" class="image-picker" src="../../../assets/img/sidebar-3.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-4')" class="image-picker" src="../../../assets/img/sidebar-4.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-5')" class="image-picker" src="../../../assets/img/sidebar-5.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-6')" class="image-picker" src="../../../assets/img/sidebar-6.jpg" alt="Forest">
+                        <img (click)="setSideImage('sidebar-7')" class="image-picker" src="../../../assets/img/sidebar-7.jpg" alt="Forest">
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>  </div>
