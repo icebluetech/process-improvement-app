@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,6 +16,8 @@ import { FooterModule} from './shared/footer/footer.module';
 
 import { Safe } from './services/data/data'
 
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { Safe } from './services/data/data'
     NavbarModule,
     DashboardModule,
     BrowserAnimationsModule,
-    FooterModule
+    FooterModule,
+    HttpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

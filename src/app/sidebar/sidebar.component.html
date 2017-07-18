@@ -7,7 +7,11 @@
             LEAN App
         </a>
     </div>
+
+
+
     <ul class="nav">
+
         <li routerLinkActive="active">
             <a [routerLink]="[menuItems[0].path]">
                     <i class="{{menuItems[0].icon}}"></i>
@@ -20,11 +24,29 @@
                     <p>{{menuItems[1].title}}</p>
                 </a>
         </li>
-        <li routerLinkActive="active">
+
+        <li routerLinkActive="active" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <a [routerLink]="[menuItems[2].path]">
                     <i class="{{menuItems[2].icon}}"></i>
-                    <p>{{menuItems[2].title}}</p>
+                    <p>{{menuItems[2].title}}<span class="caret"></span></p>
                 </a>
+
+            <span class="collapse" id="collapseExample">
+
+                <li routerLinkActive="active">
+            <a [routerLink]="[menuItems[7].path]">
+                    <!--<i class="{{menuItems[7].icon}}"></i>-->
+                    <p>{{menuItems[7].title}}</p>
+                </a>
+        </li>
+                                <li routerLinkActive="active">
+            <a [routerLink]="[menuItems[8].path]">
+                    <!--<i class="{{menuItems[8].icon}}"></i>-->
+                    <p>{{menuItems[8].title}}</p>
+                </a>
+        </li>
+
+            </span>
         </li>
         <li routerLinkActive="active">
             <a [routerLink]="[menuItems[3].path]">

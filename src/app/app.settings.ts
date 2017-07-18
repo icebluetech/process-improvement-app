@@ -17,7 +17,7 @@ export class AppSettings {
     }
 
     public static get HOST_NAME(): string {
-        return window.location.origin;
+        return window.location.hostname=='localhost'? 'http://localhost:49634':'http://process-improvement-api.azurewebsites.net';
     }
 
     public static SIDEBAR_COLOR: string;

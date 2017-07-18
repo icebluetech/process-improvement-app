@@ -7,6 +7,8 @@ export const ROUTES: RouteInfo[] = [
     { path: 'reports', title: 'Reports', menuType: MenuType.LEFT, icon:'pe-7s-news-paper' },
     { path: 'docs', title: 'Docs', menuType: MenuType.LEFT, icon:'pe-7s-science' },
     { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'pe-7s-bell' },
-    { path: 'settings', title: 'settings', menuType: MenuType.LEFT, icon:'pe-7s-tools' }
+    { path: 'settings', title: 'settings', menuType: MenuType.LEFT, icon:'pe-7s-tools' },
+    { path: 'innovation/create', title: 'Create Innovation', menuType: MenuType.LEFT, icon:'fa fa-flask' },
+    { path: 'innovation/list', title: 'View Current', menuType: MenuType.LEFT, icon:'fa fa-flask' }
     
 ];

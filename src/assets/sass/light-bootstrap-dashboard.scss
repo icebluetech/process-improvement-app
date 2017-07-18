@@ -38,3 +38,38 @@
 @import "lbd/cards";
 @import "lbd/chartist";
 @import "lbd/responsive";
+
+
+#UploadBox{
+	margin-top:1em;
+	label{
+		margin-top:1em;
+	}
+}
+
+#attachments{
+	label{
+		margin-top:0;
+	}
+	font-size: 1.2em;
+
+	border-bottom: 1pt dashed lightslategrey;
+	.fa{
+		margin-left:.5em;
+		color:mediumseagreen;
+		font-size: 1.5em;
+		vertical-align: middle;
+	}
+
+	.badge{
+		background-color:gray;
+		vertical-align: top;
+		margin-top: .2em;
+	}
+
+	.attachment{
+		margin-left:1em;
+		margin-bottom: 1em;
+	}
+}
+

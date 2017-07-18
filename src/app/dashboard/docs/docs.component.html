@@ -1,0 +1,25 @@
+
+<div class="row" id="UploadBox">
+    <div class="col-sm-12">
+        <div class="alert" [class]="{'alert-warning':!uploadSuccess, 'alert-success':uploadSuccess}">
+
+            <div *ngIf="attachments.length>0" class="row" id="attachments">
+                <div class="col-sm-12">
+                    <div><label>Attachments <span class="badge">{{attachments.length}}</span></label></div>
+                    <div *ngFor="let file of attachmentsFriendly">
+                        <div class="attachment">{{file}}<span class="fa fa-check-circle-o"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Upload Files</label>
+                    <input id="fileUploader" type="file" (change)="onChange($event)" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<a (click)="submit" type="submit" class="btn btn-info btn-fill">Submit</a>-->
+</div>
