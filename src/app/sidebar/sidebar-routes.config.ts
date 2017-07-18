@@ -9,6 +9,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'pe-7s-bell' },
     { path: 'settings', title: 'settings', menuType: MenuType.LEFT, icon:'pe-7s-tools' },
     { path: 'innovation/create', title: 'Create Innovation', menuType: MenuType.LEFT, icon:'fa fa-flask' },
-    { path: 'innovation/list', title: 'View Current', menuType: MenuType.LEFT, icon:'fa fa-flask' }
+    { path: 'innovation/list', title: 'View Current', menuType: MenuType.LEFT, icon:'fa fa-flask' },
+    { path: 'training', title: 'Training', menuType: MenuType.LEFT, icon:'pe-7s-study' }
     
 ];
