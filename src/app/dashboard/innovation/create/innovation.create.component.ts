@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked, state, style, animate, transition, trigger, keyframes } from '@angular/core';
 import { Data } from '../../../services/data/data';
 import { Innovation } from '../../../model/innovation';
+import { InnovationUser } from '../../../model/innovationUser';
 import {
     FormBuilder,
     FormGroup,
@@ -63,6 +64,12 @@ export class CreateComponent implements OnInit, AfterViewChecked {
     onSubmit(value: string) {
         this.innovation = new Innovation();
         this.innovation.Title = this.Title.value;
+
+        this.innovation.InnovationUsers = [];
+        var user = new InnovationUser();
+        user.InnovationId = 1;
+        user.UserId=1;
+        this.innovation.InnovationUsers.push(user);
 
         this._data.submitInnovation(this.innovation)
             .then(res => {

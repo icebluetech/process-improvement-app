@@ -1,5 +1,4 @@
-
 export class InnovationUser{
-    Id: string;
-    Name: string;
+    InnovationId:number;
+    UserId:number;
 }
