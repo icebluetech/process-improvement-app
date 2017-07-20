@@ -6,6 +6,7 @@ import { DomSanitizer, SafeUrl, SafeResourceUrl } from "@angular/platform-browse
 
 import { User } from '../../model/user';
 import { Doc } from '../../model/doc';
+import {InnovationCategory} from '../../model/innovationCategory';
 
 import { AppSettings } from '../../app.settings';
 
@@ -70,14 +71,13 @@ export class Data {
     });
   }
 
-  submitItems(data: any): Promise<any> {
-    var body = JSON.stringify(data).replace('<', '').replace('>', '');
+    getItems(): Promise<InnovationCategory[]> {
 
-    var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
+    var url = AppSettings.HOST_NAME + "/api/InnovationCategory";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
-    var url = AppSettings.HOST_NAME + '/api/streets/row/projects/approval';
 
-    return this.http.post(url, body, options)
+    return this.http.get(url, options)
       .toPromise()
       .then(
       response => response.json()

@@ -3,6 +3,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { InnovationComponent } from './innovation/innovation.component';
 import { CreateComponent } from './innovation/create/innovation.create.component';
+import { DetailComponent } from './innovation/detail/innovation.detail.component';
 import { UserComponent } from './user/user.component';
 import { IconsComponent } from './icons/icons.component';
 import { TableComponent } from './table/table.component';
@@ -28,7 +29,8 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'maps', component: MapsComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'docs', component: DocsComponent },
-    { path: 'training', component: TrainingComponent }
+    { path: 'training', component: TrainingComponent },
+    { path: 'innovation/detail/:id', component: DetailComponent }
 ]
 
 export const MODULE_COMPONENTS = [
@@ -43,5 +45,6 @@ export const MODULE_COMPONENTS = [
     SettingsComponent,
     CreateComponent,
     DocsComponent,
-    TrainingComponent
+    TrainingComponent,
+    DetailComponent
 ]

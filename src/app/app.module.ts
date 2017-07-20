@@ -16,7 +16,7 @@ import { FooterModule} from './shared/footer/footer.module';
 
 import { Safe } from './services/data/data'
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FooterModule,
     HttpModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
