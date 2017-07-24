@@ -1,12 +1,14 @@
 import 'rxjs/add/operator/toPromise'
 import { Injectable, Sanitizer, SecurityContext, Pipe } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
 import { DomSanitizer, SafeUrl, SafeResourceUrl } from "@angular/platform-browser";
 
 import { User } from '../../model/user';
 import { Doc } from '../../model/doc';
-import {InnovationCategory} from '../../model/innovationCategory';
+import { Innovation } from '../../model/innovation';
+import { InnovationCategory } from '../../model/innovationCategory';
 
 import { AppSettings } from '../../app.settings';
 
@@ -16,7 +18,7 @@ import { Observable, Observer } from 'rxjs/Rx';
 @Injectable()
 export class Data {
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private route: ActivatedRoute) {
 
   }
 
@@ -42,8 +44,12 @@ export class Data {
     return this.http.post(url, body, options)
       .toPromise()
       .then(
-      response => response.json()
+      response => response.text() ? response.json() : {}
       )
+  }
+
+  private extractData(res: Response) {
+    return res.text() ? res.json() : {};;
   }
 
   makeFileRequest(url: string, params: string[], files: any[]): Observable<any> {
@@ -51,8 +57,11 @@ export class Data {
       let formData: FormData = new FormData(),
         xhr: XMLHttpRequest = new XMLHttpRequest();
 
+      var test = window.location.pathname.split('/').length-1;
+      var id = window.location.pathname.split('/')[test];
+
       for (let i = 0; i < files.length; i++) {
-        formData.append("docs[]", files[i], files[i].Title);
+        formData.append(id, files[i], files[i].Title);
       }
 
       xhr.onreadystatechange = () => {
@@ -71,9 +80,35 @@ export class Data {
     });
   }
 
-    getItems(): Promise<InnovationCategory[]> {
+  getItems(): Promise<InnovationCategory[]> {
 
     var url = AppSettings.HOST_NAME + "/api/InnovationCategory";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+  getInnovations(): Promise<Innovation[]> {
+
+    var url = AppSettings.HOST_NAME + "/api/Innovation";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+  getInnovation(id: number): Promise<Innovation> {
+
+    var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 

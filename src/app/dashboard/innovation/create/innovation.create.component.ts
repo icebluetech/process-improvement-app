@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewChecked, state, style, animate, transition,
 import { Data } from '../../../services/data/data';
 import { Innovation } from '../../../model/innovation';
 import { InnovationUser } from '../../../model/innovationUser';
+import { InnovationCategory } from '../../../model/innovationCategory';
+import {InnovationType} from '../../../model/innovationType';
 import {
     FormBuilder,
     FormGroup,
@@ -12,7 +14,7 @@ import {
     ReactiveFormsModule
 } from '@angular/forms';
 
-import { InnovationCategory } from '../../../model/innovationCategory';
+
 declare var $: any;
 @Component({
     moduleId: module.id,
@@ -48,6 +50,7 @@ export class CreateComponent implements OnInit, AfterViewChecked {
     categories: Array<InnovationCategory>;
     innovation: Innovation;
     Title: AbstractControl;
+    Why: AbstractControl;
     _fb: FormBuilder;
 
     constructor(private _data: Data, private fb: FormBuilder) {
@@ -55,7 +58,8 @@ export class CreateComponent implements OnInit, AfterViewChecked {
         this.innovation = new Innovation();
 
         this.myForm = this.fb.group({
-            'Title': ['', Validators.compose([Validators.required])]
+            'Title': ['', Validators.compose([Validators.required])],
+            'Why':['']
         })
 
         this.Title = this.myForm.controls['Title'];
@@ -63,13 +67,11 @@ export class CreateComponent implements OnInit, AfterViewChecked {
 
     onSubmit(value: string) {
         this.innovation = new Innovation();
-        this.innovation.Title = this.Title.value;
+        this.innovation.title = this.Title.value;
 
-        this.innovation.InnovationUsers = [];
-        var user = new InnovationUser();
-        user.InnovationId = 1;
-        user.UserId=1;
-        this.innovation.InnovationUsers.push(user);
+        
+        this.innovation.innovationCategoryId = 1;
+        this.innovation.innovationTypeId = 1;
 
         this._data.submitInnovation(this.innovation)
             .then(res => {
@@ -79,6 +81,12 @@ export class CreateComponent implements OnInit, AfterViewChecked {
 
     ngOnInit() {
         this.getCategories();
+
+        this.innovation.innovationUsers = [];
+        var user = new InnovationUser();
+        user.innovationId = 1;
+        user.userId=1;
+        this.innovation.innovationUsers.push(user);
     }
 
     ngAfterViewChecked() {

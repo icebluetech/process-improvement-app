@@ -7,18 +7,18 @@ import {InnovationUser} from './innovationUser';
 
 export class Innovation {
 
-    Id: number;
-    Title: string;
-    InnovationUsers: Array<InnovationUser>;
-    Date: Date;
-    Tasks: Array<Notification>;
-    InnovationTypeId: number;
-    Type: InnovationType
-    InnovationCategoryId: number;
-    Category: InnovationCategory;
-    Why: string;
-    CurrentState: string;
-    FutureState: string;
-    RootCauseAnalysisId: number;
-    RootCauseAnalysis: RootCauseAnalysis;
+    id: number;
+    title: string;
+    innovationUsers: Array<InnovationUser>;
+    date: Date;
+    tasks: Array<Notification>;
+    innovationTypeId: number;
+    type: InnovationType
+    innovationCategoryId: number;
+    category: InnovationCategory;
+    why: string;
+    currentState: string;
+    futureState: string;
+    rootCauseAnalysisId: number;
+    rootCauseAnalysis: RootCauseAnalysis;
 }

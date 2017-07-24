@@ -12,8 +12,10 @@ import { AppSettings } from '../../app.settings';
 
 export class DocsComponent implements OnInit {
 
+    @Input() InnovationId: string;
+
     attachments: string[];
-    attachmentsFriendly: string[];
+    attachmentsFriendly: any[];
     uploadSuccess: boolean;
     fileUploader:string;
 
@@ -24,6 +26,7 @@ export class DocsComponent implements OnInit {
     ngOnInit() {
         this.attachments = [];
         this.attachmentsFriendly = [];
+        
     }
 
     onChange(event: any) {
@@ -36,7 +39,7 @@ export class DocsComponent implements OnInit {
 
         this._data.makeFileRequest(url, [], files).subscribe((res) => {
 
-            this.attachmentsFriendly.push(file.name);
+            this.attachmentsFriendly.push({name:file.name, date:new Date('YYYY-m-d'), user:'Chris Cheshire'});
 
             this.attachments.push(file);
 

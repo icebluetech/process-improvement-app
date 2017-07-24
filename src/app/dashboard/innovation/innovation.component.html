@@ -22,7 +22,11 @@
                                 </tr>
                                 <tbody>
                                     <tr *ngFor="let innovation of innovations">
-                                        <td><a [routerLink]="['/detail', 1]"></a></td>
+                                        <td><a [routerLink]="['detail', innovation.id]">{{innovation.title}}</a></td>
+                                        <td>{{innovation.date}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>{{innovation.category.name}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>{{innovation.innovationUsers[0].user.name}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>Not Implemented yet<a [routerLink]="['/detail', 1]"></a></td>
                                     </tr>
                                 </tbody>
                         </table>

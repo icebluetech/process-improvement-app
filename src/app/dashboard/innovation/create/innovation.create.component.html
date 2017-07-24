@@ -82,7 +82,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Innovation Theme</label>
-                                        <input cols="1" rows="3" class="form-control" placeholder="Date Started">
+                                        <input formControlName="Why" [(ngModel)]="innovation.why" type="text" rows="3" class="form-control" placeholder="Date Started">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -98,6 +98,91 @@
 
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Team Members</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
+
+                            <div class="col-md-2">
+                                <img class="avatar-med border-gray" src="assets/img/faces/face-8.jpg" alt="..." /></div>
+                            <div class="col-md-4">
+                                <p>Chris Cheshire</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Owner</p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="fa fa-envelope"></span>
+                                <span class="fa fa-bell"></span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Root Cause Analysis</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
+
+                            <div class="col-md-6">
+                                <p>Chris Cheshire</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Owner</p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="fa fa-envelope"></span>
+                                <span class="fa fa-bell"></span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                               <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Standard Work</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member">
+
+                            <!--<div class="col-md-1">
+                                <span class="fa fa-file-text"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Curent Process.doc</p>
+                            </div>
+                            -->
+                            <docs-cmp [InnovationId]="innovation.id"></docs-cmp>
+
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

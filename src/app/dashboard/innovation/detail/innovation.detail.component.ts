@@ -1,5 +1,8 @@
-import { Component, state, style, animate, transition, trigger, keyframes } from '@angular/core';
+import { Component, state, style, animate, transition, trigger, keyframes, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Data } from '../../../services/data/data';
+import { Innovation } from '../../../model/innovation';
+import { CreateComponent } from '../create/innovation.create.component';
 
 @Component({
     moduleId: module.id,
@@ -30,19 +33,36 @@ import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 })
 
 export class DetailComponent {
-    Id: string;
-    constructor(private route: ActivatedRoute) {
+    innovation: Innovation;
 
+    @ViewChild(CreateComponent) createComponent: CreateComponent;
+
+    constructor(private route: ActivatedRoute, private _data: Data) {
+
+    }
+
+    ngAfterViewInit() {
+        
     }
 
     ngOnInit(): void {
         this.route.params.subscribe((params: Params) => {
-            this.Id = params['id'];
+            this.getInnovation(params['id'])
         });
-    
-    //     this.route.paramMap
-    //   .switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id')))
-    //   .subscribe(hero => this.hero = hero);
+    }
+    getInnovation(id: number) {
+        this._data.getInnovation(id).then(res => {
+            this.innovation = res;
+            this.populateForm();
+        })
+    }
+
+    populateForm(){
+        this.createComponent.innovation.id = this.innovation.id;
+        this.createComponent.Title.setValue(this.innovation.title);
+        this.createComponent.innovation.why = "WHY TELL ME WHY";
+        this.createComponent.innovation.innovationUsers = this.innovation.innovationUsers;
+    }
 }
 
-}
+

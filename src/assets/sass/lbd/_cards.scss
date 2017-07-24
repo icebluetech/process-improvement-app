@@ -60,12 +60,45 @@
             font-size: $font-paragraph;
         }
     }
+
     
+    .team-member{
+        
+                p{
+        line-height: 3.5em;
+    }
+    span{
+        line-height: 2.6em;
+        margin-right: .8em;
+        color: #23CCEF;
+        font-size: 1.5em;
+    }
+    }
+
+
     label{
         font-size: $font-size-small;
         margin-bottom: 5px;
         text-transform: uppercase;
     }
+
+#docs{
+    input[type="file"] {
+    display: none;
+}
+
+i{
+            color: #23CCEF;
+        font-size: 1.5em;
+       
+}
+
+p{
+    i{
+ margin-right:1em;
+    }
+}
+}
 
     .title{
         margin: $none;
@@ -75,6 +108,13 @@
     .avatar{
         width: 30px;
         height: 30px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+        .avatar-med{
+        width: 4.5em;
+        height: 4.5em;
         overflow: hidden;
         border-radius: 50%;
         margin-right: 5px;
