@@ -4,37 +4,58 @@
             <div class="col-md-8">
                 <div class="card" [@carduserprofile]>
                     <div class="header">
-                        <h4 class="title">New Brainstorm</h4>
+                        <h4 class="title">New Result</h4>
                     </div>
                     <div class="content">
                         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Brainstorm Title</label>
-                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Brainstorm Title">
+                                        <label>Result Title</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Result Title">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Level Of Effort</label>
+                                        <label>Result Type (30 / 60/ 90)</label>
                                         <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Effort....</option>
-                                            <option value="1">High</option>
-                                            <option value="2">Medium</option>
-                                            <option value="3">Low</option>
+                                            <option selected disabled>Choose Result Type....</option>
+                                            <option value="1">30 days +</option>
+                                            <option value="2">60 days +</option>
+                                            <option value="3">90 days +</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="owner">Date</label>
+                                        <input id="date" [formControl]="date" type="text" class="form-control" placeholder="When were they entered">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>How many Items</label>
+                                        <select type="text" class="form-control" value="Cheshire">
+                                            <option selected disabled>Choose Item Unit....</option>
+                                            <option value="1">Items per day</option>
+                                            <option value="2">Items per week</option>
+                                            <option value="3">Items per month</option>
+                                            <option value="4">Items per year</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>How Long</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="How long to produce one item">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="owner">Impact</label>
-                                        <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Impact....</option>
-                                                <option value="1">High</option>
-                                            <option value="2">Medium</option>
-                                            <option value="3">Low</option>
-                                        </select>
+                                        <label for="owner">Success Rate</label>
+                                        <input id="what" [formControl]="what" type="text" class="form-control" placeholder="% are correct the first time through the process">
                                     </div>
                                 </div>
                             </div>
@@ -42,8 +63,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Idea Scope / Description</label>
-                                        <textarea cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
+                                        <label>Result Description</label>
+                                        <textarea cols="1" rows="8" class="form-control" placeholder="Description"></textarea>
                                     </div>
                                 </div>
 
