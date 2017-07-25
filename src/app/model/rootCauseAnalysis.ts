@@ -1,5 +1,12 @@
+import { User } from './user';
+import { Innovation } from './innovation';
+
 export class RootCauseAnalysis {
+    Id: number;
     Title: string;
-    Extention: string;
-    Size: number;
+    Description: string;
+    Tool: string;
+    Innovations: Array<Innovation>;
+    UserId: number;
+    User: User;
 }

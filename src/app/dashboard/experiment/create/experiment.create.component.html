@@ -1,0 +1,189 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">New Innovation</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Innovation Title</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Innovation Title">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input cols="1" rows="3" class="form-control" placeholder="Date Started">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="owner">Owner</label>
+                                        <input type="owner" class="form-control" placeholder="Owner of Innovation">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Innovation Problem Statement</label>
+                                        <textarea cols="1" rows="3" class="form-control" placeholder="Scope / Description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Innovation Type</label>
+                                        <select type="text" class="form-control" value="Cheshire">
+                                            <option selected disabled>Choose Type....</option>
+                                            <option value="1">Just Do It</option>
+                                            <option value="2">Workshop / Event</option>
+                                            <option value="3">Project</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label>Innovation Category</label>
+                                    <div class="content">
+                                        <div class="table-full-width">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr *ngFor="let category of categories">
+                                                        <td>
+                                                            <label class="checkbox">
+                                                <input type="checkbox" value="" data-toggle="checkbox">
+                                            </label>
+                                                        </td>
+                                                        <td>{{category}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Team Members</label>
+                                        <input type="text" class="form-control" placeholder="Innovation Title">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Innovation Theme</label>
+                                        <input formControlName="Why" [(ngModel)]="innovation.why" type="text" rows="3" class="form-control" placeholder="Date Started">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Why change is needed</label>
+                                        <textarea cols="1" rows="3" class="form-control" placeholder="Scope / Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill">Submit Innovation</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Team Members</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
+
+                            <div class="col-md-2">
+                                <img class="avatar-med border-gray" src="assets/img/faces/face-8.jpg" alt="..." /></div>
+                            <div class="col-md-4">
+                                <p>Chris Cheshire</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Owner</p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="fa fa-envelope"></span>
+                                <span class="fa fa-bell"></span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Root Cause Analysis</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
+
+                            <div class="col-md-6">
+                                <p>Chris Cheshire</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>Owner</p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="fa fa-envelope"></span>
+                                <span class="fa fa-bell"></span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                               <div class="card" [@carduserprofile]>
+                    <div class="header">
+                        <h4 class="title">Standard Work</h4>
+                    </div>
+                    <div class="content">
+
+                        <div class="row team-member">
+
+                            <!--<div class="col-md-1">
+                                <span class="fa fa-file-text"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Curent Process.doc</p>
+                            </div>
+                            -->
+                            <docs-cmp [InnovationId]="innovation.id"></docs-cmp>
+
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-md-offset-8">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

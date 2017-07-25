@@ -1,13 +1,13 @@
 import { Component, state, style, animate, transition, trigger, keyframes, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Data } from '../../../services/data/data';
-import { Innovation } from '../../../model/innovation';
-import { InnovationCreateComponent } from '../create/innovation.create.component';
+import { Experiment } from '../../../model/experiment';
+import { ExperimentCreateComponent } from '../create/experiment.create.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'innovation-detail-cmp',
-    templateUrl: 'innovation.detail.component.html',
+    selector: 'experiment-detail-cmp',
+    templateUrl: 'experiment.detail.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({
@@ -32,10 +32,9 @@ import { InnovationCreateComponent } from '../create/innovation.create.component
         ])]
 })
 
-export class InnovationDetailComponent {
-    innovation: Innovation;
-
-    @ViewChild(InnovationCreateComponent) createComponent: InnovationCreateComponent;
+export class ExperimentDetailComponent {
+    
+    experiment: Experiment;
 
     constructor(private route: ActivatedRoute, private _data: Data) {
 
@@ -47,21 +46,14 @@ export class InnovationDetailComponent {
 
     ngOnInit(): void {
         this.route.params.subscribe((params: Params) => {
-            this.getInnovation(params['id'])
+            this.getExperiment(params['id'])
         });
     }
-    getInnovation(id: number) {
-        this._data.getInnovation(id).then(res => {
-            this.innovation = res;
-            this.populateForm();
-        })
-    }
 
-    populateForm(){
-        this.createComponent.innovation.id = this.innovation.id;
-        this.createComponent.Title.setValue(this.innovation.title);
-        this.createComponent.innovation.why = "WHY TELL ME WHY";
-        this.createComponent.innovation.innovationUsers = this.innovation.innovationUsers;
+    getExperiment(id: number) {
+        this._data.getExperiment(id).then(res => {
+            this.experiment = res;
+        })
     }
 }
 

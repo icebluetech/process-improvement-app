@@ -11,8 +11,8 @@ export const ROUTES: RouteInfo[] = [
     { path: 'innovation/rootCause', title: 'Root Cause Analysis', menuType: MenuType.LEFT, icon:'fa fa-flask' },//7
     { path: 'innovation/standardWork', title: 'Standard Work', menuType: MenuType.LEFT, icon:'fa fa-flask' },//8
     { path: 'training', title: 'Training', menuType: MenuType.LEFT, icon:'pe-7s-study' },//9
-    { path: 'innovation/brainstorm', title: 'Brainstorming', menuType: MenuType.LEFT, icon:'fa fa-flask' },//10
-    { path: 'innovation/experiments', title: 'Experiments', menuType: MenuType.LEFT, icon:'fa fa-flask' },//11
+    { path: 'brainstorm', title: 'Brainstorming', menuType: MenuType.LEFT, icon:'fa fa-flask' },//10
+    { path: 'experiment', title: 'Experiments', menuType: MenuType.LEFT, icon:'fa fa-flask' },//11
     { path: 'innovation/results', title: 'Results', menuType: MenuType.LEFT, icon:'fa fa-flask' }//12
     
 ];

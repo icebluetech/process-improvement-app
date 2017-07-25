@@ -1,13 +1,13 @@
 import { Component, state, style, animate, transition, trigger, keyframes, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Data } from '../../../services/data/data';
-import { Innovation } from '../../../model/innovation';
-import { InnovationCreateComponent } from '../create/innovation.create.component';
+import { Brainstorm } from '../../../model/brainstorm';
+import { BrainstormCreateComponent } from '../create/brainstorm.create.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'innovation-detail-cmp',
-    templateUrl: 'innovation.detail.component.html',
+    selector: 'brainstorm-detail-cmp',
+    templateUrl: 'brainstorm.detail.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({
@@ -32,10 +32,9 @@ import { InnovationCreateComponent } from '../create/innovation.create.component
         ])]
 })
 
-export class InnovationDetailComponent {
-    innovation: Innovation;
-
-    @ViewChild(InnovationCreateComponent) createComponent: InnovationCreateComponent;
+export class BrainstormDetailComponent {
+    
+    brainstorm: Brainstorm;
 
     constructor(private route: ActivatedRoute, private _data: Data) {
 
@@ -47,21 +46,14 @@ export class InnovationDetailComponent {
 
     ngOnInit(): void {
         this.route.params.subscribe((params: Params) => {
-            this.getInnovation(params['id'])
+            this.getBrainstorm(params['id'])
         });
     }
-    getInnovation(id: number) {
-        this._data.getInnovation(id).then(res => {
-            this.innovation = res;
-            this.populateForm();
-        })
-    }
 
-    populateForm(){
-        this.createComponent.innovation.id = this.innovation.id;
-        this.createComponent.Title.setValue(this.innovation.title);
-        this.createComponent.innovation.why = "WHY TELL ME WHY";
-        this.createComponent.innovation.innovationUsers = this.innovation.innovationUsers;
+    getBrainstorm(id: number) {
+        this._data.getBrainstorm(id).then(res => {
+            this.brainstorm = res;
+        })
     }
 }
 
