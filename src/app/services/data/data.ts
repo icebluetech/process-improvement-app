@@ -12,6 +12,8 @@ import { Brainstorm } from '../../model/brainstorm';
 import { Experiment } from '../../model/experiment';
 import { InnovationCategory } from '../../model/innovationCategory';
 import { StandardWork } from '../../model/standardWork';
+import { RootCause } from '../../model/rootCause';
+import { Result } from '../../model/result';
 
 import { AppSettings } from '../../app.settings';
 
@@ -148,6 +150,32 @@ export class Data {
       )
   }
 
+          getRootCauses(): Promise<RootCause[]> {
+
+    var url = AppSettings.HOST_NAME + "/api/RootCause";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+            getResults(): Promise<Result[]> {
+
+    var url = AppSettings.HOST_NAME + "/api/Result";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
   getInnovation(id: number): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
@@ -190,6 +218,32 @@ export class Data {
         getStandardWork(id: number): Promise<StandardWork> {
 
     var url = AppSettings.HOST_NAME + "/api/StandardWork/" + id;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+          getRootCause(id: number): Promise<RootCause> {
+
+    var url = AppSettings.HOST_NAME + "/api/RootCause/" + id;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+            getResult(id: number): Promise<Result> {
+
+    var url = AppSettings.HOST_NAME + "/api/Result/" + id;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 

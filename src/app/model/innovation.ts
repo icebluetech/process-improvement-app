@@ -2,7 +2,7 @@ import { User } from './user';
 import { InnovationType } from './innovationtype';
 import { InnovationCategory } from './innovationCategory';
 import {Notification} from './notification';
-import {RootCauseAnalysis} from './rootCauseAnalysis';
+import {RootCause} from './rootCause';
 import {InnovationUser} from './innovationUser';
 
 export class Innovation {
@@ -20,5 +20,5 @@ export class Innovation {
     currentState: string;
     futureState: string;
     rootCauseAnalysisId: number;
-    rootCauseAnalysis: RootCauseAnalysis;
+    rootCauseAnalysis: RootCause;
 }

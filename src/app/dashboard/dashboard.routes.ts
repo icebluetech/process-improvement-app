@@ -22,6 +22,12 @@ import { ExperimentDetailComponent } from './experiment/detail/experiment.detail
 import { StandardWorkComponent } from './standardwork/standardwork.component';
 import { StandardWorkCreateComponent } from './standardwork/create/standardwork.create.component';
 import { StandardWorkDetailComponent } from './standardwork/detail/standardwork.detail.component';
+import { RootCauseComponent } from './rootcause/rootcause.component';
+import { RootCauseCreateComponent } from './rootcause/create/rootcause.create.component';
+import { RootCauseDetailComponent } from './rootcause/detail/rootcause.detail.component';
+import { ResultComponent } from './result/result.component';
+import { ResultCreateComponent } from './result/create/result.create.component';
+import { ResultDetailComponent } from './result/detail/result.detail.component';
 
 
 export const MODULE_ROUTES: Route[] = [
@@ -49,6 +55,12 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'standardwork', component: StandardWorkComponent },
     { path: 'standardwork/create', component: StandardWorkCreateComponent },
     { path: 'standardwork/detail', component: StandardWorkDetailComponent },
+    { path: 'rootcause', component: RootCauseComponent },
+    { path: 'rootcause/create', component: RootCauseCreateComponent },
+    { path: 'rootcause/detail', component: RootCauseDetailComponent },
+        { path: 'result', component: ResultComponent },
+    { path: 'result/create', component: ResultCreateComponent },
+    { path: 'result/detail', component:ResultDetailComponent },
 ]
 
 export const MODULE_COMPONENTS = [
@@ -73,5 +85,11 @@ export const MODULE_COMPONENTS = [
     ExperimentDetailComponent,
     StandardWorkComponent,
     StandardWorkCreateComponent,
-    StandardWorkDetailComponent
+    StandardWorkDetailComponent,
+    RootCauseComponent,
+    RootCauseCreateComponent,
+    RootCauseDetailComponent,
+    ResultComponent,
+    ResultCreateComponent,
+    ResultDetailComponent
 ]

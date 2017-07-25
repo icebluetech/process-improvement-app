@@ -1,7 +1,7 @@
 import { User } from './user';
 import { Innovation } from './innovation';
 
-export class RootCauseAnalysis {
+export class RootCause {
     Id: number;
     Title: string;
     Description: string;
