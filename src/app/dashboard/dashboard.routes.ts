@@ -19,6 +19,9 @@ import { BrainstormDetailComponent } from './brainstorm/detail/brainstorm.detail
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentCreateComponent } from './experiment/create/experiment.create.component';
 import { ExperimentDetailComponent } from './experiment/detail/experiment.detail.component';
+import { StandardWorkComponent } from './standardwork/standardwork.component';
+import { StandardWorkCreateComponent } from './standardwork/create/standardwork.create.component';
+import { StandardWorkDetailComponent } from './standardwork/detail/standardwork.detail.component';
 
 
 export const MODULE_ROUTES: Route[] = [
@@ -42,7 +45,10 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'brainstorm/detail', component: BrainstormDetailComponent },
     { path: 'experiment', component: ExperimentComponent },
     { path: 'experiment/create', component: ExperimentCreateComponent },
-    { path: 'experiment/detail', component: ExperimentDetailComponent }
+    { path: 'experiment/detail', component: ExperimentDetailComponent },
+    { path: 'standardwork', component: StandardWorkComponent },
+    { path: 'standardwork/create', component: StandardWorkCreateComponent },
+    { path: 'standardwork/detail', component: StandardWorkDetailComponent },
 ]
 
 export const MODULE_COMPONENTS = [
@@ -64,5 +70,8 @@ export const MODULE_COMPONENTS = [
     BrainstormDetailComponent,
     ExperimentComponent,
     ExperimentCreateComponent,
-    ExperimentDetailComponent
+    ExperimentDetailComponent,
+    StandardWorkComponent,
+    StandardWorkCreateComponent,
+    StandardWorkDetailComponent
 ]

@@ -11,6 +11,7 @@ import { Innovation } from '../../model/innovation';
 import { Brainstorm } from '../../model/brainstorm';
 import { Experiment } from '../../model/experiment';
 import { InnovationCategory } from '../../model/innovationCategory';
+import { StandardWork } from '../../model/standardWork';
 
 import { AppSettings } from '../../app.settings';
 
@@ -134,6 +135,19 @@ export class Data {
       )
   }
 
+        getStandardWorks(): Promise<StandardWork[]> {
+
+    var url = AppSettings.HOST_NAME + "/api/StandardWork";
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
   getInnovation(id: number): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
@@ -163,6 +177,19 @@ export class Data {
       getExperiment(id: number): Promise<Experiment> {
 
     var url = AppSettings.HOST_NAME + "/api/Experiment/" + id;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+        getStandardWork(id: number): Promise<StandardWork> {
+
+    var url = AppSettings.HOST_NAME + "/api/StandardWork/" + id;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 

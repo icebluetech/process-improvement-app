@@ -3151,3 +3151,13 @@ input:focus {
   background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
   background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
   background-size: 150% 150%; }
+
+.card .progress {
+  margin-top: 1.5em; }
+
+#NewExperiment form .progress {
+  height: 2.5em;
+  margin-top: 1.9em; }
+
+#NewExperiment form .progress-bar {
+  line-height: 3em; }

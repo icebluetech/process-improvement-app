@@ -9,7 +9,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'pe-7s-bell' },//5
     { path: 'settings', title: 'settings', menuType: MenuType.LEFT, icon:'pe-7s-tools' },//6
     { path: 'innovation/rootCause', title: 'Root Cause Analysis', menuType: MenuType.LEFT, icon:'fa fa-flask' },//7
-    { path: 'innovation/standardWork', title: 'Standard Work', menuType: MenuType.LEFT, icon:'fa fa-flask' },//8
+    { path: 'standardwork', title: 'Standard Work', menuType: MenuType.LEFT, icon:'fa fa-flask' },//8
     { path: 'training', title: 'Training', menuType: MenuType.LEFT, icon:'pe-7s-study' },//9
     { path: 'brainstorm', title: 'Brainstorming', menuType: MenuType.LEFT, icon:'fa fa-flask' },//10
     { path: 'experiment', title: 'Experiments', menuType: MenuType.LEFT, icon:'fa fa-flask' },//11

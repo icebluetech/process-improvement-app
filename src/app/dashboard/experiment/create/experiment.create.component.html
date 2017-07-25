@@ -1,98 +1,71 @@
-<div class="main-content">
+<div id="NewExperiment" class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div  class="col-md-8">
                 <div class="card" [@carduserprofile]>
                     <div class="header">
-                        <h4 class="title">New Innovation</h4>
+                        <h4 class="title">New Experiment</h4>
                     </div>
                     <div class="content">
-                        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+                        <form  [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Innovation Title</label>
-                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Innovation Title">
+                                        <label>Experiment Title</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Brainstorm Title">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Date</label>
-                                        <input cols="1" rows="3" class="form-control" placeholder="Date Started">
+                                        <label>Planned End Date</label>
+                                        <input id="when" [formControl]="when" type="text" class="form-control" placeholder="Planned End Date">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Actual Completion Date</label>
+                                        <input id="completionDate" [formControl]="completionDate" type="text" class="form-control" placeholder="Actual Completion Date">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea cols="1" rows="8" class="form-control" placeholder="Description of improvement idea"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="owner">Owner</label>
-                                        <input type="owner" class="form-control" placeholder="Owner of Innovation">
+                                        <label>Responsible</label>
+                                        <input id="who" [formControl]="who" type="text" class="form-control" placeholder="Who is responsible for experiment">
                                     </div>
                                 </div>
+
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
+                                                        <div class="row">
+                                                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Innovation Problem Statement</label>
-                                        <textarea cols="1" rows="3" class="form-control" placeholder="Scope / Description"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Innovation Type</label>
+                                        <label>Status</label>
                                         <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Type....</option>
-                                            <option value="1">Just Do It</option>
-                                            <option value="2">Workshop / Event</option>
-                                            <option value="3">Project</option>
+                                            <option value="1">New</option>
+                                            <option value="2">In Progress</option>
+                                            <option value="3">Completed</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-9">
+                                                                 <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                        60%
+                                    </div>
+                                </div>
+                                </div>
 
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-
-                                    <label>Innovation Category</label>
-                                    <div class="content">
-                                        <div class="table-full-width">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr *ngFor="let category of categories">
-                                                        <td>
-                                                            <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                                                        </td>
-                                                        <td>{{category}}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Team Members</label>
-                                        <input type="text" class="form-control" placeholder="Innovation Title">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Innovation Theme</label>
-                                        <input formControlName="Why" [(ngModel)]="innovation.why" type="text" rows="3" class="form-control" placeholder="Date Started">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Why change is needed</label>
-                                        <textarea cols="1" rows="3" class="form-control" placeholder="Scope / Description"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-info btn-fill">Submit Innovation</button>
+                            <button type="submit" class="btn btn-info btn-fill">Save</button>
 
                         </form>
 
@@ -106,7 +79,7 @@
                     </div>
                     <div class="content">
 
-                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
+                        <div class="row team-member">
 
                             <div class="col-md-2">
                                 <img class="avatar-med border-gray" src="assets/img/faces/face-8.jpg" alt="..." /></div>
@@ -129,60 +102,64 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="card" [@carduserprofile]>
                     <div class="header">
-                        <h4 class="title">Root Cause Analysis</h4>
+                        <h4 class="title">Innovations</h4>
                     </div>
                     <div class="content">
 
                         <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
 
-                            <div class="col-md-6">
-                                <p>Chris Cheshire</p>
+                            <div class="col-md-5">
+                                <p>Change world</p>
                             </div>
-                            <div class="col-md-3">
-                                <p>Owner</p>
-                            </div>
-                            <div class="col-md-3">
-                                <span class="fa fa-envelope"></span>
-                                <span class="fa fa-bell"></span>
+                            <div class="col-md-7">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                        60%
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                         <div class="row">
-                            <div class="col-md-offset-8">
-                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                            <div class="col-md-offset-7">
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Link Innovation</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                               <div class="card" [@carduserprofile]>
+                
+                <div class="card" [@carduserprofile]>
                     <div class="header">
-                        <h4 class="title">Standard Work</h4>
+                        <h4 class="title">Results</h4>
                     </div>
                     <div class="content">
 
                         <div class="row team-member">
 
-                            <!--<div class="col-md-1">
-                                <span class="fa fa-file-text"></span>
+                            <div class="col-md-5">
+                                <p>Test Result</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>Curent Process.doc</p>
+                            <div class="col-md-4">
+                                <p>Chris Cheshire</p>
                             </div>
-                            -->
-                            <docs-cmp [InnovationId]="innovation.id"></docs-cmp>
+                            <div class="col-md-3">
+                                <span class="fa fa-pencil-square-o"></span>
+                                <span class="fa fa-times"></span>
+                            </div>
 
                         </div>
-                        <!--<div class="row">
+                        <div class="row">
                             <div class="col-md-offset-8">
-                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
+                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Result</a>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
