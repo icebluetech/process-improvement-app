@@ -1757,13 +1757,15 @@ input:focus {
     .card .category i,
     .card label i {
       font-size: 16px; }
-  .card .team-member p {
-    line-height: 3.5em; }
-  .card .team-member span {
-    line-height: 2.6em;
-    margin-right: .8em;
-    color: #23CCEF;
-    font-size: 1.5em; }
+  .card .team-member {
+    margin-bottom: 1.2em; }
+    .card .team-member p {
+      line-height: 4.5em; }
+    .card .team-member span {
+      line-height: 3.5em;
+      margin-right: .6em;
+      color: #23CCEF;
+      font-size: 1.3em; }
   .card label {
     font-size: 12px;
     margin-bottom: 5px;
