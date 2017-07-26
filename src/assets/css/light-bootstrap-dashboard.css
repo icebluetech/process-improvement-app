@@ -1763,9 +1763,11 @@ input:focus {
       line-height: 4.5em; }
     .card .team-member span {
       line-height: 3.5em;
-      margin-right: .6em;
+      margin-right: .4em;
       color: #23CCEF;
-      font-size: 1.3em; }
+      font-size: 1em; }
+    .card .team-member .description {
+      font-size: .85em; }
   .card label {
     font-size: 12px;
     margin-bottom: 5px;
