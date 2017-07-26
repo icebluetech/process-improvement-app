@@ -13,6 +13,8 @@ import { MapsComponent } from './maps/maps.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DocsComponent } from './docs/docs.component';
 import { TrainingComponent } from './training/training.component';
+import { TrainingCreateComponent } from './training/create/training.create.component';
+import { TrainingDetailComponent } from './training/detail/training.detail.component';
 import { BrainstormComponent } from './brainstorm/brainstorm.component';
 import { BrainstormCreateComponent } from './brainstorm/create/brainstorm.create.component';
 import { BrainstormDetailComponent } from './brainstorm/detail/brainstorm.detail.component';
@@ -45,6 +47,8 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'settings', component: SettingsComponent },
     { path: 'docs', component: DocsComponent },
     { path: 'training', component: TrainingComponent },
+    { path: 'training/create', component: TrainingCreateComponent },
+    { path: 'training/detail', component: TrainingDetailComponent },
     { path: 'innovation/detail/:id', component: InnovationDetailComponent },
     { path: 'brainstorm', component: BrainstormComponent },
     { path: 'brainstorm/create', component: BrainstormCreateComponent },
@@ -58,9 +62,9 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'rootcause', component: RootCauseComponent },
     { path: 'rootcause/create', component: RootCauseCreateComponent },
     { path: 'rootcause/detail', component: RootCauseDetailComponent },
-        { path: 'result', component: ResultComponent },
+    { path: 'result', component: ResultComponent },
     { path: 'result/create', component: ResultCreateComponent },
-    { path: 'result/detail', component:ResultDetailComponent },
+    { path: 'result/detail', component: ResultDetailComponent },
 ]
 
 export const MODULE_COMPONENTS = [
@@ -76,6 +80,8 @@ export const MODULE_COMPONENTS = [
     InnovationCreateComponent,
     DocsComponent,
     TrainingComponent,
+    TrainingCreateComponent,
+    TrainingDetailComponent,
     InnovationDetailComponent,
     BrainstormComponent,
     BrainstormCreateComponent,

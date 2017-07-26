@@ -1,5 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
+                <a routerLink="create" type="submit" class="btn btn-info btn-fill">Create New</a>
+        <div class="clearfix"></div><br>
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
@@ -42,6 +44,39 @@
                                 <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="row">
+            <div class="col-md-12">
+                <div class="card" [@cardtable1]>
+                    <div class="header">
+                        <h4 class="title">All Active Trainings</h4>
+                        <p class="category">All Training for active innovations</p>
+                    </div>
+
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Level Of Effort</th>
+                                    <th>Impact</th>
+                                    <th>Innovation</th>
+                                    <th>User</th>
+                                </tr>
+                                <tbody>
+                                    <tr *ngFor="let training of trainings">
+                                        <td><a [routerLink]="['detail', training.id]">{{training.title}}</a></td>
+                                        <td>{{training.levelOfEffort}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>{{training.impact}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>{{training.innovation.title}}<a [routerLink]="['/detail', 1]"></a></td>
+                                        <td>{{training.user.name}}<a [routerLink]="['/detail', 1]"></a></td>
+                                    </tr>
+                                </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
