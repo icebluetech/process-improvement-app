@@ -1883,6 +1883,12 @@ input:focus {
   .card-plain .image {
     border-radius: 4px; }
 
+#InnovationProgress .card {
+  margin-bottom: 0; }
+
+#InnovationProgress .content {
+  padding-top: 0; }
+
 .ct-label {
   fill: rgba(0, 0, 0, 0.4);
   color: rgba(0, 0, 0, 0.4);
@@ -3153,6 +3159,19 @@ input:focus {
   background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
   background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
   background-size: 150% 150%; }
+
+.progress {
+  height: 2.5em;
+  margin-top: 1.9em; }
+
+.progress-bar {
+  line-height: 3em; }
+
+.status {
+  line-height: 3em;
+  font-size: 11px;
+  color: gray;
+  border-right: 1pt dashed lightgrey; }
 
 .card .progress {
   margin-top: 1.5em; }

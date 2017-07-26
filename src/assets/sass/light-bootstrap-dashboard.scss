@@ -195,6 +195,21 @@ border: 1px solid #ddd;
   background-size: 150% 150%;
 }
 
+  .progress{
+    height: 2.5em;
+    margin-top: 1.9em;
+  }
+  .progress-bar{
+    line-height: 3em;
+  }
+
+  .status{
+    line-height: 3em;
+    font-size: 11px;
+    color: gray;
+    border-right: 1pt dashed lightgrey;
+  }
+
 .card .progress{
     margin-top: 1.5em;
   }
@@ -228,6 +243,8 @@ border: 1px solid #ddd;
     font-weight: 50;
   }
 }}
+
+
 
 
 
