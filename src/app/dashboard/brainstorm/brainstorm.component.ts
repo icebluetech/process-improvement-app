@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit, trigger, state, style, transition, an
 import { Data } from '../../services/data/data';
 import { Brainstorm } from '../../model/brainstorm';
 
+import initDemo = require('../../../assets/js/charts.js');
+
 @Component({
     moduleId: module.id,
     selector: 'brainstorm-cmp',
@@ -61,7 +63,7 @@ export class BrainstormComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        initDemo();
     }
 
     getBrainstorms() {

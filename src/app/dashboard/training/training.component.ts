@@ -4,6 +4,8 @@ import { Data } from '../../services/data/data';
 
 import { AppSettings } from '../../app.settings';
 
+import initDemo = require('../../../assets/js/charts.js');
+
 @Component({
     moduleId: module.id,
     selector: 'training-cmp',
@@ -18,6 +20,7 @@ export class TrainingComponent implements OnInit {
     }
 
     ngOnInit() {
+        initDemo();
     }
 
 }

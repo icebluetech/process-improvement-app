@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit, trigger, state, style, transition, an
 import { Data } from '../../services/data/data';
 import { Innovation } from '../../model/innovation';
 
+import initDemo = require('../../../assets/js/charts.js');
+
 @Component({
     moduleId: module.id,
     selector: 'innovation-cmp',
@@ -61,7 +63,7 @@ export class InnovationComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        initDemo();
     }
 
     getInnovations() {
