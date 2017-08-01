@@ -4,6 +4,8 @@ import { Innovation } from '../../model/innovation';
 
 import initDemo = require('../../../assets/js/charts.js');
 
+declare var $:any;
+
 @Component({
     moduleId: module.id,
     selector: 'innovation-cmp',
@@ -63,6 +65,8 @@ export class InnovationComponent implements OnInit {
     }
 
     ngOnInit() {
+        //$.getScript('../../../assets/js/light-bootstrap-dashboard.js');
+
         initDemo();
     }
 

@@ -2,6 +2,53 @@
     <div class="container-fluid">
         <a routerLink="create" type="submit" class="btn btn-info btn-fill">Create New</a>
         <div class="clearfix"></div><br>
+
+                      <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Active experiments</h4>
+                        <p class="category">Number of experiments in system</p>
+                    </div>
+                    <div class="content">
+                        <div id="expTest" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="legend">
+                                <i class="fa fa-circle text-info"></i> Successfull
+                                <i class="fa fa-circle text-danger"></i> Not succesful
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-md-4">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Experiments By Type</h4>
+                        <p class="category">Experiments by onnovation type</p>
+                    </div>
+                    <div class="content">
+                        <div id="expBar" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="legend">
+                                <i class="fa fa-circle text-info"></i> Green Belt
+                                <i class="fa fa-circle text-danger"></i> Black Belt
+                                <i class="fa fa-circle text-warning"></i> Un- Trained
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card" [@cardtable1]>
@@ -9,7 +56,7 @@
                         <h4 class="title">Current Active Experiments</h4>
                         <p class="category">Experiments currently underway</p>
                     </div>
-
+  
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
                             <thead>

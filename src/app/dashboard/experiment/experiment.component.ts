@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit, trigger, state, style, transition, an
 import { Data } from '../../services/data/data';
 import { Experiment } from '../../model/experiment';
 
+import initDemo = require('../../../assets/js/charts.js');
+
 @Component({
     moduleId: module.id,
     selector: 'experiment-cmp',
@@ -61,7 +63,7 @@ export class ExperimentComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        initDemo();
     }
 
     getExperiments() {

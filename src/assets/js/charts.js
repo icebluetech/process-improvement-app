@@ -140,6 +140,46 @@ Chartist.Pie('#trainingTest', {
   showLabel: true
 });
 
+Chartist.Bar('#expBar', {
+  labels: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter'],
+  series: [
+    [60, 40, 80, 70],
+    [40, 30, 70, 65],
+    [80, 30, 10, 60]
+  ]
+}, {
+  seriesBarDistance: 10,
+  axisX: {
+    offset: 60
+  },
+  axisY: {
+    offset: 80,
+    labelInterpolationFnc: function(value) {
+      return value + ' CHF'
+    },
+    scaleMinSpace: 15
+  }
+});
+
+Chartist.Line('#expTest', {
+  labels: [1, 2, 3, 4, 5],
+  series: [
+    [1, 5, 10, 0, 5],
+    [10, 15, 0, 1, 6]
+  ]
+}, {
+  // Remove this configuration to see that chart rendered with cardinal spline interpolation
+  // Sometimes, on large jumps in data values, it's better to use simple smoothing.
+  lineSmooth: Chartist.Interpolation.simple({
+    divisor: 2
+  }),
+  fullWidth: true,
+  chartPadding: {
+    right: 20
+  },
+  low: 0
+});
+
         Chartist.Line('#chartTest', {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
             series: [
