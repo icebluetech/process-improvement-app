@@ -102,10 +102,12 @@ export class Data {
   getInnovations(): Promise<Innovation[]> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation";
-    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var headers = new Headers();
+    headers.append( 'Access-Control-Allow-Origin', '*' );
+    headers.append( 'Content-Type', 'application/json; charset=UTF-8' );
     var options = new RequestOptions({ headers: headers });
 
-    return this.http.get(url, options)
+    return this.http.get(url)
       .toPromise()
       .then(
       response => response.json()
@@ -194,7 +196,7 @@ export class Data {
   getInnovation(id: number): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
-    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var headers = new Headers([{ 'Access-Control-Allow-Origin': '*' },{ 'Content-Type': 'application/json; charset=UTF-8' }]);
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)

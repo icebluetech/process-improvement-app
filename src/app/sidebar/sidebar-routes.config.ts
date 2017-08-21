@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'brainstorm', title: 'Brainstorming', menuType: MenuType.LEFT, icon:'fa fa-lightbulb-o' },//10
     { path: 'experiment', title: 'Solution Approach', menuType: MenuType.LEFT, icon:'fa fa-flask' },//11
     { path: 'confirmed', title: 'Confirmed State', menuType: MenuType.LEFT, icon:'fa fa-gavel' },//12
-    { path: 'reason', title: 'Reason for Action', menuType: MenuType.LEFT, icon:'fa fa-question' },//13
+    { path: 'reason', title: 'Reason for Action', menuType: MenuType.LEFT, icon:'fa fa-bullhorn' },//13
     { path: 'initial', title: 'Initial State', menuType: MenuType.LEFT, icon:'fa fa-bicycle' },//14
     { path: 'target', title: 'Target State', menuType: MenuType.LEFT, icon:'fa fa-rocket' },//15
     { path: 'gap', title: 'Gap Analaysis', menuType: MenuType.LEFT, icon:'fa fa-cogs' },//16
