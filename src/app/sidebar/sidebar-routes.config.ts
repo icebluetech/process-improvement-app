@@ -3,7 +3,7 @@ import { MenuType, RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Dashboard', menuType: MenuType.LEFT, icon: 'pe-7s-graph' },//0
     { path: 'user', title: 'User profile', menuType: MenuType.LEFT, icon:'pe-7s-user' },//1
-    { path: 'innovation', title: 'Innovations', menuType: MenuType.LEFT, icon:'fa fa-flask' },//2
+    { path: 'innovation', title: 'Projects', menuType: MenuType.LEFT, icon:'fa fa-flask' },//2
     { path: 'reports', title: 'Reports', menuType: MenuType.LEFT, icon:'pe-7s-news-paper' },//3
     { path: 'docs', title: 'Docs', menuType: MenuType.LEFT, icon:'pe-7s-science' },//4
     { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'pe-7s-bell' },//5
