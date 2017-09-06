@@ -1,10 +1,132 @@
-<div class="main-content">
+<div class="main-content innogrid">
     <div class="container-fluid">
-        
-        <a routerLink="create" type="submit" class="btn btn-info btn-fill">Create New</a>
 
+        <div class="row">
+            <div class="col-sm-4 stage1">
+                <div class="thumbnail" (click)="showDialog = !showDialog">
+                    <header>Reason For Action</header>
+                    <div class="caption">
 
+                        <div class="description">
+                            <i class="fa fa-bullhorn fa-4x"></i>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
 
+            <app-dialog [(visible)]="showDialog">     
+            
+                <action-dialog></action-dialog>
+            
+            </app-dialog>
+
+            <div class="col-sm-4 stage2">
+                <div class="thumbnail">
+                    <header>Gap Analysis</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-cogs fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 stage3">
+                <div class="thumbnail">
+                    <header>Completion Plan</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-list-alt fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 stage1">
+                <div class="thumbnail">
+                    <header>Initial State</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-bicycle fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 stage2">
+                <div class="thumbnail">
+                    <header>Solution Approach</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-flask fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 stage3">
+                <div class="thumbnail">
+                    <header>Innovations</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-bolt fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 stage1">
+                <div class="thumbnail">
+                    <header>Target State</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-rocket fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 stage2">
+                <div class="thumbnail">
+                    <header>Confirmed State</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-gavel fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 stage3">
+                <div class="thumbnail">
+                    <header>Insights</header>
+                    <div class="caption">
+
+                        <div class="description">
+                            <i class="fa fa-eye fa-4x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
