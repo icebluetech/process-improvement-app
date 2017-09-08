@@ -244,7 +244,7 @@ border: 1px solid #ddd;
   }
 }}
 
-.header{
+.innogrid .header{
 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -252,10 +252,11 @@ border: 1px solid #ddd;
 	font-size: 19px;
   color: rgb(88, 89, 91);
 
+
 }
 
-
   .stage1{
+
       header{
     background-color: rgba(243, 74, 83, 0.94);
   }
@@ -285,6 +286,12 @@ border: 1px solid #ddd;
     
   }
 
+  .stage1{
+      header{
+        padding:.8em;
+    color:white;
+  }
+  }
 
 .thumbnail {
   header{
@@ -306,6 +313,10 @@ border: 1px solid #ddd;
 .thumbnail:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	
+}
+
+.popup form{
+  padding: 1em;
 }
 
 

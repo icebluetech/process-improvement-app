@@ -15,7 +15,6 @@ import { DocsComponent } from './docs/docs.component';
 import { TrainingComponent } from './training/training.component';
 import { TrainingCreateComponent } from './training/create/training.create.component';
 import { TrainingDetailComponent } from './training/detail/training.detail.component';
-import { DialogComponent } from './brainstorm/brainstorm.component';
 import { ActionComponent } from './action/action.component';
 import { BrainstormCreateComponent } from './brainstorm/create/brainstorm.create.component';
 import { BrainstormDetailComponent } from './brainstorm/detail/brainstorm.detail.component';
@@ -51,7 +50,6 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'training/create', component: TrainingCreateComponent },
     { path: 'training/detail', component: TrainingDetailComponent },
     { path: 'innovation/detail/:id', component: InnovationDetailComponent },
-    { path: 'brainstorm', component: DialogComponent },
     { path: 'action', component: ActionComponent },
     { path: 'brainstorm/create', component: BrainstormCreateComponent },
     { path: 'brainstorm/detail', component: BrainstormDetailComponent },
@@ -85,7 +83,6 @@ export const MODULE_COMPONENTS = [
     TrainingCreateComponent,
     TrainingDetailComponent,
     InnovationDetailComponent,
-    DialogComponent,
     BrainstormCreateComponent,
     BrainstormDetailComponent,
     ExperimentComponent,

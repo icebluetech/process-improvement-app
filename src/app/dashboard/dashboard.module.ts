@@ -5,6 +5,7 @@ import { Settings, Data } from '../services/data/data'
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
+import { DialogComponent } from '../shared/dialog/dialog.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
         BrowserModule,
         FormsModule,ReactiveFormsModule
     ],
-    declarations: [ MODULE_COMPONENTS ],
+    declarations: [ MODULE_COMPONENTS,DialogComponent ],
     providers:[Settings, Data]
 })
 

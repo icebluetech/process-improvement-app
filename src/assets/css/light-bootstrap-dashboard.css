@@ -3195,7 +3195,7 @@ input:focus {
   font-size: 1.5em;
   font-weight: 50; }
 
-.header {
+.innogrid .header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
@@ -3221,6 +3221,10 @@ input:focus {
 .stage3 i {
   color: rgba(35, 204, 239, 0.65); }
 
+.stage1 header {
+  padding: .8em;
+  color: white; }
+
 .thumbnail {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -3238,3 +3242,6 @@ input:focus {
 
 .thumbnail:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+
+.popup form {
+  padding: 1em; }
