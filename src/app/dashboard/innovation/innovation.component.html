@@ -22,7 +22,7 @@
                                 </tr>
                                 <tbody>
                                     <tr *ngFor="let innovation of innovations">
-                                        <td><a [routerLink]="['innovation', brainstorm.id]">{{brainstorm.title}}</a></td>
+                                        <td><a [routerLink]="['innovation', innovation.id]">{{innovation.title}}</a></td>
                                         <td>{{innovation.sponsor}}<a [routerLink]="['/innovation', 1]"></a></td>
                                         <td>{{innovation.customer}}<a [routerLink]="['/innovation', 1]"></a></td>
                                         <td>{{innovation.department}}<a [routerLink]="['/innovation', 1]"></a></td>
