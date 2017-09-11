@@ -3,7 +3,7 @@
 
         <div class="row">
             <div class="col-sm-4 stage1">
-                <div class="thumbnail" (click)="showDialog = !showDialog">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Reason For Action</header>
                     <div class="caption">
 
@@ -15,14 +15,15 @@
                 </div>
             </div>
 
+           
             <app-dialog [(visible)]="showDialog">     
-            
-                <action-dialog></action-dialog>
+                <div #container></div>
+                <!-- <action-dialog></action-dialog> -->
             
             </app-dialog>
 
             <div class="col-sm-4 stage2">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Gap Analysis</header>
                     <div class="caption">
 
@@ -35,7 +36,7 @@
             </div>
 
             <div class="col-sm-4 stage3">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Completion Plan</header>
                     <div class="caption">
 
@@ -51,7 +52,7 @@
 
         <div class="row">
             <div class="col-sm-4 stage1">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('current-state')">
                     <header>Initial State</header>
                     <div class="caption">
 
@@ -63,7 +64,7 @@
                 </div>
             </div>
             <div class="col-sm-4 stage2">
-                <div class="thumbnail">
+               <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Solution Approach</header>
                     <div class="caption">
 
@@ -75,7 +76,7 @@
                 </div>
             </div>
             <div class="col-sm-4 stage3">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Innovations</header>
                     <div class="caption">
 
@@ -91,7 +92,7 @@
 
         <div class="row">
             <div class="col-sm-4 stage1">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('future-state')">
                     <header>Target State</header>
                     <div class="caption">
 
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div class="col-sm-4 stage2">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Confirmed State</header>
                     <div class="caption">
 
@@ -115,7 +116,7 @@
                 </div>
             </div>
             <div class="col-sm-4 stage3">
-                <div class="thumbnail">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Insights</header>
                     <div class="caption">
 

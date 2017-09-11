@@ -16,8 +16,8 @@ import { TrainingComponent } from './training/training.component';
 import { TrainingCreateComponent } from './training/create/training.create.component';
 import { TrainingDetailComponent } from './training/detail/training.detail.component';
 import { ActionComponent } from './action/action.component';
-import { BrainstormCreateComponent } from './brainstorm/create/brainstorm.create.component';
-import { BrainstormDetailComponent } from './brainstorm/detail/brainstorm.detail.component';
+import { CurrentStateComponent } from './currentState/currentState.component';
+import { FutureStateComponent } from './futurestate/futurestate.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { ExperimentCreateComponent } from './experiment/create/experiment.create.component';
 import { ExperimentDetailComponent } from './experiment/detail/experiment.detail.component';
@@ -51,8 +51,6 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'training/detail', component: TrainingDetailComponent },
     { path: 'innovation/detail/:id', component: InnovationDetailComponent },
     { path: 'action', component: ActionComponent },
-    { path: 'brainstorm/create', component: BrainstormCreateComponent },
-    { path: 'brainstorm/detail', component: BrainstormDetailComponent },
     { path: 'experiment', component: ExperimentComponent },
     { path: 'experiment/create', component: ExperimentCreateComponent },
     { path: 'experiment/detail', component: ExperimentDetailComponent },
@@ -83,8 +81,6 @@ export const MODULE_COMPONENTS = [
     TrainingCreateComponent,
     TrainingDetailComponent,
     InnovationDetailComponent,
-    BrainstormCreateComponent,
-    BrainstormDetailComponent,
     ExperimentComponent,
     ExperimentCreateComponent,
     ExperimentDetailComponent,
@@ -97,5 +93,7 @@ export const MODULE_COMPONENTS = [
     ResultComponent,
     ResultCreateComponent,
     ResultDetailComponent,
-    ActionComponent
+    ActionComponent,
+    CurrentStateComponent,
+    FutureStateComponent
 ]

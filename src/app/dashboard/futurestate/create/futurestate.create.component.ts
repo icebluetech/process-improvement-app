@@ -18,8 +18,8 @@ import {
 declare var $: any;
 @Component({
     moduleId: module.id,
-    selector: 'brainstorm-create-cmp',
-    templateUrl: 'brainstorm.create.component.html',
+    selector: 'futurestate-create-cmp',
+    templateUrl: 'futurestate.create.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({
@@ -44,7 +44,7 @@ declare var $: any;
         ])]
 })
 
-export class BrainstormCreateComponent implements OnInit, AfterViewChecked {
+export class FutureStateCreateComponent implements OnInit, AfterViewChecked {
 
     myForm: FormGroup;
     categories: Array<InnovationCategory>;

@@ -2,12 +2,12 @@ import { Component, state, style, animate, transition, trigger, keyframes, ViewC
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Data } from '../../../services/data/data';
 import { Brainstorm } from '../../../model/brainstorm';
-import { BrainstormCreateComponent } from '../create/brainstorm.create.component';
+import { CurrentStateCreateComponent } from '../create/currentstate.create.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'brainstorm-detail-cmp',
-    templateUrl: 'brainstorm.detail.component.html',
+    selector: 'currentstate-detail-cmp',
+    templateUrl: 'currentstate.detail.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({

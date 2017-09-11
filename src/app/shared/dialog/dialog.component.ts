@@ -1,6 +1,6 @@
 import {
     Component, OnInit, Input, Output, OnChanges, EventEmitter,
-    trigger, state, style, animate, transition
+    trigger, state, style, animate, transition, ViewChild
 } from '@angular/core';
 
 @Component({

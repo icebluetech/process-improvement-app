@@ -1,10 +1,12 @@
-import { Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
+import { ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Data } from '../../services/data/data';
 import { Innovation } from '../../model/innovation';
+import { AppModule } from '../../app.module';
 
 import initDemo = require('../../../assets/js/charts.js');
 
-declare var $:any;
+declare var $: any;
 
 @Component({
     moduleId: module.id,
@@ -58,8 +60,10 @@ declare var $:any;
 
 export class InnovationComponent implements OnInit {
     innovations: Innovation[];
+    showDialog: boolean;
+    @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
-    constructor(private _data: Data) {
+    constructor(private _data: Data, private compiler: Compiler) {
         this.innovations = [];
         this.getInnovations();
     }
@@ -74,5 +78,16 @@ export class InnovationComponent implements OnInit {
         this._data.getInnovations().then(res => {
             this.innovations = res;
         })
+    }
+
+    loadComponent(selector) {
+        this.showDialog = !this.showDialog;
+        
+        this.compiler.compileModuleAndAllComponentsAsync(AppModule)
+            .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) => {
+                const componentFactory = moduleWithComponentFactory.componentFactories
+                    .find(x => x.selector === selector);
+                return this.viewContainer.createComponent(componentFactory);
+            });
     }
 }
