@@ -12,11 +12,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ToolKitModule } from './toolkit/toolkit.module';
 import { FooterModule} from './shared/footer/footer.module';
 
 import { Safe } from './services/data/data';
-
-import { DialogComponent } from './shared/dialog/dialog.component';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
@@ -33,6 +32,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SidebarModule,
     NavbarModule,
     DashboardModule,
+    ToolKitModule,
     BrowserAnimationsModule,
     FooterModule,
     HttpModule,
