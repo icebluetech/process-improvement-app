@@ -14,12 +14,8 @@ import { TrainingDetailComponent } from './training/detail/training.detail.compo
 import { StandardWorkComponent } from './standardwork/standardwork.component';
 import { StandardWorkCreateComponent } from './standardwork/create/standardwork.create.component';
 import { StandardWorkDetailComponent } from './standardwork/detail/standardwork.detail.component';
-import { RootCauseComponent } from './rootcause/rootcause.component';
-import { RootCauseCreateComponent } from './rootcause/create/rootcause.create.component';
-import { RootCauseDetailComponent } from './rootcause/detail/rootcause.detail.component';
-import { ResultComponent } from './result/result.component';
-import { ResultCreateComponent } from './result/create/result.create.component';
-import { ResultDetailComponent } from './result/detail/result.detail.component';
+import { InnovationComponent } from './innovation/innovation.component';
+import { InnovationCreateComponent } from './innovation/create/innovation.create.component';
 
 
 export const MODULE_ROUTES: Route[] = [
@@ -38,12 +34,8 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'standardwork', component: StandardWorkComponent },
     { path: 'standardwork/create', component: StandardWorkCreateComponent },
     { path: 'standardwork/detail', component: StandardWorkDetailComponent },
-    { path: 'rootcause', component: RootCauseComponent },
-    { path: 'rootcause/create', component: RootCauseCreateComponent },
-    { path: 'rootcause/detail', component: RootCauseDetailComponent },
-    { path: 'result', component: ResultComponent },
-    { path: 'result/create', component: ResultCreateComponent },
-    { path: 'result/detail', component: ResultDetailComponent },
+    { path: 'innovation', component: InnovationComponent },
+    { path: 'innovation/create', component: InnovationCreateComponent }
 ]
 
 export const MODULE_COMPONENTS = [
@@ -61,10 +53,6 @@ export const MODULE_COMPONENTS = [
     StandardWorkComponent,
     StandardWorkCreateComponent,
     StandardWorkDetailComponent,
-    RootCauseComponent,
-    RootCauseCreateComponent,
-    RootCauseDetailComponent,
-    ResultComponent,
-    ResultCreateComponent,
-    ResultDetailComponent
+    InnovationComponent,
+    InnovationCreateComponent
 ]

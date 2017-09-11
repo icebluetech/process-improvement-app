@@ -193,7 +193,7 @@ export class Data {
       )
   }
 
-  getInnovation(id: number): Promise<Innovation> {
+  getInnovation(id: any): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
     var headers = new Headers([{ 'Access-Control-Allow-Origin': '*' },{ 'Content-Type': 'application/json; charset=UTF-8' }]);

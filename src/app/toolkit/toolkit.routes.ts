@@ -9,7 +9,7 @@ import { FutureStateComponent } from './state/future/future.component';
 
 export const MODULE_ROUTES: Route[] = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'innovation', component: HomeComponent }
+    { path: 'innovation/:id', component: HomeComponent }
 ]
 
 export const MODULE_COMPONENTS = [

@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { Data } from '../../services/data/data';
-import { Result } from '../../model/result';
+import { Innovation } from '../../model/innovation';
 
 @Component({
     moduleId: module.id,
-    selector: 'result-cmp',
-    templateUrl: 'result.component.html',
+    selector: 'innovation-cmp',
+    templateUrl: 'innovation.component.html',
     animations: [
         trigger('cardtable1', [
             state('*', style({
@@ -52,21 +52,21 @@ import { Result } from '../../model/result';
     ]
 })
 
-export class ResultComponent implements OnInit {
-    results: Result[];
+export class InnovationComponent implements OnInit {
+    innovations: Innovation[];
 
     constructor(private _data: Data) {
-        this.results = [];
-        this.getResults();
+        this.innovations = [];
+        this.getInnovations();
     }
 
     ngOnInit() {
 
     }
 
-    getResults() {
-        this._data.getResults().then(res => {
-            this.results = res;
+    getInnovations() {
+        this._data.getInnovations().then(res => {
+            this.innovations = res;
         })
     }
 }

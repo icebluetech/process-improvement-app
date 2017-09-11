@@ -1,4 +1,9 @@
 <div class="main-content innogrid">
+
+    <div *ngIf="innovation$ | async as innovation">
+        <h3>"{{ innovation.title }}"</h3>
+    <div>
+
     <div class="container-fluid">
 
         <div class="row">
@@ -15,11 +20,11 @@
                 </div>
             </div>
 
-           
-            <app-dialog [(visible)]="showDialog">     
+
+            <app-dialog [(visible)]="showDialog">
                 <div #container></div>
                 <!-- <action-dialog></action-dialog> -->
-            
+
             </app-dialog>
 
             <div class="col-sm-4 stage2">
@@ -64,7 +69,7 @@
                 </div>
             </div>
             <div class="col-sm-4 stage2">
-               <div class="thumbnail" (click)="loadComponent('action-dialog')">
+                <div class="thumbnail" (click)="loadComponent('action-dialog')">
                     <header>Solution Approach</header>
                     <div class="caption">
 

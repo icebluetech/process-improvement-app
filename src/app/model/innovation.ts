@@ -16,9 +16,9 @@ export class Innovation {
     type: InnovationType
     innovationCategoryId: number;
     category: InnovationCategory;
-    why: string;
-    currentState: string;
-    futureState: string;
-    rootCauseAnalysisId: number;
-    rootCauseAnalysis: RootCause;
+
+    sponsor: string;
+    customer: string;
+    department: string;
+
 }

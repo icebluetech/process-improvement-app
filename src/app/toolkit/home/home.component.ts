@@ -4,6 +4,10 @@ import { Data } from '../../services/data/data';
 import { Innovation } from '../../model/innovation';
 import { AppModule } from '../../app.module';
 
+import { Observable } from 'rxjs/Observable';
+
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 import initDemo = require('../../../assets/js/charts.js');
 
 declare var $: any;
@@ -62,19 +66,26 @@ export class HomeComponent implements OnInit {
 
     showDialog: boolean;
 
+    innovation: Observable<Innovation>;
+
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
-    constructor(private _data: Data, private compiler: Compiler) {
-
+    constructor(private _data: Data,
+        private compiler: Compiler,
+        private route: ActivatedRoute,
+        private router: Router) {
     }
 
     ngOnInit() {
-
+        this.innovation = this.route.paramMap
+            .switchMap((params: ParamMap) =>
+                this._data.getInnovation(params.get('id')
+                ));
     }
 
     loadComponent(selector) {
         this.showDialog = !this.showDialog;
-        
+
         this.compiler.compileModuleAndAllComponentsAsync(AppModule)
             .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) => {
                 const componentFactory = moduleWithComponentFactory.componentFactories
