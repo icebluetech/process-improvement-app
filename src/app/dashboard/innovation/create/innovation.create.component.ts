@@ -18,8 +18,8 @@ import {
 declare var $: any;
 @Component({
     moduleId: module.id,
-    selector: 'result-create-cmp',
-    templateUrl: 'result.create.component.html',
+    selector: 'innovation-create-cmp',
+    templateUrl: 'innovation.create.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({
