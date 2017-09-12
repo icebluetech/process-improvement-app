@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
 
     showDialog: boolean;
 
-    innovation$: Observable<Innovation>;
+    innovation: Innovation;
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
@@ -77,10 +77,17 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.innovation$ = this.route.paramMap
-            .switchMap((params: ParamMap) =>
-                this._data.getInnovation(params.get('id')
-                ));
+
+        let id = this.route.snapshot.paramMap.get('id');
+
+        this._data.getInnovation(id).then(res => {
+            this.innovation = res;
+        });
+
+        // this.innovation$ = this.route.paramMap
+        //     .switchMap((params: ParamMap) => {
+        //         return this._data.getInnovation(params.get('id'))
+        //     });
     }
 
     loadComponent(selector) {

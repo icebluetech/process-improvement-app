@@ -4,70 +4,72 @@
             <div class="col-md-8">
                 <div class="card" [@carduserprofile]>
                     <div class="header">
-                        <h4 class="title">New Result</h4>
+                        <h4 class="title">New Innovation</h4>
                     </div>
                     <div class="content">
                         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
                             <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Innovation Title</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Title">
+                                    </div>
+                                </div>
+                                                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Innovation Type</label>
+                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Title">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Result Title</label>
-                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Result Title">
+                                        <label>Process</label>
+                                        <input id="Process" [formControl]="Process" type="text" class="form-control" placeholder="Process">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Result Type (30 / 60/ 90)</label>
-                                        <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Result Type....</option>
-                                            <option value="1">30 days +</option>
-                                            <option value="2">60 days +</option>
-                                            <option value="3">90 days +</option>
-                                        </select>
+                                        <label>Widget</label>
+                                        <input id="Widget" [formControl]="Widget" type="text" class="form-control" placeholder="Widget">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="owner">Date</label>
-                                        <input id="date" [formControl]="date" type="text" class="form-control" placeholder="When were they entered">
-                                    </div>
-                                </div>
+
                             </div>
+
                             <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>How many Items</label>
-                                        <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Item Unit....</option>
-                                            <option value="1">Items per day</option>
-                                            <option value="2">Items per week</option>
-                                            <option value="3">Items per month</option>
-                                            <option value="4">Items per year</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label>How Long</label>
-                                        <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="How long to produce one item">
-                                    </div>
-                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="owner">Success Rate</label>
-                                        <input id="what" [formControl]="what" type="text" class="form-control" placeholder="% are correct the first time through the process">
+                                        <label for="Department">Primary Department</label>
+                                        <select type="text" class="form-control" value="Cheshire">
+                                            <option selected disabled>Choose Department....</option>
+                                            <option value="1">High</option>
+                                            <option value="2">Medium</option>
+                                            <option value="3">Low</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Result Description</label>
-                                        <textarea cols="1" rows="8" class="form-control" placeholder="Description"></textarea>
+                                        <label>Date Created</label>
+                                        <input id="Date" [formControl]="Date" type="text" class="form-control" placeholder="Date">
                                     </div>
                                 </div>
 
+                            </div>
+                            <div class="col-sm-12">Created By</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="chip">
+                                        <img src="./assets/img/faces/face-8.jpg" alt="Person" width="96" height="96"> Chris
+                                        Cheshire
+                                        <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-info">modify</a>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-info btn-fill">Save</button>
 
@@ -77,60 +79,57 @@
                 </div>
             </div>
             <div class="col-md-4">
+
                 <div class="card" [@carduserprofile]>
                     <div class="header">
                         <h4 class="title">Team Members</h4>
                     </div>
                     <div class="content">
 
-                        <div class="row team-member">
-
-                            <div class="col-md-2">
-                                <img class="avatar-med border-gray" src="assets/img/faces/face-8.jpg" alt="..." /></div>
-                            <div class="col-md-4">
-                                <p>Chris Cheshire</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p>Owner</p>
-                            </div>
-                            <div class="col-md-3">
-                                <span class="fa fa-envelope"></span>
-                                <span class="fa fa-bell"></span>
-                            </div>
-
-                        </div>
+                        <div class="col-sm-12">Sponsor</div>
                         <div class="row">
-                            <div class="col-md-offset-8">
-                                <a class="btn btn-info"><span class="fa fa-plus"></span> Add Member</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-
-                <div class="card" [@carduserprofile]>
-                    <div class="header">
-                        <h4 class="title">Innovations</h4>
-                    </div>
-                    <div class="content">
-
-                        <div class="row team-member" *ngFor="let innovationuser of innovation.innovationUsers">
-
-                            <div class="col-md-5">
-                                <p>Change world</p>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                        60%
-                                    </div>
+                            <div class="col-md-12">
+                                <div class="chip">
+                                    <img src="./assets/img/faces/face-8.jpg" alt="Person" width="96" height="96"> Chris Cheshire
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="col-sm-12">Customer</div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="chip">
+                                    <img src="./assets/img/faces/male-1.png" alt="Person" width="96" height="96"> John Doe
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-offset-7">
-                                <a class="btn btn-info"><span class="fa fa-plus"></span> Link Innovation</a>
+
+                            <div class="col-md-8">
+                                <div class="chip">
+                                    <img src="./assets/img/faces/female-1.png" alt="Person" width="96" height="96"> John
+                                    Doe
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Process Owner</p>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-8">
+                                <div class="chip">
+                                    <img src="./assets/img/faces/female-1.png" alt="Person" width="96" height="96"> John
+                                    Doe
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p>PI Member</p>
                             </div>
                         </div>
                     </div>

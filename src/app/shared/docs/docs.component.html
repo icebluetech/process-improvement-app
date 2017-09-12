@@ -1,0 +1,41 @@
+<div id="docs">
+
+    <div *ngIf="attachments.length>0">
+
+        <div class="col-md-6">
+            File Name
+        </div>
+        <div class="col-md-3">
+            Uploaded By
+        </div>
+        <div class="col-md-3">
+            Date
+        </div>
+        <div class="row" *ngFor="let file of attachmentsFriendly">
+            <div class="col-md-6">
+                <p><i class="fa fa-file-text"></i>{{file.name}}</p>
+            </div>
+            <div class="col-md-3">
+                <p>{{file.user}}</p>
+            </div>
+            <div class="col-md-3">
+                <p>{{file.date}}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label class="btn btn-info">
+                <input type="file" (change)="onChange($event)" />
+                <!-- <i class="fa fa-plus"></i> Upload -->
+            </label>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>

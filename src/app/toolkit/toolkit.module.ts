@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DialogComponent } from '../shared/dialog/dialog.component';
+import { DocsComponent } from '../shared/docs/docs.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { DialogComponent } from '../shared/dialog/dialog.component';
     BrowserModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [MODULE_COMPONENTS, DialogComponent],
+  declarations: [MODULE_COMPONENTS, DialogComponent, DocsComponent],
   providers: [Settings, Data]
 })
 

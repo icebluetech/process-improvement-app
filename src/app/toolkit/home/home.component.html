@@ -1,8 +1,8 @@
 <div class="main-content innogrid">
 
-    <div *ngIf="innovation$ | async as innovation">
+     <div *ngIf="innovation">
         <h3>"{{ innovation.title }}"</h3>
-    <div>
+    </div> 
 
     <div class="container-fluid">
 
@@ -28,7 +28,7 @@
             </app-dialog>
 
             <div class="col-sm-4 stage2">
-                <div class="thumbnail" (click)="loadComponent('action-dialog')">
+                <div class="thumbnail" (click)="loadComponent('analysis-dialog')">
                     <header>Gap Analysis</header>
                     <div class="caption">
 

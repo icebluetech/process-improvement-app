@@ -7,7 +7,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { TypographyComponent } from './typography/typography.component';
 import { MapsComponent } from './maps/maps.component';
 import { SettingsComponent } from './settings/settings.component';
-import { DocsComponent } from './docs/docs.component';
 import { TrainingComponent } from './training/training.component';
 import { TrainingCreateComponent } from './training/create/training.create.component';
 import { TrainingDetailComponent } from './training/detail/training.detail.component';
@@ -27,7 +26,6 @@ export const MODULE_ROUTES: Route[] = [
     { path: 'typography', component: TypographyComponent },
     { path: 'maps', component: MapsComponent },
     { path: 'settings', component: SettingsComponent },
-    { path: 'docs', component: DocsComponent },
     { path: 'training', component: TrainingComponent },
     { path: 'training/create', component: TrainingCreateComponent },
     { path: 'training/detail', component: TrainingDetailComponent },
@@ -46,7 +44,6 @@ export const MODULE_COMPONENTS = [
     TypographyComponent,
     MapsComponent,
     SettingsComponent,
-    DocsComponent,
     TrainingComponent,
     TrainingCreateComponent,
     TrainingDetailComponent,

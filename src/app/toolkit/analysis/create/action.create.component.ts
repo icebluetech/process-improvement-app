@@ -18,9 +18,8 @@ import {
 declare var $: any;
 @Component({
     moduleId: module.id,
-    selector: 'innovation-create-cmp',
-    templateUrl: 'innovation.create.component.html',
-    styleUrls: ['./innovation.create.component.css'],
+    selector: 'action-create',
+    templateUrl: 'action.create.component.html',
     animations: [
         trigger('carduserprofile', [
             state('*', style({
@@ -45,7 +44,7 @@ declare var $: any;
         ])]
 })
 
-export class InnovationCreateComponent implements OnInit, AfterViewChecked {
+export class ActionCreateComponent implements OnInit, AfterViewChecked {
 
     myForm: FormGroup;
     categories: Array<InnovationCategory>;

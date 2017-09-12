@@ -5,7 +5,6 @@ import { Data } from '../../services/data/data';
 import { AppSettings } from '../../app.settings';
 
 @Component({
-    moduleId: module.id,
     selector: 'docs-cmp',
     templateUrl: 'docs.component.html'
 })

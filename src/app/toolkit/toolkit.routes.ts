@@ -5,11 +5,12 @@ import { ActionComponent } from './action/action.component';
 import { StateComponent } from './state/state.component';
 import { CurrentStateComponent } from './state/current/current.component';
 import { FutureStateComponent } from './state/future/future.component';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 
 export const MODULE_ROUTES: Route[] = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'innovation/:id', component: HomeComponent }
+    { path: 'toolkit/:id', component: HomeComponent }
 ]
 
 export const MODULE_COMPONENTS = [
@@ -18,5 +19,6 @@ export const MODULE_COMPONENTS = [
     ActionComponent,
     StateComponent,
     CurrentStateComponent,
-    FutureStateComponent
+    FutureStateComponent,
+    AnalysisComponent
 ]
