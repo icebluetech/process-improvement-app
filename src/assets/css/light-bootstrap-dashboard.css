@@ -3221,7 +3221,7 @@ input:focus {
 .stage3 i {
   color: rgba(35, 204, 239, 0.65); }
 
-.stage1 header {
+.stage1 header, .stage2 header, .stage3 header {
   padding: .8em;
   color: white; }
 

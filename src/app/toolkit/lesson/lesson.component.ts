@@ -5,18 +5,18 @@ import {
 
 declare var $: any;
 @Component({
-    selector: 'analysis-dialog',
-    templateUrl: 'analysis.component.html',
-    styleUrls: ['analysis.component.css']
+    selector: 'lesson-dialog',
+    templateUrl: 'lesson.component.html',
+    styleUrls: ['lesson.component.css']
     
 })
-export class AnalysisComponent implements OnInit {
+export class LessonComponent implements OnInit {
 
     categories:any[]
 
     constructor() {
         this.categories = [];
-        this.categories.push("Defects","Overprocessing","Waiting","Non utilized talent","Tranprtation","Inventory","Motion","Excessive Processing")
+        this.categories.push("Continous Flow","Eliminate Branching","Eliinate Handoffs","5S/6S")
      }
 
     ngOnInit() {

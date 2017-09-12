@@ -5,12 +5,12 @@ import {
 
 declare var $: any;
 @Component({
-    selector: 'analysis-dialog',
-    templateUrl: 'analysis.component.html',
-    styleUrls: ['analysis.component.css']
+    selector: 'brainstorm-dialog',
+    templateUrl: 'brainstorm.component.html',
+    styleUrls: ['brainstorm.component.css']
     
 })
-export class AnalysisComponent implements OnInit {
+export class BrainstormComponent implements OnInit {
 
     categories:any[]
 

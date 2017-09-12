@@ -16,6 +16,7 @@ declare var $: any;
     moduleId: module.id,
     selector: 'toolkit-home',
     templateUrl: 'home.component.html',
+    styleUrls:['home.component.css'],
     animations: [
         trigger('cardtable1', [
             state('*', style({
