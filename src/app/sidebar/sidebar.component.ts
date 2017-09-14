@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTES } from './sidebar-routes.config';
 import { MenuType } from './sidebar.metadata';
 
+import { Settings } from '../services/data/data';
+
 @Component({
     moduleId: module.id,
     selector: 'sidebar-cmp',
@@ -11,10 +13,14 @@ import { MenuType } from './sidebar.metadata';
 export class SidebarComponent implements OnInit {
     public menuItems: any[];
     isCollapsed = true;
-    constructor() {}
+    
+    constructor(private settings: Settings) {}
+    
     ngOnInit() {
+
         this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);
     }
+        
     public get menuIcon(): string {
         return this.isCollapsed ? '☰' : '✖';
     }

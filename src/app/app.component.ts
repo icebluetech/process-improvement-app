@@ -16,4 +16,10 @@ export class AppComponent {
   constructor(private settings: Settings,private _sanitizer: Sanitizer, private _safe: Safe){
     this.styleclass = this.settings.SIDEBAR_COLOR;
   }
+
+  showHide(){
+    this.settings.SIDEBAR_SHOW = !this.settings.SIDEBAR_SHOW;
+    this.settings.resize();
+  }
+
 }

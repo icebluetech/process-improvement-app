@@ -1,97 +1,35 @@
 <div class="stage2 popup">
   <div class="">
-    <header>Solution</header>
+    <header>Action Plan</header>
 
     <div class="caption">
       <form>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
-            <div class="form-group">
-              <p>Action / Idea</p>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <p>Outcome</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Standard work</td>
-                  <td>
-                    <label class="checkbox"><input type="checkbox" value="" data-toggle="checkbox"></label>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
-            <div class="form-group">
-              <docs-cmp></docs-cmp>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Standard Work" />
-            </div>
-          </div>
-        </div>
-
-      <div class="row">
-
-        <div class="col-md-6">
-
-          <div class="content">
-            <div class="">
-              <table class="table">
-                <tbody>
-                  <tr *ngFor="let category of categories">
-                    <td>
-                      <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                    </td>
-                    <td>{{category}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        <div class="row">
-          <div class="col-md-2">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Other Ideas</td>
-                  <td>
-                    <label class="checkbox"><input type="checkbox" value="" data-toggle="checkbox"></label>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
-            <div class="form-group">
-              <docs-cmp></docs-cmp>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Standard Work" />
-            </div>
-          </div>
-        </div>
-
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Action Item</th>
+              <th>Assigned To</th>
+              <th>Due Date</th>
+              <th>Date Completed</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="form-control" /></td>
+           
+              <td><select class="form-control"><option>Select</option></select></td>
+            
+              <td><select class="form-control"><option>Select</option></select></td>
+            
+              <td><input type="text" class="form-control" /></td>
+            
+              <td><input type="text" class="form-control" /></td>
+            </tr>
+            <tr><td><a class="btn btn-info">add new row</a></td>
+            <td colspan="4"><a class="btn btn-info pull-right">save</a></td></tr>
+          </tbody>
+        </table>
       </form>
     </div>
   </div>

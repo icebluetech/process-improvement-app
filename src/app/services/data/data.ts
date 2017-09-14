@@ -103,8 +103,8 @@ export class Data {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation";
     var headers = new Headers();
-    headers.append( 'Access-Control-Allow-Origin', '*' );
-    headers.append( 'Content-Type', 'application/json; charset=UTF-8' );
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url)
@@ -196,7 +196,7 @@ export class Data {
   getInnovation(id: any): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
-    var headers = new Headers([{ 'Access-Control-Allow-Origin': '*' },{ 'Content-Type': 'application/json; charset=UTF-8' }]);
+    var headers = new Headers([{ 'Access-Control-Allow-Origin': '*' }, { 'Content-Type': 'application/json; charset=UTF-8' }]);
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)
@@ -292,10 +292,22 @@ export class Settings {
 
   SIDEBAR_COLOR: string;
   SIDEBAR_IMAGE: string;
+  SIDEBAR_WIDTH: string;
+  MAIN_WIDTH: String;
+  SIDEBAR_SHOW: boolean;
 
   constructor(private _sanitizer: Sanitizer, private domSanitizer: DomSanitizer) {
     this.SIDEBAR_COLOR = "orange";
     this.SIDEBAR_IMAGE = '/assets/img/sidebar-5.jpg';
+
+    this.SIDEBAR_SHOW = true;
+    
+    this.resize()
+  }
+
+  resize(){
+    this.SIDEBAR_WIDTH = this.SIDEBAR_SHOW ? '19%' : '4%';
+    this.MAIN_WIDTH = this.SIDEBAR_SHOW ? '81%' : '96%';
   }
 }
 
