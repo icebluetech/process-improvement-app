@@ -1,97 +1,39 @@
-<div class="stage2 popup">
+<div class="stage1 popup">
   <div class="">
-    <header>Solution</header>
-
+    <header>Lessons Learned</header>
     <div class="caption">
       <form>
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-sm-4">
+            <p>What went well? (help)</p>
           </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
+          <div class="col-md-8">
             <div class="form-group">
-              <p>Action / Idea</p>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <p>Outcome</p>
+              <textarea cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
             </div>
           </div>
         </div>
-
         <div class="row">
-          <div class="col-md-2">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Standard work</td>
-                  <td>
-                    <label class="checkbox"><input type="checkbox" value="" data-toggle="checkbox"></label>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="col-sm-4">
+            <p>What didn't go well / What didn't work? (hinderance)</p>
           </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
+          <div class="col-md-8">
             <div class="form-group">
-              <docs-cmp></docs-cmp>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Standard Work" />
+              <textarea cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
             </div>
           </div>
         </div>
-
-      <div class="row">
-
-        <div class="col-md-6">
-
-          <div class="content">
-            <div class="">
-              <table class="table">
-                <tbody>
-                  <tr *ngFor="let category of categories">
-                    <td>
-                      <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                    </td>
-                    <td>{{category}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
         <div class="row">
-          <div class="col-md-2">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Other Ideas</td>
-                  <td>
-                    <label class="checkbox"><input type="checkbox" value="" data-toggle="checkbox"></label>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="col-sm-4">
+            <p>Any other important lessons or ideas you'd like to share for other teams or future innovations</p>
           </div>
-          <div class="col-md-5" style="border-right:1pt dashed grey;">
+          <div class="col-md-8">
             <div class="form-group">
-              <docs-cmp></docs-cmp>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Standard Work" />
+              <textarea cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
             </div>
           </div>
         </div>
-
+        <button type="submit" class="btn btn-info btn-fill">Save</button>
       </form>
     </div>
   </div>

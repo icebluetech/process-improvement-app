@@ -7,13 +7,13 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-4 stage1">
+            <div class="col-sm-4 stage1 completed">
                 <div class="thumbnail" (click)="loadComponent('action-dialog')">
-                    <header>Reason For Action</header>
+                    <header>Reason For Action <i class="fa fa-bullhorn pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-bullhorn fa-3x"></i>
+                            <p>Completed....<i class="fa fa-check-circle"></i></p>
                         </div>
 
                     </div>
@@ -29,11 +29,11 @@
 
             <div class="col-sm-4 stage2">
                 <div class="thumbnail" (click)="loadComponent('analysis-dialog')">
-                    <header>Gap Analysis</header>
+                    <header>Gap Analysis <i class="fa fa-cogs pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-cogs fa-3x"></i>
+                            <p>Not started....</p>
                         </div>
 
                     </div>
@@ -42,11 +42,12 @@
 
             <div class="col-sm-4 stage3">
                 <div class="thumbnail" (click)="loadComponent('plan-dialog')">
-                    <header>Action Plan</header>
+                    <header>Action Plan <i class="fa fa-list-alt pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-list-alt fa-3x"></i>
+                            <p>Not started....</p>
+                            
                         </div>
 
                     </div>
@@ -56,13 +57,14 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-4 stage1">
+            <div class="col-sm-4 stage1 started">
                 <div class="thumbnail" (click)="loadComponent('state-cmp')">
-                    <header>Initial State</header>
+                    <header>Initial State <i class="fa fa-bicycle pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-bicycle fa-3x"></i>
+                            <p>In Progress....<i class="fa fa-hourglass-start"></i></p>
+                            
                         </div>
 
                     </div>
@@ -70,11 +72,12 @@
             </div>
             <div class="col-sm-4 stage2">
                 <div class="thumbnail" (click)="loadComponent('brainstorm-dialog')">
-                    <header>Brainstorming</header>
+                    <header>Brainstorming <i class="fa fa-flask pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-flask fa-3x"></i>
+                            <p>Not started....</p>
+                            
                         </div>
 
                     </div>
@@ -82,11 +85,12 @@
             </div>
             <div class="col-sm-4 stage3">
                 <div class="thumbnail" (click)="loadComponent('result-dialog')">
-                    <header>Results</header>
+                    <header>Results <i class="fa fa-gavel pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-gavel fa-3x"></i>
+                            <p>Not started....</p>
+                            
                         </div>
 
                     </div>
@@ -98,11 +102,12 @@
         <div class="row">
             <div class="col-sm-4 stage1">
                 <div class="thumbnail" (click)="loadComponent('state-cmp')">
-                    <header>Target State</header>
+                    <header>Target State  <i class="fa fa-rocket pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-rocket fa-3x"></i>
+                            <p>Not started....</p>
+                           
                         </div>
 
                     </div>
@@ -110,11 +115,12 @@
             </div>
             <div class="col-sm-4 stage2">
                 <div class="thumbnail" (click)="loadComponent('result-dialog')">
-                    <header>Solutions</header>
+                    <header>Solutions <i class="fa fa-bolt pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-bolt fa-3x"></i>
+                            <p>Not started....</p>
+                            
                         </div>
 
                     </div>
@@ -122,11 +128,12 @@
             </div>
             <div class="col-sm-4 stage3">
                 <div class="thumbnail" (click)="loadComponent('lesson-dialog')">
-                    <header>Lessons Learned</header>
+                    <header>Lessons Learned <i class="fa fa-eye pull-right"></i></header>
                     <div class="caption">
 
                         <div class="description">
-                            <i class="fa fa-eye fa-3x"></i>
+                            <p>Not started....</p>
+                            
                         </div>
 
                     </div>
