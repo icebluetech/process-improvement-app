@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div (click)="showHide()" class="sidebar" [style.width]="settings.SIDEBAR_WIDTH" attr.data-color={{settings.SIDEBAR_COLOR}} data-image="">
+    <div class="sidebar" [style.width]="settings.SIDEBAR_WIDTH" attr.data-color={{settings.SIDEBAR_COLOR}} data-image="">
         <sidebar-cmp></sidebar-cmp>
         <div class="sidebar-background" [style.background-image]="'url(' + settings.SIDEBAR_IMAGE + ')' | safeStyle"> </div>
     </div>

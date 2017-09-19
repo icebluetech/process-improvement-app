@@ -1,21 +1,18 @@
 <div class="sidebar-wrapper" *ngIf="!settings.SIDEBAR_SHOW">
-    <div class="logo">
-        
+    <div (click)="showHide()" class="logo">
             <i class="fa fa-bars" style="font-size:2em;"></i>
-
-
     </div>
 </div>
 
 <div class="sidebar-wrapper" *ngIf="settings.SIDEBAR_SHOW">
 
-    <div class="logo">
-        <a href="" class="simple-text">
+    <div (click)="showHide()" class="logo">
+        
             <div class="logo-img">
                 <img src="/assets/img/angular2-logo-white.png" />
             </div>
             PI App
-        </a>
+    
     </div>
 
 

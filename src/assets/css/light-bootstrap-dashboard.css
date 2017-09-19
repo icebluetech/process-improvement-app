@@ -3203,17 +3203,17 @@ input:focus {
   font-size: 19px;
   color: #58595b; }
 
-.stage1 p, .stage2 p, .stage3 p {
+.thumbnail p {
   color: grey;
   font-style: italic;
   font-size: small; }
 
-.stage1 header, .stage2 header, .stage3 header {
+header {
   padding: .8em;
   color: white;
   background-color: lightgray; }
 
-.stage1 i, .stage2 i, .stage3 i {
+i {
   font-size: 1.2em;
   margin-right: 5px; }
 
@@ -3251,3 +3251,11 @@ input:focus {
 
 .popup form {
   padding: 1em; }
+
+.header-row {
+  background-color: rgba(58, 197, 224, 0.65);
+  margin: 0;
+  padding: .5em;
+  color: white;
+  font-weight: bold;
+  margin-top: 1em; }

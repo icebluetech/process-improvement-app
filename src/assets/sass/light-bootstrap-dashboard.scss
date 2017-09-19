@@ -255,12 +255,14 @@ border: 1px solid #ddd;
 
 }
 
-  .stage1, .stage2, .stage3{
+
+    .thumbnail{
     p{
       color:grey;
       font-style: italic;
       font-size: small;
     }
+  }
       header{
         padding:.8em;
     color:white;
@@ -270,7 +272,7 @@ border: 1px solid #ddd;
     font-size:1.2em;
     margin-right: 5px;
   }
-  }
+  
 
 .thumbnail {
   header{
@@ -322,6 +324,15 @@ border: 1px solid #ddd;
 
 .popup form{
   padding: 1em;
+}
+
+.header-row{
+  background-color: rgba(58, 197, 224, 0.65);
+  margin: 0;
+  padding: .5em;
+  color:white;
+  font-weight: bold;
+  margin-top:1em;
 }
 
 

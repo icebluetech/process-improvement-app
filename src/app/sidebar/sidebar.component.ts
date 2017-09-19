@@ -20,6 +20,11 @@ export class SidebarComponent implements OnInit {
 
         this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);
     }
+
+    showHide(){
+        this.settings.SIDEBAR_SHOW = !this.settings.SIDEBAR_SHOW;
+        this.settings.resize();
+      }
         
     public get menuIcon(): string {
         return this.isCollapsed ? '☰' : '✖';

@@ -196,7 +196,9 @@ export class Data {
   getInnovation(id: any): Promise<Innovation> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation/" + id;
-    var headers = new Headers([{ 'Access-Control-Allow-Origin': '*' }, { 'Content-Type': 'application/json; charset=UTF-8' }]);
+    var headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)
@@ -306,8 +308,8 @@ export class Settings {
   }
 
   resize(){
-    this.SIDEBAR_WIDTH = this.SIDEBAR_SHOW ? '19%' : '4%';
-    this.MAIN_WIDTH = this.SIDEBAR_SHOW ? '81%' : '96%';
+    this.SIDEBAR_WIDTH = this.SIDEBAR_SHOW ? '260px' : '60px';
+    this.MAIN_WIDTH = this.SIDEBAR_SHOW ? (window.screen.width-260)+'px' : (window.screen.width-60)+'px'
   }
 }
 
@@ -317,10 +319,6 @@ export class Safe {
 
   transform(style) {
     return this.domSanitizer.bypassSecurityTrustStyle(style);
-    // return this.sanitizer.bypassSecurityTrustHtml(style);
-    // return this.sanitizer.bypassSecurityTrustScript(value);
-    // return this.sanitizer.bypassSecurityTrustUrl(value);
-    // return this.sanitizer.bypassSecurityTrustResourceUrl(value);
   }
 }
 
