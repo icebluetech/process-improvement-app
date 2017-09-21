@@ -83,20 +83,20 @@
 
                 <div class="card" [@carduserprofile]>
                     <div class="row">
-                    <div class="col-sm-9">
-                        <div class="header">
-                            <h4 class="title">Team Members</h4>
+                        <div class="col-sm-9">
+                            <div class="header">
+                                <h4 class="title">Team Members</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <a (click)="showDialog = !showDialog;" class="btn btn-info">Add</a>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <a (click)="showDialog = !showDialog;" class="btn btn-info">Add</a>
-                    </div>
-                </div>
                     <div class="content">
 
                         <user-search (selectedUser)="onUserSelected($event)" [(visible)]="showDialog"></user-search>
 
-                        <div *ngFor="let innoUser in innovationUsers" class="row">
+                        <div *ngFor="let innoUser of innovationUsers" class="row">
 
                             <div class="col-md-7">
                                 <div class="chip">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        
+
                         <!-- <div class="row">
                             <div class="col-md-12">
                                 <div class="chip">
