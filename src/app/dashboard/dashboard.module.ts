@@ -6,10 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToolKitModule } from '../toolkit/toolkit.module';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
     imports: [
         RouterModule.forChild(MODULE_ROUTES),
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         ToolKitModule

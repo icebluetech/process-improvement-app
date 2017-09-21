@@ -20,11 +20,12 @@ import { Safe } from './services/data/data';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    Safe
+    Safe    
   ],
   imports: [
     BrowserModule,

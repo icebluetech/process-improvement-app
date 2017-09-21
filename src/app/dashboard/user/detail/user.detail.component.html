@@ -1,0 +1,30 @@
+<div [@dialog] *ngIf="visible" class="dialog">
+
+
+    <div class="form-group">
+            <div class="col-md-9">
+                    <div class="chip">
+                        <img src="./assets/img/faces/face-8.jpg" alt="Person" width="96" height="96"> {{User.name}}
+                        <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                    </div>
+                </div>
+    </div>
+
+    <div class="form-group">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>user</th>
+                </tr>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td><a href="" (click)="select(user)">{{user.name}}</a></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+
+
+    <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

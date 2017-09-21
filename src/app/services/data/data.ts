@@ -28,9 +28,8 @@ export class Data {
 
   }
 
-  getUsers(): Promise<User[]> {
-
-    var url = AppSettings.HOST_NAME + '/api/users';
+  searchUsers(term?: string): Promise<User[]> {
+    var url = AppSettings.HOST_NAME + '/api/user/search?term='+term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 
@@ -89,7 +88,9 @@ export class Data {
   getItems(): Promise<InnovationCategory[]> {
 
     var url = AppSettings.HOST_NAME + "/api/InnovationCategory";
-    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)
@@ -303,13 +304,13 @@ export class Settings {
     this.SIDEBAR_IMAGE = '/assets/img/sidebar-5.jpg';
 
     this.SIDEBAR_SHOW = true;
-    
+
     this.resize()
   }
 
-  resize(){
+  resize() {
     this.SIDEBAR_WIDTH = this.SIDEBAR_SHOW ? '260px' : '60px';
-    this.MAIN_WIDTH = this.SIDEBAR_SHOW ? (window.screen.width-260)+'px' : (window.screen.width-60)+'px'
+    this.MAIN_WIDTH = this.SIDEBAR_SHOW ? (window.screen.width - 260) + 'px' : (window.screen.width - 60) + 'px'
   }
 }
 

@@ -1,9 +1,12 @@
-import { Component, OnInit, AfterViewChecked, state, style, animate, transition, trigger, keyframes } from '@angular/core';
+import { AfterViewChecked, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
 import { Data } from '../../../services/data/data';
 import { Innovation } from '../../../model/innovation';
 import { InnovationUser } from '../../../model/innovationUser';
 import { InnovationCategory } from '../../../model/innovationCategory';
 import {InnovationType} from '../../../model/innovationType';
+import { AppModule } from '../../../app.module';
+
+import { User } from '../../../model/user';
 import {
     FormBuilder,
     FormGroup,
@@ -51,8 +54,14 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     categories: Array<InnovationCategory>;
     innovation: Innovation;
     Title: AbstractControl;
-    Why: AbstractControl;
+    Type: AbstractControl;
+    Process: AbstractControl;
+    Widget: AbstractControl;
+    Date: AbstractControl;
     _fb: FormBuilder;
+    showDialog: boolean;
+    private compiler: Compiler;
+    @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
     constructor(private _data: Data, private fb: FormBuilder) {
         this.categories = [];
@@ -60,10 +69,19 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
         this.myForm = this.fb.group({
             'Title': ['', Validators.compose([Validators.required])],
-            'Why':['']
+            'Type':[''],
+            'Process':[''],
+            'Widget':[''],
+            'Date':['']
+
         })
 
         this.Title = this.myForm.controls['Title'];
+        this.Type = this.myForm.controls['Type'];
+        this.Process = this.myForm.controls['Process'];
+        this.Widget = this.myForm.controls['Widget'];
+        this.Date = this.myForm.controls['Date'];
+
     }
 
     onSubmit(value: string) {
@@ -84,10 +102,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.getCategories();
 
         this.innovation.innovationUsers = [];
-        var user = new InnovationUser();
-        user.innovationId = 1;
-        user.userId=1;
-        this.innovation.innovationUsers.push(user);
+        
     }
 
     ngAfterViewChecked() {
@@ -106,4 +121,23 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
                 this.categories = res;
             })
     }
+
+    onUserSelected(user:User){
+        var innoUser = new InnovationUser();
+        innoUser.innovation = this.innovation;
+        innoUser.user = user;
+        this.innovation.innovationUsers.push(innoUser);
+    }
+
+    // loadComponent(selector) {
+    //     this.showDialog = !this.showDialog;
+
+    //     this.compiler.compileModuleAndAllComponentsAsync(AppModule)
+    //         .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) => {
+    //             const componentFactory = moduleWithComponentFactory.componentFactories
+    //                 .find(x => x.selector === selector);
+    //             this.viewContainer.clear();
+    //             return this.viewContainer.createComponent(componentFactory);
+    //         });
+    // }
 }

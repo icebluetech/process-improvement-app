@@ -15,6 +15,8 @@ import { StandardWorkCreateComponent } from './standardwork/create/standardwork.
 import { StandardWorkDetailComponent } from './standardwork/detail/standardwork.detail.component';
 import { InnovationComponent } from './innovation/innovation.component';
 import { InnovationCreateComponent } from './innovation/create/innovation.create.component';
+import { UserSearchComponent } from './user/search/user.search.component';
+import { UserDetailComponent } from './user/detail/user.detail.component';
 
 
 export const MODULE_ROUTES: Route[] = [
@@ -51,5 +53,7 @@ export const MODULE_COMPONENTS = [
     StandardWorkCreateComponent,
     StandardWorkDetailComponent,
     InnovationComponent,
-    InnovationCreateComponent
+    InnovationCreateComponent,
+    UserSearchComponent,
+    UserDetailComponent
 ]

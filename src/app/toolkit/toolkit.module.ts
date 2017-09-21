@@ -14,7 +14,8 @@ import { DocsComponent } from '../shared/docs/docs.component';
     BrowserModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [MODULE_COMPONENTS, DialogComponent, DocsComponent],
+  declarations: [MODULE_COMPONENTS, DocsComponent,DialogComponent],
+  exports:[DialogComponent],
   providers: [Settings, Data]
 })
 
