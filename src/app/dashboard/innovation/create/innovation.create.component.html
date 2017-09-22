@@ -26,14 +26,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Process</label>
-                                        <input id="Process" [formControl]="Process" type="text" class="form-control" placeholder="Process">
+                                        <!-- <label>Process</label> -->
+                                        <!-- <input id="Process" [formControl]="Process" type="text" class="form-control" placeholder="Process"> -->
+                                    
+                                        <process-search (selectedProcess)="onProcessSelected($event)"></process-search>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Widget</label>
-                                        <input id="Widget" [formControl]="Widget" type="text" class="form-control" placeholder="Widget">
+                                            <widget-search (selectedWidget)="onWidgetSelected($event)"></widget-search>
                                     </div>
                                 </div>
 

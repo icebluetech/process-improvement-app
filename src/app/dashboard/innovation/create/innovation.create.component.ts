@@ -8,6 +8,8 @@ import {InnovationType} from '../../../model/innovationType';
 import { AppModule } from '../../../app.module';
 
 import { User } from '../../../model/user';
+import { Process } from '../../../model/process';
+import { Widget } from '../../../model/widget';
 import {
     FormBuilder,
     FormGroup,
@@ -57,8 +59,6 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     innovation: Innovation;
     Title: AbstractControl;
     Type: AbstractControl;
-    Process: AbstractControl;
-    Widget: AbstractControl;
     Date: AbstractControl;
     _fb: FormBuilder;
     showDialog: boolean;
@@ -74,16 +74,14 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.myForm = this.fb.group({
             'Title': ['', Validators.compose([Validators.required])],
             'Type':[''],
-            'Process':[''],
-            'Widget':[''],
             'Date':['']
 
         })
 
         this.Title = this.myForm.controls['Title'];
         this.Type = this.myForm.controls['Type'];
-        this.Process = this.myForm.controls['Process'];
-        this.Widget = this.myForm.controls['Widget'];
+        //this.Process = this.myForm.controls['Process'];
+        //this.Widget = this.myForm.controls['Widget'];
         this.Date = this.myForm.controls['Date'];
 
     }
@@ -92,7 +90,6 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
         this.innovation.title = this.Title.value;
 
-        
         this.innovation.innovationCategoryId = 1;
         this.innovation.innovationTypeId = 1;
 
@@ -145,6 +142,14 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.innovation.innovationUsers.push(innoUser);
 
         this.showDialog = !this.showDialog;
+    }
+
+    onProcessSelected(process:Process){
+        this.innovation.process = process;
+    }
+
+    onWidgetSelected(widget:Widget){
+        this.innovation.widget = widget;
     }
 
     // loadComponent(selector) {

@@ -1,15 +1,14 @@
-
-    <div class="form-group">
-            <label class="control-label">Widget</label>
-            <input (keyup)="search($event)" [(ngModel)]="term" type="text" class="form-control" placeholder="Search" />
-            <i class="fa fa-search searchIcon"></i>
-        </div>
+<div class="form-group">
+        <label class="control-label">Widget</label>
+        <input (mousedown)="showDialog = !showDialog" (keyup)="search($event)" [(ngModel)]="term" type="text" class="form-control"
+            placeholder="Search" />
+        <i class="fa fa-search searchIcon"></i>
+        <!-- <i class="fa fa-search newIcon"></i> -->
+    </div>
     
+    <div class="card" *ngIf="showDialog">
         <div class="form-group">
             <a class="btn btn-info">new</a>
-        </div>
-    
-        <div class="form-group">
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
@@ -17,8 +16,9 @@
                     </tr>
                     <tbody>
                         <tr *ngFor="let widget of widgets">
-                            <td><a href="" (click)="select(user)">{{widget.name}}</a></td>
+                            <td><a href="" (click)="select(widget)">{{widget.name}}</a></td>
                         </tr>
                     </tbody>
             </table>
         </div>
+    </div>

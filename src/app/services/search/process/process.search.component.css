@@ -55,3 +55,12 @@
     z-index: 2;
     color: grey;
 }
+
+.newIcon {
+  float: right;
+  margin-right: 16px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+  color: blue;
+}

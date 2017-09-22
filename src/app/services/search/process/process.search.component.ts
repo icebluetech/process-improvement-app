@@ -26,6 +26,8 @@ import { Process } from '../../../model/process';
 
 export class ProcessSearchComponent {
 
+    showDialog:boolean;
+
     @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
 
     constructor(private _data: Data) {
@@ -46,7 +48,9 @@ export class ProcessSearchComponent {
     }
 
     select(process: Process) {
+        this.term = process.name;
         this.selectedProcess.emit(process);
+        this.showDialog = false;
         return false;
     }
 }

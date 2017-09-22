@@ -26,7 +26,9 @@ import { Widget } from '../../../model/widget';
 
 export class WidgetSearchComponent {
 
-    @Output() selectedUser: EventEmitter<Widget> = new EventEmitter<Widget>();
+    showDialog:boolean;
+
+    @Output() selectedWidget: EventEmitter<Widget> = new EventEmitter<Widget>();
 
     constructor(private _data: Data) {
         this.widgets = [];
@@ -35,8 +37,8 @@ export class WidgetSearchComponent {
     ngOnInit() { }
 
     widgets: Widget[];
-    term:string;
-    selected:Widget;
+    term: string;
+    selected: Widget;
 
     search() {
         this._data.searchWidgets(this.term).then(res => {
@@ -45,8 +47,10 @@ export class WidgetSearchComponent {
         return false;
     }
 
-    select(widget:Widget){
-        this.selectedUser.emit(widget);
+    select(widget: Widget) {
+        this.term = widget.name;
+        this.selectedWidget.emit(widget);
+        this.showDialog = false;
         return false;
     }
 }
