@@ -16,9 +16,7 @@ export class Innovation {
     type: InnovationType
     innovationCategoryId: number;
     category: InnovationCategory;
-
-    sponsor: string;
-    customer: string;
     department: string;
+    createdBy:User;
 
 }

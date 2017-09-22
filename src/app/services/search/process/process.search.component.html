@@ -1,19 +1,23 @@
 
     <div class="form-group">
-        <label class="control-label">Search Users</label>
+        <label class="control-label">Process</label>
         <input (keyup)="search($event)" [(ngModel)]="term" type="text" class="form-control" placeholder="Search" />
         <i class="fa fa-search searchIcon"></i>
+    </div>
+
+    <div class="form-group">
+        <a class="btn btn-info">new</a>
     </div>
 
     <div class="form-group">
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th>user</th>
+                    <th>process</th>
                 </tr>
                 <tbody>
-                    <tr *ngFor="let user of users">
-                        <td><a href="" (click)="select(user)">{{user.name}}</a></td>
+                    <tr *ngFor="let process of processes">
+                        <td><a href="" (click)="select(user)">{{process.name}}</a></td>
                     </tr>
                 </tbody>
         </table>

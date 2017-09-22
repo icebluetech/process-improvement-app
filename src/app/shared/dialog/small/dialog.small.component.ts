@@ -8,9 +8,9 @@ import { User } from '../../../model/user';
 
 @Component({
     moduleId: module.id,
-    selector: 'user-search',
-    templateUrl: 'user.search.component.html',
-    styleUrls: ['user.search.component.css'],
+    selector: 'app-dialog-small',
+    templateUrl: 'dialog.small.component.html',
+    styleUrls: ['dialog.small.component.css'],
     animations: [
         trigger('dialog', [
             transition('void => *', [
@@ -24,19 +24,29 @@ import { User } from '../../../model/user';
     ]
 })
 
-export class UserSearchComponent {
+export class DialogSmallComponent {
 
-    @Output() done: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Input() closable = true;
+    @Input() visible: boolean;
+    @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() selectedUser: EventEmitter<User> = new EventEmitter<User>();
 
+    
     constructor(private _data: Data) {
         this.users = [];
     }
 
     ngOnInit() { }
 
+    close() {
+        this.visible = false;
+        this.visibleChange.emit(this.visible);
+    }
+
+
     users: User[];
     term:string;
+
     selected:User;
 
     search() {
@@ -48,6 +58,7 @@ export class UserSearchComponent {
 
     select(user:User){
         this.selectedUser.emit(user);
+        this.close();
         return false;
     }
 }

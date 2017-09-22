@@ -17,6 +17,8 @@ import { InnovationComponent } from './innovation/innovation.component';
 import { InnovationCreateComponent } from './innovation/create/innovation.create.component';
 import { UserSearchComponent } from './user/search/user.search.component';
 import { UserDetailComponent } from './user/detail/user.detail.component';
+import { ProcessSearchComponent } from '../services/search/process/process.search.component';
+import { WidgetSearchComponent } from '../services/search/widget/widget.search.component';
 
 
 export const MODULE_ROUTES: Route[] = [
@@ -55,5 +57,7 @@ export const MODULE_COMPONENTS = [
     InnovationComponent,
     InnovationCreateComponent,
     UserSearchComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ProcessSearchComponent,
+    WidgetSearchComponent
 ]

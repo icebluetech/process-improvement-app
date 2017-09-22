@@ -48,3 +48,7 @@
 .closebtn:hover {
     color: #000;
 }
+
+.card a{
+    margin-top:1em;
+}

@@ -4,13 +4,13 @@ import {
 } from '@angular/core';
 import { Data } from '../../../services/data/data';
 
-import { User } from '../../../model/user';
+import { Process } from '../../../model/process';
 
 @Component({
     moduleId: module.id,
-    selector: 'user-search',
-    templateUrl: 'user.search.component.html',
-    styleUrls: ['user.search.component.css'],
+    selector: 'process-search',
+    templateUrl: 'process.search.component.html',
+    styleUrls: ['process.search.component.css'],
     animations: [
         trigger('dialog', [
             transition('void => *', [
@@ -24,30 +24,29 @@ import { User } from '../../../model/user';
     ]
 })
 
-export class UserSearchComponent {
+export class ProcessSearchComponent {
 
-    @Output() done: EventEmitter<boolean> = new EventEmitter<boolean>();
-    @Output() selectedUser: EventEmitter<User> = new EventEmitter<User>();
+    @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
 
     constructor(private _data: Data) {
-        this.users = [];
+        this.processes = [];
     }
 
     ngOnInit() { }
 
-    users: User[];
-    term:string;
-    selected:User;
+    processes: Process[];
+    term: string;
+    selected: Process;
 
     search() {
-        this._data.searchUsers(this.term).then(res => {
-            this.users = res;
+        this._data.searchProcesses(this.term).then(res => {
+            this.processes = res;
         })
         return false;
     }
 
-    select(user:User){
-        this.selectedUser.emit(user);
+    select(process: Process) {
+        this.selectedProcess.emit(process);
         return false;
     }
 }

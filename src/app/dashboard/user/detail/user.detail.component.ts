@@ -5,6 +5,7 @@ import {
 import { Data } from '../../../services/data/data';
 
 import { User } from '../../../model/user';
+import { UserRole } from '../../../model/userRole';
 
 @Component({
     moduleId: module.id,
@@ -26,21 +27,24 @@ import { User } from '../../../model/user';
 
 export class UserDetailComponent {
 
-    @Input() closable = true;
-    @Input() visible: boolean;
     @Input() user: User;
-    @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-    
+
+    userRoles: Array<UserRole>;
+
     constructor(private _data: Data) {
-        
+        this.userRoles = [];
     }
 
-    ngOnInit() { }
-
-    close() {
-        this.visible = false;
-        this.visibleChange.emit(this.visible);
+    ngOnInit() {
+        this.geUserRoles();
     }
 
-   
+    geUserRoles() {
+        this._data
+            .getUserRoles()
+            .then(res => {
+                this.userRoles = res;
+            })
+    }
+
 }

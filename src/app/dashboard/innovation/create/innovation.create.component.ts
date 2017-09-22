@@ -1,6 +1,7 @@
 import { AfterViewChecked, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
 import { Data } from '../../../services/data/data';
 import { Innovation } from '../../../model/innovation';
+import { Department } from '../../../model/department';
 import { InnovationUser } from '../../../model/innovationUser';
 import { InnovationCategory } from '../../../model/innovationCategory';
 import {InnovationType} from '../../../model/innovationType';
@@ -52,6 +53,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
     myForm: FormGroup;
     categories: Array<InnovationCategory>;
+    departments: Array<Department>;
     innovation: Innovation;
     Title: AbstractControl;
     Type: AbstractControl;
@@ -65,7 +67,9 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
     constructor(private _data: Data, private fb: FormBuilder) {
         this.categories = [];
+        this.departments = [];
         this.innovation = new Innovation();
+
 
         this.myForm = this.fb.group({
             'Title': ['', Validators.compose([Validators.required])],
@@ -85,7 +89,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     }
 
     onSubmit(value: string) {
-        this.innovation = new Innovation();
+
         this.innovation.title = this.Title.value;
 
         
@@ -100,7 +104,9 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
     ngOnInit() {
         this.getCategories();
+        this.getDepartments();
 
+        this.innovation.createdBy = this._data.getLoggedInUser();
         this.innovation.innovationUsers = [];
         
     }
@@ -122,11 +128,23 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
             })
     }
 
+    getDepartments() {
+        this._data
+            .getDepartments()
+            .then(res => {
+                this.departments = res;
+            })
+    }
+
+
+
     onUserSelected(user:User){
         var innoUser = new InnovationUser();
         innoUser.innovation = this.innovation;
         innoUser.user = user;
         this.innovation.innovationUsers.push(innoUser);
+
+        this.showDialog = !this.showDialog;
     }
 
     // loadComponent(selector) {

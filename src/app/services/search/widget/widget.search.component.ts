@@ -4,13 +4,13 @@ import {
 } from '@angular/core';
 import { Data } from '../../../services/data/data';
 
-import { User } from '../../../model/user';
+import { Widget } from '../../../model/widget';
 
 @Component({
     moduleId: module.id,
-    selector: 'user-search',
-    templateUrl: 'user.search.component.html',
-    styleUrls: ['user.search.component.css'],
+    selector: 'widget-search',
+    templateUrl: 'widget.search.component.html',
+    styleUrls: ['widget.search.component.css'],
     animations: [
         trigger('dialog', [
             transition('void => *', [
@@ -24,30 +24,29 @@ import { User } from '../../../model/user';
     ]
 })
 
-export class UserSearchComponent {
+export class WidgetSearchComponent {
 
-    @Output() done: EventEmitter<boolean> = new EventEmitter<boolean>();
-    @Output() selectedUser: EventEmitter<User> = new EventEmitter<User>();
+    @Output() selectedUser: EventEmitter<Widget> = new EventEmitter<Widget>();
 
     constructor(private _data: Data) {
-        this.users = [];
+        this.widgets = [];
     }
 
     ngOnInit() { }
 
-    users: User[];
+    widgets: Widget[];
     term:string;
-    selected:User;
+    selected:Widget;
 
     search() {
-        this._data.searchUsers(this.term).then(res => {
-            this.users = res;
+        this._data.searchWidgets(this.term).then(res => {
+            this.widgets = res;
         })
         return false;
     }
 
-    select(user:User){
-        this.selectedUser.emit(user);
+    select(widget:Widget){
+        this.selectedUser.emit(widget);
         return false;
     }
 }

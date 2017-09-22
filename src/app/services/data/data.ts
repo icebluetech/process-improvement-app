@@ -6,6 +6,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { DomSanitizer, SafeUrl, SafeResourceUrl } from "@angular/platform-browser";
 
 import { User } from '../../model/user';
+import { UserRole } from '../../model/userRole';
 import { Doc } from '../../model/doc';
 import { Innovation } from '../../model/innovation';
 import { Brainstorm } from '../../model/brainstorm';
@@ -15,6 +16,7 @@ import { StandardWork } from '../../model/standardWork';
 import { RootCause } from '../../model/rootCause';
 import { Result } from '../../model/result';
 import { Training } from '../../model/training';
+import { Department } from '../../model/department';
 
 import { AppSettings } from '../../app.settings';
 
@@ -28,8 +30,41 @@ export class Data {
 
   }
 
+  getLoggedInUser(){
+    //Get this from an auth service after demo
+    var user = new User();
+    user.id = "1";
+    user.name = "Chris Cheshire";
+    user.avatar = "face-8";
+    return user;
+  }
+
   searchUsers(term?: string): Promise<User[]> {
     var url = AppSettings.HOST_NAME + '/api/user/search?term='+term;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+  searchProcesses(term?: string): Promise<User[]> {
+    var url = AppSettings.HOST_NAME + '/api/process/search?term='+term;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+  searchWidgets(term?: string): Promise<User[]> {
+    var url = AppSettings.HOST_NAME + '/api/widget/search?term='+term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 
@@ -99,6 +134,36 @@ export class Data {
       response => response.json()
       )
   }
+
+  getDepartments(): Promise<Department[]> {
+    
+        var url = AppSettings.HOST_NAME + "/api/Department";
+        var headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Content-Type', 'application/json; charset=UTF-8');
+        var options = new RequestOptions({ headers: headers });
+    
+        return this.http.get(url, options)
+          .toPromise()
+          .then(
+          response => response.json()
+          )
+      }
+
+      getUserRoles(): Promise<UserRole[]> {
+        
+            var url = AppSettings.HOST_NAME + "/api/UserRole";
+            var headers = new Headers();
+            headers.append('Access-Control-Allow-Origin', '*');
+            headers.append('Content-Type', 'application/json; charset=UTF-8');
+            var options = new RequestOptions({ headers: headers });
+        
+            return this.http.get(url, options)
+              .toPromise()
+              .then(
+              response => response.json()
+              )
+          }
 
   getInnovations(): Promise<Innovation[]> {
 

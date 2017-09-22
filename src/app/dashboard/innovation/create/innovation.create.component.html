@@ -45,9 +45,7 @@
                                         <label for="Department">Primary Department</label>
                                         <select type="text" class="form-control" value="Cheshire">
                                             <option selected disabled>Choose Department....</option>
-                                            <option value="1">High</option>
-                                            <option value="2">Medium</option>
-                                            <option value="3">Low</option>
+                                            <option value="{{dep.Id}}" *ngFor="let dep of departments">{{dep.name}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -63,13 +61,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="chip">
-                                        <img src="./assets/img/faces/face-8.jpg" alt="Person" width="96" height="96"> Chris
-                                        Cheshire
+                                        <img src="./assets/img/faces/{{innovation.createdBy.avatar}}.jpg" alt="Person" width="96" height="96">                                        {{innovation.createdBy.name}}
                                         <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="btn btn-info">modify</a>
+
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info btn-fill">Save</button>
@@ -94,64 +91,16 @@
                     </div>
                     <div class="content">
 
-                        <user-search (selectedUser)="onUserSelected($event)" [(visible)]="showDialog"></user-search>
+                        <app-dialog-small [(visible)]="showDialog">
+                            <user-search (selectedUser)="onUserSelected($event)"></user-search>
+                        </app-dialog-small>
 
                         <div *ngFor="let innoUser of innovation.innovationUsers" class="row">
 
-                            <div class="col-md-7">
-                                <div class="chip">
-                                    <img src="./assets/img/faces/{{innoUser.user.avatar}}.jpg" alt="Person" width="96" height="96"> {{innoUser.user.name}}
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <select type="text" class="form-control" value="1">
-                                                <option disabled>Role....</option>
-                                                <option selected value="1">Sponsor</option>
-                                                <option value="2">Customer</option>
-                                                <option value="3">PI Member</option>
-                                                <option value="4">Process Owner</option>
-                                            </select>
-                                </div>
-                            </div>
+                            <user-detail [(user)]="innoUser.user"></user-detail>
+
                         </div>
 
-
-                        <!-- <div class="row">
-                            <div class="col-md-12">
-                                <div class="chip">
-                                    <img src="./assets/img/faces/male-1.png" alt="Person" width="96" height="96"> John Doe
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-md-8">
-                                <div class="chip">
-                                    <img src="./assets/img/faces/female-1.png" alt="Person" width="96" height="96"> John
-                                    Doe
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <p>Process Owner</p>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-md-8">
-                                <div class="chip">
-                                    <img src="./assets/img/faces/female-1.png" alt="Person" width="96" height="96"> John
-                                    Doe
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <p>PI Member</p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
