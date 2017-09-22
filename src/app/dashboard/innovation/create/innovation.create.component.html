@@ -96,11 +96,11 @@
 
                         <user-search (selectedUser)="onUserSelected($event)" [(visible)]="showDialog"></user-search>
 
-                        <div *ngFor="let innoUser of innovationUsers" class="row">
+                        <div *ngFor="let innoUser of innovation.innovationUsers" class="row">
 
                             <div class="col-md-7">
                                 <div class="chip">
-                                    <img src="./assets/img/faces/face-8.jpg" alt="Person" width="96" height="96"> {{innoUser.User.name}}
+                                    <img src="./assets/img/faces/{{innoUser.user.avatar}}.jpg" alt="Person" width="96" height="96"> {{innoUser.user.name}}
                                     <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
                                 </div>
                             </div>
