@@ -8,9 +8,9 @@ import { Widget } from '../../../model/widget';
 
 @Component({
     moduleId: module.id,
-    selector: 'widget-search',
-    templateUrl: 'widget.search.component.html',
-    styleUrls: ['widget.search.component.css'],
+    selector: 'widget-create',
+    templateUrl: 'widget.create.component.html',
+    styleUrls: ['widget.create.component.css'],
     animations: [
         trigger('dialog', [
             transition('void => *', [
@@ -24,39 +24,25 @@ import { Widget } from '../../../model/widget';
     ]
 })
 
-export class WidgetSearchComponent {
+export class WidgetCreateComponent {
 
     showDialog:boolean;
-    createNew: boolean;
+    widget:Widget;
 
-    @Output() selectedWidget: EventEmitter<Widget> = new EventEmitter<Widget>();
+    @Output() createWidget: EventEmitter<Widget> = new EventEmitter<Widget>();
 
     constructor(private _data: Data) {
-        this.widgets = [];
+        this.widget = new Widget();
     }
 
     ngOnInit() { }
 
-    widgets: Widget[];
-    term: string;
-    selected: Widget;
 
-    search() {
-        this._data.searchWidgets(this.term).then(res => {
-            this.widgets = res;
+    insert() {
+        this._data.insertWidget(this.widget).then(res => {
+            this.showDialog = false;
+            this.createWidget.emit(this.widget);
         })
-        return false;
-    }
-
-    select(widget: Widget) {
-        this.term = widget.name;
-        this.selectedWidget.emit(widget);
-        this.showDialog = false;
-        return false;
-    }
-
-    loadComponent(selector) {
-        this.createNew = !this.createNew;
         return false;
     }
 }

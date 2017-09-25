@@ -30,7 +30,7 @@ export class Data {
 
   }
 
-  getLoggedInUser(){
+  getLoggedInUser() {
     //Get this from an auth service after demo
     var user = new User();
     user.id = "1";
@@ -40,7 +40,7 @@ export class Data {
   }
 
   searchUsers(term?: string): Promise<User[]> {
-    var url = AppSettings.HOST_NAME + '/api/user/search?term='+term;
+    var url = AppSettings.HOST_NAME + '/api/user/search?term=' + term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 
@@ -52,7 +52,7 @@ export class Data {
   }
 
   searchProcesses(term?: string): Promise<User[]> {
-    var url = AppSettings.HOST_NAME + '/api/process/search?term='+term;
+    var url = AppSettings.HOST_NAME + '/api/process/search?term=' + term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 
@@ -64,7 +64,7 @@ export class Data {
   }
 
   searchWidgets(term?: string): Promise<User[]> {
-    var url = AppSettings.HOST_NAME + '/api/widget/search?term='+term;
+    var url = AppSettings.HOST_NAME + '/api/widget/search?term=' + term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
     var options = new RequestOptions({ headers: headers });
 
@@ -136,34 +136,34 @@ export class Data {
   }
 
   getDepartments(): Promise<Department[]> {
-    
-        var url = AppSettings.HOST_NAME + "/api/Department";
-        var headers = new Headers();
-        headers.append('Access-Control-Allow-Origin', '*');
-        headers.append('Content-Type', 'application/json; charset=UTF-8');
-        var options = new RequestOptions({ headers: headers });
-    
-        return this.http.get(url, options)
-          .toPromise()
-          .then(
-          response => response.json()
-          )
-      }
 
-      getUserRoles(): Promise<UserRole[]> {
-        
-            var url = AppSettings.HOST_NAME + "/api/UserRole";
-            var headers = new Headers();
-            headers.append('Access-Control-Allow-Origin', '*');
-            headers.append('Content-Type', 'application/json; charset=UTF-8');
-            var options = new RequestOptions({ headers: headers });
-        
-            return this.http.get(url, options)
-              .toPromise()
-              .then(
-              response => response.json()
-              )
-          }
+    var url = AppSettings.HOST_NAME + "/api/Department";
+    var headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
+  getUserRoles(): Promise<UserRole[]> {
+
+    var url = AppSettings.HOST_NAME + "/api/UserRole";
+    var headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8');
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
 
   getInnovations(): Promise<Innovation[]> {
 
@@ -357,6 +357,19 @@ export class Data {
     var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
     var options = new RequestOptions({ headers: headers });
     var url = AppSettings.HOST_NAME + '/api/process';
+
+    return this.http.post(url, body, options)
+      .toPromise()
+      .then(
+      response => response.text() ? response.json() : {}
+      )
+  }
+
+  insertWidget(data: any): Promise<any> {
+    var body = JSON.stringify(data);
+    var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
+    var options = new RequestOptions({ headers: headers });
+    var url = AppSettings.HOST_NAME + '/api/widget';
 
     return this.http.post(url, body, options)
       .toPromise()
