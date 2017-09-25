@@ -1,4 +1,4 @@
-import { Output,EventEmitter, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
+import { Output, EventEmitter, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
 
 import { Data } from '../../../services/data/data';
 
@@ -26,13 +26,14 @@ import { AppModule } from '../../../app.module';
 
 export class ProcessSearchComponent {
 
-    showDialog:boolean;
+    showDialog: boolean;
+    createNew: boolean;
 
     @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
-    constructor(private _data: Data,private compiler: Compiler) {
+    constructor(private _data: Data, private compiler: Compiler) {
         this.processes = [];
     }
 
@@ -57,12 +58,9 @@ export class ProcessSearchComponent {
     }
 
     loadComponent(selector) {
-        this.compiler.compileModuleAndAllComponentsAsync(AppModule)
-            .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) => {
-                const componentFactory = moduleWithComponentFactory.componentFactories
-                    .find(x => x.selector === selector);
-                this.viewContainer.clear();
-                return this.viewContainer.createComponent(componentFactory);
-            });
+        this.createNew = !this.createNew;
+        return false;
     }
+
+
 }

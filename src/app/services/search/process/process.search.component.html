@@ -8,19 +8,26 @@
 
 <div class="card" *ngIf="showDialog">
     <div class="form-group">
-        <a (click)="loadComponent('process-create')" class="btn btn-info">new</a>
+        <!-- <a (click)="loadComponent('process-create')" class="btn btn-info">new</a> -->
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th>process</th>
+                    <th>process
+                        <span class="resultsInfo"> Results: {{processes.length}}
+                            <a href="" (click)="loadComponent()"><i class="fa fa-plus-circle newIcon"></i> </a>
+                        </span>
+                    </th>
                 </tr>
                 <tbody>
                     <tr *ngFor="let process of processes">
                         <td><a href="" (click)="select(process)">{{process.name}}</a></td>
                     </tr>
+                    <tr *ngIf="createNew">
+                        <td>
+                            <process-create (createProcess)="select($event)"></process-create>
+                        </td>
+                    </tr>
                 </tbody>
         </table>
     </div>
 </div>
-
-<div #container></div>

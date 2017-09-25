@@ -50,17 +50,21 @@
   .searchIcon {
     float: right;
     margin-right: 6px;
-    margin-top: -25px;
+    margin-top: -27px;
     position: relative;
     z-index: 2;
     color: grey;
 }
 
-.newIcon {
-  float: right;
-  margin-right: 16px;
-  margin-top: -25px;
-  position: relative;
+
+
+th .newIcon {
+  margin-left: 2em;
   z-index: 2;
-  color: blue;
+  color: grey;
 }
+
+th .newIcon:hover{
+  color: #23CCEF;
+}
+

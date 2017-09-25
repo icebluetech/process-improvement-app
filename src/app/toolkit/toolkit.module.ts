@@ -17,7 +17,7 @@ import { ProcessCreateComponent } from '../services/create/process/process.creat
     FormsModule, ReactiveFormsModule
   ],
   declarations: [MODULE_COMPONENTS, DocsComponent,DialogComponent,DialogSmallComponent,ProcessCreateComponent],
-  exports:[DialogComponent,DialogSmallComponent],
+  exports:[DialogComponent,DialogSmallComponent,ProcessCreateComponent],
   providers: [Settings, Data]
 })
 

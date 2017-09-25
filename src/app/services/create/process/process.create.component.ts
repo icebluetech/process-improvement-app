@@ -29,7 +29,7 @@ export class ProcessCreateComponent {
     showDialog:boolean;
     process:Process;
 
-    @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
+    @Output() createProcess: EventEmitter<Process> = new EventEmitter<Process>();
 
     constructor(private _data: Data) {
         this.process = new Process();
@@ -41,7 +41,7 @@ export class ProcessCreateComponent {
     insert() {
         this._data.insertProcess(this.process).then(res => {
             this.showDialog = false;
-            this.selectedProcess.emit(this.process);
+            this.createProcess.emit(this.process);
         })
         return false;
     }
