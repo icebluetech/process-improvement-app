@@ -8,7 +8,7 @@
 
 <div class="card" *ngIf="showDialog">
     <div class="form-group">
-        <a class="btn btn-info">new</a>
+        <a (click)="loadComponent('process-create')" class="btn btn-info">new</a>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -22,3 +22,5 @@
         </table>
     </div>
 </div>
+
+<div #container></div>
