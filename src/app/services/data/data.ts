@@ -352,6 +352,19 @@ export class Data {
       )
   }
 
+  insertProcess(data: any): Promise<any> {
+    var body = JSON.stringify(data);
+    var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
+    var options = new RequestOptions({ headers: headers });
+    var url = AppSettings.HOST_NAME + '/api/process';
+
+    return this.http.post(url, body, options)
+      .toPromise()
+      .then(
+      response => response.text() ? response.json() : {}
+      )
+  }
+
 }
 
 
