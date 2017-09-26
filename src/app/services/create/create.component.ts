@@ -6,8 +6,6 @@ import { Data } from '../../services/data/data';
 
 import { ICreateable } from '../../model/generics';
 
-import { Process } from '../../model/process';
-
 @Component({
     moduleId: module.id,
     selector: 'create-cmp',
@@ -29,7 +27,7 @@ import { Process } from '../../model/process';
 export class CreateComponent implements OnInit {
 
     showDialog: boolean;
-    object: Process;
+    object: any;
 
     @Input() type: string;
 
