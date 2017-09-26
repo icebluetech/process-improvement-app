@@ -35,25 +35,26 @@ export class SearchComponent {
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
     constructor(private _data: Data, private compiler: Compiler) {
-        this.processes = [];
+        this.results = [];
     }
 
     ngOnInit() { }
 
-    processes: Process[];
+    results: any[];
     term: string;
     selected: Process;
 
     search() {
-        this._data.searchProcesses(this.term).then(res => {
-            this.processes = res;
+        this._data.search(this.type, this.term).then(res => {
+            this.results = res;
         })
         return false;
     }
 
-    select(process: Process) {
-        this.term = process.name;
-        this.selectedProcess.emit(process);
+    select(object: any) {
+        //var obj =  this.getInstance(this.type, []);
+        this.term = object.name;
+        this.selectedProcess.emit(object);
         this.showDialog = false;
         return false;
     }

@@ -39,6 +39,18 @@ export class Data {
     return user;
   }
 
+  search(type:string, term?: string): Promise<any[]> {
+    var url = AppSettings.HOST_NAME + '/api/'+type+'/search?term=' + term;
+    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+    var options = new RequestOptions({ headers: headers });
+
+    return this.http.get(url, options)
+      .toPromise()
+      .then(
+      response => response.json()
+      )
+  }
+
   searchUsers(term?: string): Promise<User[]> {
     var url = AppSettings.HOST_NAME + '/api/user/search?term=' + term;
     var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });

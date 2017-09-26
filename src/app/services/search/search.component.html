@@ -13,14 +13,14 @@
             <thead>
                 <tr>
                     <th>process
-                        <span class="resultsInfo"> Results: {{processes.length}}
+                        <span class="resultsInfo"> Results: {{results.length}}
                             <a href="" (click)="loadComponent()"><i class="fa fa-plus-circle newIcon"></i> </a>
                         </span>
                     </th>
                 </tr>
                 <tbody>
-                    <tr *ngFor="let process of processes">
-                        <td><a href="" (click)="select(process)">{{process.name}}</a></td>
+                    <tr *ngFor="let obj of results">
+                        <td><a href="" (click)="select(obj)">{{obj.name}}</a></td>
                     </tr>
                     <tr *ngIf="createNew">
                         <td>
