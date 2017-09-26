@@ -17,7 +17,7 @@ import { InnovationComponent } from './innovation/innovation.component';
 import { InnovationCreateComponent } from './innovation/create/innovation.create.component';
 import { UserSearchComponent } from './user/search/user.search.component';
 import { UserDetailComponent } from './user/detail/user.detail.component';
-import { ProcessSearchComponent } from '../services/search/process/process.search.component';
+import { SearchComponent } from '../services/search/search.component';
 import { WidgetSearchComponent } from '../services/search/widget/widget.search.component';
 
 
@@ -58,6 +58,6 @@ export const MODULE_COMPONENTS = [
     InnovationCreateComponent,
     UserSearchComponent,
     UserDetailComponent,
-    ProcessSearchComponent,
+    SearchComponent,
     WidgetSearchComponent
 ]

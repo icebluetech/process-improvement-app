@@ -29,7 +29,7 @@
                                         <!-- <label>Process</label> -->
                                         <!-- <input id="Process" [formControl]="Process" type="text" class="form-control" placeholder="Process"> -->
                                     
-                                        <process-search (selectedProcess)="onProcessSelected($event)"></process-search>
+                                        <search-cmp [type]="'Process'" (selectedProcess)="onProcessSelected($event)"></search-cmp>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

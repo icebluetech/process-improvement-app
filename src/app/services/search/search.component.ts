@@ -1,16 +1,16 @@
-import { Output, EventEmitter, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
+import { Input, Output, EventEmitter, ModuleWithComponentFactories, NgModule, Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes, Compiler, ViewContainerRef, ViewChild } from '@angular/core';
 
-import { Data } from '../../../services/data/data';
+import { Data } from '../../services/data/data';
 
-import { Process } from '../../../model/process';
+import { Process } from '../../model/process';
 
-import { AppModule } from '../../../app.module';
+import { AppModule } from '../../app.module';
 
 @Component({
     moduleId: module.id,
-    selector: 'process-search',
-    templateUrl: 'process.search.component.html',
-    styleUrls: ['process.search.component.css'],
+    selector: 'search-cmp',
+    templateUrl: 'search.component.html',
+    styleUrls: ['search.component.css'],
     animations: [
         trigger('dialog', [
             transition('void => *', [
@@ -24,11 +24,12 @@ import { AppModule } from '../../../app.module';
     ]
 })
 
-export class ProcessSearchComponent {
+export class SearchComponent {
 
     showDialog: boolean;
     createNew: boolean;
 
+    @Input() type:string;
     @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
