@@ -152,15 +152,4 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.innovation.widget = widget;
     }
 
-    // loadComponent(selector) {
-    //     this.showDialog = !this.showDialog;
-
-    //     this.compiler.compileModuleAndAllComponentsAsync(AppModule)
-    //         .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) => {
-    //             const componentFactory = moduleWithComponentFactory.componentFactories
-    //                 .find(x => x.selector === selector);
-    //             this.viewContainer.clear();
-    //             return this.viewContainer.createComponent(componentFactory);
-    //         });
-    // }
 }
