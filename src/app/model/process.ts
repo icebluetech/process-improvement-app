@@ -1,4 +1,7 @@
-export class Process {
-    id:string;
-    name: string;
-}
+
+
+    export class Process {
+        id: string;
+        name: string;
+    }
+

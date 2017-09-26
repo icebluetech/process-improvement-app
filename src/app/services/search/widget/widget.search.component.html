@@ -22,7 +22,7 @@
                         </tr>
                         <tr *ngIf="createNew">
                             <td>
-                                <widget-create (createWidget)="select($event)"></widget-create>
+                                <create-cmp [type]="'Widget'" (createWidget)="select($event)"></create-cmp>
                             </td>
                         </tr>
                     </tbody>

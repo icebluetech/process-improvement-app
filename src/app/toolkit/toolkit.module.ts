@@ -8,8 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogComponent } from '../shared/dialog/dialog.component';
 import { DialogSmallComponent } from '../shared/dialog/small/dialog.small.component';
 import { DocsComponent } from '../shared/docs/docs.component';
-import { ProcessCreateComponent } from '../services/create/process/process.create.component';
-import { WidgetCreateComponent } from '../services/create/widget/widget.create.component';
+import { CreateComponent } from '../services/create/create.component';
 
 @NgModule({
   imports: [
@@ -17,8 +16,8 @@ import { WidgetCreateComponent } from '../services/create/widget/widget.create.c
     BrowserModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [MODULE_COMPONENTS, DocsComponent,DialogComponent,DialogSmallComponent,ProcessCreateComponent,WidgetCreateComponent],
-  exports:[DialogComponent,DialogSmallComponent,ProcessCreateComponent,WidgetCreateComponent],
+  declarations: [MODULE_COMPONENTS, DocsComponent,DialogComponent,DialogSmallComponent,CreateComponent],
+  exports:[DialogComponent,DialogSmallComponent,CreateComponent],
   providers: [Settings, Data]
 })
 

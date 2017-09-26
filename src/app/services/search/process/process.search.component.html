@@ -24,7 +24,7 @@
                     </tr>
                     <tr *ngIf="createNew">
                         <td>
-                            <process-create (createProcess)="select($event)"></process-create>
+                            <create-cmp [type]="'Process'" (createdObject)="select($event)"></create-cmp>
                         </td>
                     </tr>
                 </tbody>

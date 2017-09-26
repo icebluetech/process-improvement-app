@@ -1,4 +1,5 @@
-export class Widget {
+
+    export class Widget {
     id:string;
     name: string;
 }
