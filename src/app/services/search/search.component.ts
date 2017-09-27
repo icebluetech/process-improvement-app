@@ -42,7 +42,6 @@ export class SearchComponent {
 
     results: any[];
     term: string;
-    selected: Process;
 
     search() {
         this._data.search(this.type, this.term).then(res => {
@@ -52,7 +51,6 @@ export class SearchComponent {
     }
 
     select(object: any) {
-        //var obj =  this.getInstance(this.type, []);
         this.term = object.name;
         this.selectedProcess.emit(object);
         this.showDialog = false;
