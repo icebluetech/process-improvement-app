@@ -25,10 +25,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <!-- <label>Process</label> -->
-                                        <!-- <input id="Process" [formControl]="Process" type="text" class="form-control" placeholder="Process"> -->
-                                    
+                                    <div class="form-group">                                  
                                         <search-cmp [type]="'Process'" (selectedProcess)="onProcessSelected($event)"></search-cmp>
                                     </div>
                                 </div>
@@ -43,11 +40,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="Department">Primary Department</label>
-                                        <select type="text" class="form-control" value="Cheshire">
-                                            <option selected disabled>Choose Department....</option>
-                                            <option value="{{dep.Id}}" *ngFor="let dep of departments">{{dep.name}}</option>
-                                        </select>
+                                            <search-cmp [type]="'Department'" (selectedProcess)="onDepartmentSelected($event)"></search-cmp>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
