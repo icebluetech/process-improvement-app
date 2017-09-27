@@ -1,14 +1,5 @@
-<div class="col-md-7">
+
     <div class="chip">
         <img src="./assets/img/faces/{{user.avatar}}.jpg" alt="Person" width="96" height="96"> {{user.name}}
         <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
     </div>
-</div>
-<div class="col-md-5">
-    <div class="form-group">
-        <select type="text" class="form-control" value="1">
-                                <option selected disabled>Select Role....</option>
-                                <option *ngFor="let role of userRoles" value="{{role.id}}">{{role.name}}</option>
-                            </select>
-    </div>
-</div>

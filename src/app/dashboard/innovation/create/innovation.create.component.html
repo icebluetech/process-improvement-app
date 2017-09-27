@@ -25,13 +25,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">                                  
-                                        <search-cmp [type]="'Process'" (selectedProcess)="onProcessSelected($event)"></search-cmp>
+                                    <div class="form-group">
+                                        <search-cmp [type]="'Process'" (selected)="onProcessSelected($event)"></search-cmp>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                            <search-cmp [type]="'Widget'" (selectedWidget)="onWidgetSelected($event)"></search-cmp>
+                                        <search-cmp [type]="'Widget'" (selected)="onWidgetSelected($event)"></search-cmp>
                                     </div>
                                 </div>
 
@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                            <search-cmp [type]="'Department'" (selectedProcess)="onDepartmentSelected($event)"></search-cmp>
+                                        <search-cmp [type]="'Department'" (selected)="onDepartmentSelected($event)"></search-cmp>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -90,11 +90,13 @@
                         </app-dialog-small>
 
                         <div *ngFor="let innoUser of innovation.innovationUsers" class="row">
-
-                            <user-detail [(user)]="innoUser.user"></user-detail>
-
+                            <div class="col-sm-7">
+                                <user-detail [(user)]="innoUser.user"></user-detail>
+                            </div>
+                            <div class="col-sm-5">
+                                <search-cmp [type]="'UserRole'" (selected)="onUserRoleSelected($event, user.id)"></search-cmp>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export class SearchComponent {
     createNew: boolean;
 
     @Input() type:string;
-    @Output() selectedProcess: EventEmitter<Process> = new EventEmitter<Process>();
+    @Output() selected: EventEmitter<any> = new EventEmitter<any>();
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
@@ -52,7 +52,7 @@ export class SearchComponent {
 
     select(object: any) {
         this.term = object.name;
-        this.selectedProcess.emit(object);
+        this.selected.emit(object);
         this.showDialog = false;
         return false;
     }
