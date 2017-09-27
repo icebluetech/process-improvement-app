@@ -4,7 +4,7 @@ import { Innovation } from '../../../model/innovation';
 import { Department } from '../../../model/department';
 import { InnovationUser } from '../../../model/innovationUser';
 import { InnovationCategory } from '../../../model/innovationCategory';
-import {InnovationType} from '../../../model/innovationType';
+import { InnovationType } from '../../../model/innovationType';
 import { AppModule } from '../../../app.module';
 
 import { User } from '../../../model/user';
@@ -73,8 +73,8 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
         this.myForm = this.fb.group({
             'Title': ['', Validators.compose([Validators.required])],
-            'Type':[''],
-            'Date':['']
+            'Type': [''],
+            'Date': ['']
 
         })
 
@@ -105,7 +105,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
         this.innovation.createdBy = this._data.getLoggedInUser();
         this.innovation.innovationUsers = [];
-        
+
     }
 
     ngAfterViewChecked() {
@@ -135,7 +135,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
 
 
-    onUserSelected(user:User){
+    onUserSelected(user: User) {
         var innoUser = new InnovationUser();
         innoUser.innovation = this.innovation;
         innoUser.user = user;
@@ -144,15 +144,15 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.showDialog = !this.showDialog;
     }
 
-    onProcessSelected(process:Process){
+    onProcessSelected(process: Process) {
         this.innovation.process = process;
     }
 
-    onWidgetSelected(widget:Widget){
+    onWidgetSelected(widget: Widget) {
         this.innovation.widget = widget;
     }
 
-    onDepartmentSelected(department:Department){
+    onDepartmentSelected(department: Department) {
         this.innovation.department = department;
     }
 
