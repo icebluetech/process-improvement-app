@@ -6,6 +6,7 @@ import { InnovationCategory } from './innovationCategory';
 import { Notification } from './notification';
 import { RootCause } from './rootCause';
 import { InnovationUser } from './innovationUser';
+import { Department } from './department';
 
 export class Innovation {
 
@@ -18,7 +19,7 @@ export class Innovation {
     type: InnovationType
     innovationCategoryId: number;
     category: InnovationCategory;
-    department: string;
+    department: Department;
     createdBy: User;
     process: Process;
     widget: Widget;
