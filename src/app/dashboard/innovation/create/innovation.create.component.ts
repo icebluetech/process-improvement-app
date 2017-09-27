@@ -8,6 +8,7 @@ import { InnovationType } from '../../../model/innovationType';
 import { AppModule } from '../../../app.module';
 
 import { User } from '../../../model/user';
+import { UserRole } from '../../../model/userRole';
 import { Process } from '../../../model/process';
 import { Widget } from '../../../model/widget';
 import {
@@ -62,6 +63,8 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     Date: AbstractControl;
     _fb: FormBuilder;
     showDialog: boolean;
+    showRoleDialog: boolean;
+    selectedInnoUser : InnovationUser;
     private compiler: Compiler;
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
@@ -133,12 +136,11 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
             })
     }
 
-
-
     onUserSelected(user: User) {
         var innoUser = new InnovationUser();
         innoUser.innovation = this.innovation;
         innoUser.user = user;
+        //innoUser.type = new UserRole();
         this.innovation.innovationUsers.push(innoUser);
 
         this.showDialog = !this.showDialog;
@@ -154,6 +156,19 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
 
     onDepartmentSelected(department: Department) {
         this.innovation.department = department;
+    }
+
+    onUserRoleSelected(userRole: UserRole) {
+        //innoUser.type = new UserRole();
+        //innoUser.type = userRole;
+        this.showRoleDialog = !this.showRoleDialog;
+        this.selectedInnoUser.type = userRole;
+    }
+
+    setRole(innoUser:InnovationUser){
+        this.showRoleDialog = !this.showRoleDialog;
+        this.selectedInnoUser = innoUser;
+
     }
 
 }

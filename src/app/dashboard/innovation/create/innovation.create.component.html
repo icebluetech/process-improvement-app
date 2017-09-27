@@ -86,15 +86,25 @@
                     <div class="content">
 
                         <app-dialog-small [(visible)]="showDialog">
-                            <user-search (selectedUser)="onUserSelected($event)"></user-search>
+                            <search-cmp [type]="'User'" (selected)="onUserSelected($event)"></search-cmp>
                         </app-dialog-small>
+
+                        <app-dialog-small [(visible)]="showRoleDialog">
+                            <search-cmp [type]="'UserRole'" (selected)="onUserRoleSelected($event)"></search-cmp>
+                        </app-dialog-small>
+
 
                         <div *ngFor="let innoUser of innovation.innovationUsers" class="row">
                             <div class="col-sm-7">
                                 <user-detail [(user)]="innoUser.user"></user-detail>
                             </div>
                             <div class="col-sm-5">
-                                <search-cmp [type]="'UserRole'" (selected)="onUserRoleSelected($event, user.id)"></search-cmp>
+                                <!-- <userRole-detail [(role)]="innoUser.type"></userRole-detail> -->
+
+                                <a *ngIf="innoUser.type!=undefined" (click)="setRole(innoUser)" class="btn btn-info">{{innoUser.type.name}}</a>
+
+                                <a *ngIf="innoUser.type==undefined" (click)="setRole(innoUser)" class="btn btn-info">Add Role</a>
+
                             </div>
                         </div>
                     </div>

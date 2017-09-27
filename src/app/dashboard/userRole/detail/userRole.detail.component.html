@@ -1,0 +1,8 @@
+
+<a *ngIf="role!=undefined" (click)="showDialog = !showDialog;" class="btn btn-info">{{role}}</a>
+
+<a *ngIf="role==undefined" (click)="showDialog = !showDialog;" class="btn btn-info">Add Role</a>
+
+<app-dialog-small [(visible)]="showDialog">
+    <search-cmp [type]="'UserRole'" (selected)="onUserRoleSelected($event, innoUser)"></search-cmp>
+</app-dialog-small>

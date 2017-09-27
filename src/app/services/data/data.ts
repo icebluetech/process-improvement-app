@@ -63,29 +63,6 @@ export class Data {
       )
   }
 
-  searchProcesses(term?: string): Promise<User[]> {
-    var url = AppSettings.HOST_NAME + '/api/process/search?term=' + term;
-    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
-    var options = new RequestOptions({ headers: headers });
-
-    return this.http.get(url, options)
-      .toPromise()
-      .then(
-      response => response.json()
-      )
-  }
-
-  searchWidgets(term?: string): Promise<User[]> {
-    var url = AppSettings.HOST_NAME + '/api/widget/search?term=' + term;
-    var headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
-    var options = new RequestOptions({ headers: headers });
-
-    return this.http.get(url, options)
-      .toPromise()
-      .then(
-      response => response.json()
-      )
-  }
 
   submitInnovation(data: any): Promise<any> {
     var body = JSON.stringify(data);
@@ -369,32 +346,6 @@ export class Data {
     var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
     var options = new RequestOptions({ headers: headers });
     var url = AppSettings.HOST_NAME + '/api/'+type;
-
-    return this.http.post(url, body, options)
-      .toPromise()
-      .then(
-      response => response.text() ? response.json() : {}
-      )
-  }
-
-  insertProcess(data: any): Promise<any> {
-    var body = JSON.stringify(data);
-    var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
-    var options = new RequestOptions({ headers: headers });
-    var url = AppSettings.HOST_NAME + '/api/process';
-
-    return this.http.post(url, body, options)
-      .toPromise()
-      .then(
-      response => response.text() ? response.json() : {}
-      )
-  }
-
-  insertWidget(data: any): Promise<any> {
-    var body = JSON.stringify(data);
-    var headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
-    var options = new RequestOptions({ headers: headers });
-    var url = AppSettings.HOST_NAME + '/api/widget';
 
     return this.http.post(url, body, options)
       .toPromise()
