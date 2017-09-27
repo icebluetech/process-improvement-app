@@ -152,4 +152,8 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
         this.innovation.widget = widget;
     }
 
+    onDepartmentSelected(department:Department){
+        this.innovation.department = department;
+    }
+
 }
