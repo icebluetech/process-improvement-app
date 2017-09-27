@@ -1,18 +1,16 @@
 <div class="form-group">
-    <label class="control-label">Process</label>
+    <label class="control-label">{{type}}</label>
     <input (mousedown)="showDialog = !showDialog" (keyup)="search($event)" [(ngModel)]="term" type="text" class="form-control"
         placeholder="Search" />
     <i class="fa fa-search searchIcon"></i>
-    <!-- <i class="fa fa-search newIcon"></i> -->
 </div>
 
 <div class="card" *ngIf="showDialog">
     <div class="form-group">
-        <!-- <a (click)="loadComponent('process-create')" class="btn btn-info">new</a> -->
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th>process
+                    <th>{{type}}
                         <span class="resultsInfo"> Results: {{results.length}}
                             <a href="" (click)="loadComponent()"><i class="fa fa-plus-circle newIcon"></i> </a>
                         </span>
