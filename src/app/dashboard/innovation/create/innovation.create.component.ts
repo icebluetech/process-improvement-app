@@ -93,6 +93,7 @@ export class InnovationCreateComponent implements OnInit {
             innoUser.userId = innoUser.user.id;
             innoUser.user = null;
             innoUser.innovation = null;
+            innoUser.userRole = null;
         });
 
         this.innovation.title = this.Title.value;
@@ -139,6 +140,7 @@ export class InnovationCreateComponent implements OnInit {
 
     onUserRoleSelected(userRole: UserRole) {
         this.showRoleDialog = !this.showRoleDialog;
+        this.selectedInnoUser.userRole = userRole;
         this.selectedInnoUser.userRoleId = userRole.id;
     }
 

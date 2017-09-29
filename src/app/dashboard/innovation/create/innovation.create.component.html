@@ -106,9 +106,9 @@
                             <div class="col-sm-5">
                                 <!-- <userRole-detail [(role)]="innoUser.type"></userRole-detail> -->
 
-                                <a *ngIf="innoUser.type!=undefined" (click)="setRole(innoUser)" class="btn btn-info">{{innoUser.type.name}}</a>
+                                <a *ngIf="innoUser.userRole!=undefined" (click)="setRole(innoUser)" class="btn btn-info">{{innoUser.userRole.name}}</a>
 
-                                <a *ngIf="innoUser.type==undefined" (click)="setRole(innoUser)" class="btn btn-info">Add Role</a>
+                                <a *ngIf="innoUser.userRole==undefined" (click)="setRole(innoUser)" class="btn btn-info">Add Role</a>
 
                             </div>
                         </div>
