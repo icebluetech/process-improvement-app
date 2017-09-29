@@ -24,12 +24,15 @@ import { AppModule } from '../../app.module';
     ]
 })
 
-export class SearchComponent {
+export class SearchComponent implements OnInit {
 
     showDialog: boolean;
     createNew: boolean;
+    label: string;
+    results: any[];
+    term: string;
 
-    @Input() type:string;
+    @Input() type: string;
     @Output() selected: EventEmitter<any> = new EventEmitter<any>();
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
@@ -38,10 +41,11 @@ export class SearchComponent {
         this.results = [];
     }
 
-    ngOnInit() { }
-
-    results: any[];
-    term: string;
+    ngOnInit() {
+       this.label = this.type;
+       this.label = this.label.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([A-Z])([a-z])/g, ' $1$2').replace(/\ +/g, ' ');
+       
+    }
 
     search() {
         this._data.search(this.type, this.term).then(res => {

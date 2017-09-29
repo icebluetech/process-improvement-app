@@ -10,7 +10,7 @@
                     <div class="content">
                         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Innovation Title</label>
                                         <input id="Title" [formControl]="Title" type="text" class="form-control" placeholder="Title">
@@ -18,8 +18,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Innovation Type</label>
-                                        <input id="Type" [formControl]="Type" type="text" class="form-control" placeholder="Type">
+                                        <search-cmp [type]="'InnovationType'" (selected)="onInnovationTypeSelected($event)"></search-cmp>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <search-cmp [type]="'InnovationCategory'" (selected)="onInnovationCategorySelected($event)"></search-cmp>
                                     </div>
                                 </div>
                             </div>

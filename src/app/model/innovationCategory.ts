@@ -1,4 +1,6 @@
-export class InnovationCategory{
-    Id:number;
-    name:string;
+export namespace ICreateable {
+    export class InnovationCategory {
+        Id: number;
+        name: string;
+    }
 }

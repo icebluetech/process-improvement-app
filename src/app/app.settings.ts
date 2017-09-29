@@ -21,8 +21,5 @@ export class AppSettings {
         return 'https://process-improvement-api.azurewebsites.net';
     }
 
-    public static SIDEBAR_COLOR: string;
-
-
 }
 
