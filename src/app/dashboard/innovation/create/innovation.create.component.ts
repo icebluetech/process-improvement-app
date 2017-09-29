@@ -92,11 +92,8 @@ export class InnovationCreateComponent implements OnInit {
         this.innovation.innovationUsers.forEach(innoUser => {
             innoUser.userId = innoUser.user.id;
             innoUser.user = null;
-            innoUser.innovationId = innoUser.innovation.id;
             innoUser.innovation = null;
         });
-
-        this.innovation.innovationUsers = [];
 
         this.innovation.title = this.Title.value;
         this.innovation.date = this.Date.value;
@@ -115,7 +112,7 @@ export class InnovationCreateComponent implements OnInit {
 
 
         this.createdBy = new InnovationUser();
-        this.createdBy.userRole = { id: 5 } as UserRole;
+        this.createdBy.userRoleId = 5;
         this.createdBy.user = this._data.getLoggedInUser();
     }
 
