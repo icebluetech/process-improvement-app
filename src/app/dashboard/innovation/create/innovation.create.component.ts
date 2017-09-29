@@ -52,7 +52,7 @@ declare var $: any;
         ])]
 })
 
-export class InnovationCreateComponent implements OnInit, AfterViewChecked {
+export class InnovationCreateComponent implements OnInit {
 
     myForm: FormGroup;
     categories: Array<InnovationCategory>;
@@ -69,22 +69,14 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
     constructor(private _data: Data, private fb: FormBuilder) {
-        this.categories = [];
-        this.departments = [];
-        this.innovation = new Innovation();
-
 
         this.myForm = this.fb.group({
             'Title': ['', Validators.compose([Validators.required])],
-            'Type': [''],
             'Date': ['']
 
         })
 
         this.Title = this.myForm.controls['Title'];
-        this.Type = this.myForm.controls['Type'];
-        //this.Process = this.myForm.controls['Process'];
-        //this.Widget = this.myForm.controls['Widget'];
         this.Date = this.myForm.controls['Date'];
 
     }
@@ -92,9 +84,7 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     onSubmit(value: string) {
 
         this.innovation.title = this.Title.value;
-
-        this.innovation.innovationCategoryId = 1;
-        this.innovation.innovationTypeId = 1;
+        this.innovation.date = this.Date.value;
 
         this._data.submitInnovation(this.innovation)
             .then(res => {
@@ -103,44 +93,18 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     }
 
     ngOnInit() {
-        this.getCategories();
-        this.getDepartments();
-
-        this.innovation.createdBy = this._data.getLoggedInUser();
+        this.categories = [];
+        this.departments = [];
+        this.innovation = new Innovation();
         this.innovation.innovationUsers = [];
 
-    }
-
-    ngAfterViewChecked() {
-        $('[data-toggle="checkbox"]').each(function () {
-            if ($(this).data('toggle') == 'switch') return;
-
-            var $checkbox = $(this);
-            $checkbox.checkbox();
-        });
-    }
-
-    getCategories() {
-        this._data
-            .getItems()
-            .then(res => {
-                this.categories = res;
-            })
-    }
-
-    getDepartments() {
-        this._data
-            .getDepartments()
-            .then(res => {
-                this.departments = res;
-            })
+        this.innovation.createdBy = this._data.getLoggedInUser();
     }
 
     onUserSelected(user: User) {
         var innoUser = new InnovationUser();
         innoUser.innovation = this.innovation;
         innoUser.user = user;
-        //innoUser.type = new UserRole();
         this.innovation.innovationUsers.push(innoUser);
 
         this.showDialog = !this.showDialog;
@@ -159,10 +123,18 @@ export class InnovationCreateComponent implements OnInit, AfterViewChecked {
     }
 
     onUserRoleSelected(userRole: UserRole) {
-        //innoUser.type = new UserRole();
-        //innoUser.type = userRole;
         this.showRoleDialog = !this.showRoleDialog;
         this.selectedInnoUser.type = userRole;
+    }
+
+    onInnovationTypeSelected(innovationType: InnovationType) {
+        this.showRoleDialog = !this.showRoleDialog;
+        this.innovation.type = innovationType;
+    }
+
+    onInnovationCategorySelected(innovationCategory: InnovationCategory) {
+        this.showRoleDialog = !this.showRoleDialog;
+        this.innovation.category = innovationCategory;
     }
 
     setRole(innoUser:InnovationUser){

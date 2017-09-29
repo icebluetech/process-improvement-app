@@ -5,7 +5,7 @@ import {
 import { Data } from '../../../services/data/data';
 
 import { User } from '../../../model/user';
-import { ICreateable } from '../../../model/userRole'
+import { UserRole } from '../../../model/userRole'
 
 @Component({
     moduleId: module.id,
@@ -27,9 +27,9 @@ import { ICreateable } from '../../../model/userRole'
 
 export class UserRoleDetailComponent {
 
-    @Input() role: ICreateable.UserRole;
+    @Input() role: UserRole;
 
-    userRoles: Array<ICreateable.UserRole>;
+    userRoles: Array<UserRole>;
 
     constructor(private _data: Data) {
         this.userRoles = [];

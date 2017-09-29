@@ -1,6 +1,4 @@
-export namespace ICreateable {
-    export class Department {
-    id:string;
+export class Department {
+    id: string;
     name: string;
-}
 }
