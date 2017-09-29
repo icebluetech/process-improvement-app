@@ -133,17 +133,14 @@ export class InnovationCreateComponent implements OnInit {
     }
 
     onInnovationTypeSelected(innovationType: InnovationType) {
-        this.showRoleDialog = !this.showRoleDialog;
         this.innovation.type = innovationType;
     }
 
     onInnovationCategorySelected(innovationCategory: InnovationCategory) {
-        this.showRoleDialog = !this.showRoleDialog;
         this.innovation.category = innovationCategory;
     }
 
     setRole(innoUser:InnovationUser){
-        this.showRoleDialog = !this.showRoleDialog;
         this.selectedInnoUser = innoUser;
 
     }
