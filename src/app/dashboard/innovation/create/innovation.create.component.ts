@@ -65,6 +65,7 @@ export class InnovationCreateComponent implements OnInit {
     showDialog: boolean;
     showRoleDialog: boolean;
     selectedInnoUser : InnovationUser;
+    createdBy:InnovationUser;
     private compiler: Compiler;
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
@@ -83,6 +84,9 @@ export class InnovationCreateComponent implements OnInit {
 
     onSubmit(value: string) {
 
+        this.createdBy.typeId = 5; //createdBy
+        this.innovation.innovationUsers.push(this.createdBy);
+
         this.innovation.title = this.Title.value;
         this.innovation.date = this.Date.value;
 
@@ -98,7 +102,8 @@ export class InnovationCreateComponent implements OnInit {
         this.innovation = new Innovation();
         this.innovation.innovationUsers = [];
 
-        this.innovation.createdBy = this._data.getLoggedInUser();
+        this.createdBy = new InnovationUser();
+        this.createdBy.user = this._data.getLoggedInUser();
     }
 
     onUserSelected(user: User) {

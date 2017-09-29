@@ -19,9 +19,14 @@ export class Innovation {
     type: InnovationType
     innovationCategoryId: number;
     category: InnovationCategory;
+    
+    departmentId: number;
     department: Department;
-    createdBy: User;
+      
+    processId: number;
     process: Process;
+    
+    widgetId: number;
     widget: Widget;
 
 }
