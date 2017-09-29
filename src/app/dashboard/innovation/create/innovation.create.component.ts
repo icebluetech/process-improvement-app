@@ -64,8 +64,8 @@ export class InnovationCreateComponent implements OnInit {
     _fb: FormBuilder;
     showDialog: boolean;
     showRoleDialog: boolean;
-    selectedInnoUser : InnovationUser;
-    createdBy:InnovationUser;
+    selectedInnoUser: InnovationUser;
+    createdBy: InnovationUser;
     private compiler: Compiler;
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
 
@@ -84,8 +84,19 @@ export class InnovationCreateComponent implements OnInit {
 
     onSubmit(value: string) {
 
-        this.createdBy.typeId = 5; //createdBy
-        this.innovation.innovationUsers.push(this.createdBy);
+        var innoUser = this.createdBy;
+        innoUser.innovation = this.innovation;
+        innoUser.user = this.createdBy.user;
+        this.innovation.innovationUsers.push(innoUser);
+
+        this.innovation.innovationUsers.forEach(innoUser => {
+            innoUser.userId = innoUser.user.id;
+            innoUser.user = null;
+            innoUser.innovationId = innoUser.innovation.id;
+            innoUser.innovation = null;
+        });
+
+        this.innovation.innovationUsers = [];
 
         this.innovation.title = this.Title.value;
         this.innovation.date = this.Date.value;
@@ -102,7 +113,9 @@ export class InnovationCreateComponent implements OnInit {
         this.innovation = new Innovation();
         this.innovation.innovationUsers = [];
 
+
         this.createdBy = new InnovationUser();
+        this.createdBy.userRole = { id: 5 } as UserRole;
         this.createdBy.user = this._data.getLoggedInUser();
     }
 
@@ -116,31 +129,32 @@ export class InnovationCreateComponent implements OnInit {
     }
 
     onProcessSelected(process: Process) {
-        this.innovation.process = process;
+        this.innovation.processId = process.id;
     }
 
     onWidgetSelected(widget: Widget) {
-        this.innovation.widget = widget;
+        this.innovation.widgetId = widget.id;
     }
 
     onDepartmentSelected(department: Department) {
-        this.innovation.department = department;
+        this.innovation.departmentId = department.id;
     }
 
     onUserRoleSelected(userRole: UserRole) {
         this.showRoleDialog = !this.showRoleDialog;
-        this.selectedInnoUser.type = userRole;
+        this.selectedInnoUser.userRoleId = userRole.id;
     }
 
     onInnovationTypeSelected(innovationType: InnovationType) {
-        this.innovation.type = innovationType;
+        this.innovation.innovationTypeId = innovationType.id;
     }
 
     onInnovationCategorySelected(innovationCategory: InnovationCategory) {
-        this.innovation.category = innovationCategory;
+        this.innovation.innovationCategoryId = innovationCategory.id;
     }
 
-    setRole(innoUser:InnovationUser){
+    setRole(innoUser: InnovationUser) {
+        this.showRoleDialog = !this.showRoleDialog;
         this.selectedInnoUser = innoUser;
 
     }

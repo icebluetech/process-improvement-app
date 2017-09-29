@@ -5,8 +5,10 @@ import { UserRole } from './userrole';
 export class InnovationUser {
     innovationId: number;
     innovation: Innovation;
+    
     userId: number;
     user: User;
-    type:UserRole;
-    typeId:number;
+    
+    userRole:UserRole;
+    userRoleId:number;
 }

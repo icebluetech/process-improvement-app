@@ -1,5 +1,5 @@
 
 export class InnovationType {
-    Id: number;
+    id: number;
     name: string;
 }

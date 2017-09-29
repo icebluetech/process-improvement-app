@@ -33,7 +33,7 @@ export class Data {
   getLoggedInUser() {
     //Get this from an auth service after demo
     var user = new User();
-    user.id = "1";
+    user.id = 1;
     user.name = "Chris Cheshire";
     user.avatar = "face-8";
     return user;

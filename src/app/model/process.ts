@@ -1,4 +1,4 @@
 export class Process {
-    id: string;
+    id: number;
     name: string;
 }

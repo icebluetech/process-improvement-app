@@ -1,4 +1,4 @@
-    export class InnovationCategory {
-        Id: number;
-        name: string;
-    }
+export class InnovationCategory {
+    id: number;
+    name: string;
+}
