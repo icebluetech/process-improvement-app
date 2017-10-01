@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Data } from '../../services/data/data';
 import { State } from '../../model/state';
 import { Innovation } from '../../model/innovation';
+import { Widget } from '../../model/widget';
 
 @Component({
     selector: 'state-cmp',
@@ -23,7 +24,8 @@ export class StateComponent implements OnInit {
     innovation:Innovation;
 
     constructor(private _data: Data, private activatedRoute: ActivatedRoute) {
-
+        this.innovation = new Innovation();
+        this.innovation.widget = new Widget();
     }
 
     ngOnInit() {
