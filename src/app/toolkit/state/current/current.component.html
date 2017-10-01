@@ -1,17 +1,17 @@
-<form>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
 
   <div style="border-right:1pt dashed grey;">
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label>Number</label>
-          <input type="text" class="form-control" placeholder="Widget" />
+          <input [formControl]="Provided" type="text" class="form-control" placeholder="Provided" />
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Unit of measure</label>
-          <input type="text" class="form-control" placeholder="Widget" />
+          <input [formControl]="providedNumber" type="text" class="form-control" placeholder="Unit of measure" />
         </div>
       </div>
     </div>
@@ -91,4 +91,5 @@
       </div>
     </div>
   </div>
+  <button type="submit" class="btn btn-info btn-fill">Save</button>
 </form>

@@ -37,17 +37,21 @@ export class CurrentStateComponent implements OnInit {
     BacklogNumber: AbstractControl;
     Handoffs: AbstractControl;
     Approvals: AbstractControl;
+    ProvidedMeasure:AbstractControl;
+    TimeTakenMeasure:AbstractControl;
 
     InnovationId: number;
 
-    @Output() close: EventEmitter<any> = new EventEmitter<any>();
-    @Input() parent: any;
+    @Output() created: EventEmitter<State> = new EventEmitter<State>();
+    
 
     constructor(private _data: Data, private fb: FormBuilder, private activatedRoute: ActivatedRoute) {
 
         this.myForm = this.fb.group({
             'Provided': [''],
+            'ProvidedMeasure': [''],
             'TimeTaken': [''],
+            'TimeTakenMeasure': [''],
             'Correct': [''],
             'EmpSatisfied': [''],
             'CustSatisfied': [''],
@@ -58,7 +62,9 @@ export class CurrentStateComponent implements OnInit {
         })
 
         this.Provided = this.myForm.controls['Provided'];
+        this.ProvidedMeasure = this.myForm.controls['ProvidedMeasure'];
         this.TimeTaken = this.myForm.controls['TimeTaken'];
+        this.TimeTakenMeasure = this.myForm.controls['TimeTakenMeasure'];
         this.Correct = this.myForm.controls['Correct'];
         this.EmpSatisfied = this.myForm.controls['EmpSatisfied'];
         this.CustSatisfied = this.myForm.controls['CustSatisfied'];
@@ -82,7 +88,9 @@ export class CurrentStateComponent implements OnInit {
         this.state.innovationId = this.InnovationId;
 
         this.state.provided = this.Provided.value;
+        this.state.providedMeasure = this.ProvidedMeasure.value;
         this.state.timeTaken = this.TimeTaken.value;
+        this.state.timeTakenMeasure = this.TimeTakenMeasure.value;
         this.state.correct = this.Correct.value;
         this.state.empSatisfied = this.EmpSatisfied.value;
         this.state.custSatisfied = this.CustSatisfied.value;
@@ -91,10 +99,7 @@ export class CurrentStateComponent implements OnInit {
         this.state.handoffs = this.Handoffs.value;
         this.state.approvals = this.Approvals.value;
 
-        this._data.insertAny(this.state, 'State')
-            .then(res => {
-                this.close.emit(this.parent);
-            })
+        this.created.emit(this.state);
     }
 
 }

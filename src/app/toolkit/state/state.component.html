@@ -80,13 +80,13 @@
 
       <div class="col-sm-4">
         <div class="row">
-          <current-state></current-state>
+          <current-state (created)="save($event)"></current-state>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="row">
-          <future-state></future-state>
+          <future-state (created)="save($event)"></future-state>
         </div>
       </div>
 

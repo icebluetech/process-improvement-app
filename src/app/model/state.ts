@@ -13,7 +13,9 @@ export class State {
     widget: Widget;
 
     provided: number;
+    providedMeasure: number;
     timeTaken: number;
+    timeTakenMeasure: number;
     correct: number;
     empSatisfied:number;
     custSatisfied: number;

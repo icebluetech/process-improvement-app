@@ -13,29 +13,85 @@ import {
     ReactiveFormsModule
 } from '@angular/forms';
 
+import {ActivatedRoute, Params} from '@angular/router';
+
 import { Data } from '../../../services/data/data';
+import { State } from '../../../model/state';
 
 @Component({
     selector: 'future-state',
     templateUrl: 'future.component.html',
     styleUrls: ['future.component.css']
-    
+
 })
 export class FutureStateComponent implements OnInit {
 
+    state:State;
     myForm: FormGroup;
-    Title: AbstractControl;
+    Provided: AbstractControl;
+    TimeTaken: AbstractControl;
+    Correct: AbstractControl;
+    EmpSatisfied: AbstractControl;
+    CustSatisfied: AbstractControl;
+    BacklogWork: AbstractControl;
+    BacklogNumber: AbstractControl;
+    Handoffs: AbstractControl;
+    Approvals: AbstractControl;
 
-    constructor(private _data: Data, private fb: FormBuilder) {
+    InnovationId: number;
+
+    @Output() created: EventEmitter<State> = new EventEmitter<State>();
+    
+
+    constructor(private _data: Data, private fb: FormBuilder, private activatedRoute: ActivatedRoute) {
 
         this.myForm = this.fb.group({
-            'Title': ['', Validators.compose([Validators.required])]
+            'Provided': [''],
+            'TimeTaken': [''],
+            'Correct': [''],
+            'EmpSatisfied': [''],
+            'CustSatisfied': [''],
+            'BacklogWork': [''],
+            'BacklogNumber': [''],
+            'Handoffs': [''],
+            'Approvals': ['']
         })
 
-        this.Title = this.myForm.controls['Title'];
-
+        this.Provided = this.myForm.controls['Provided'];
+        this.TimeTaken = this.myForm.controls['TimeTaken'];
+        this.Correct = this.myForm.controls['Correct'];
+        this.EmpSatisfied = this.myForm.controls['EmpSatisfied'];
+        this.CustSatisfied = this.myForm.controls['CustSatisfied'];
+        this.BacklogWork = this.myForm.controls['BacklogWork'];
+        this.BacklogNumber = this.myForm.controls['BacklogNumber'];
+        this.Handoffs = this.myForm.controls['Handoffs'];
+        this.Approvals = this.myForm.controls['Approvals'];
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.activatedRoute.params.subscribe((params: Params) => {
+            this.InnovationId = params['id'];
+          });
+     }
+
+
+    onSubmit(value: string) {
+        this.state = new State();
+
+        this.state.stateTypeId = 2;
+        this.state.innovationId = this.InnovationId;
+
+        this.state.provided = this.Provided.value;
+        this.state.timeTaken = this.TimeTaken.value;
+        this.state.correct = this.Correct.value;
+        this.state.empSatisfied = this.EmpSatisfied.value;
+        this.state.custSatisfied = this.CustSatisfied.value;
+        this.state.backlogWork = this.BacklogWork.value;
+        this.state.backlogNumber = this.BacklogNumber.value;
+        this.state.handoffs = this.Handoffs.value;
+        this.state.approvals = this.Approvals.value;
+
+        this.created.emit(this.state);
+    }
 
 }
