@@ -2,7 +2,17 @@ import {
     Component, OnInit, Input, Output, OnChanges, EventEmitter,
     trigger, state, style, animate, transition
 } from '@angular/core';
+import {
+    FormBuilder,
+    FormGroup,
+    Validators,
+    AbstractControl,
+    FormControl,
+    FormArray,
+    ReactiveFormsModule
+} from '@angular/forms';
 
+import { Data } from '../../services/data/data';
 declare var $: any;
 @Component({
     selector: 'solution-dialog',
@@ -12,12 +22,18 @@ declare var $: any;
 })
 export class SolutionComponent implements OnInit {
 
-    categories:any[]
+    myForm: FormGroup;
+    Title: AbstractControl;
 
-    constructor() {
-        this.categories = [];
-        this.categories.push("Continous Flow","Eliminate Branching","Eliinate Handoffs","5S/6S")
-     }
+    constructor(private _data: Data, private fb: FormBuilder) {
+
+        this.myForm = this.fb.group({
+            'Title': ['', Validators.compose([Validators.required])]
+        })
+
+        this.Title = this.myForm.controls['Title'];
+
+    }
 
     ngOnInit() {
         $.getScript('../../../assets/js/bootstrap-checkbox-radio-switch.js');

@@ -3,7 +3,7 @@
     <header>Reason For Action</header>
     <div class="caption">
 
-      <form>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
         <div class="row">
           <div class="col-md-10">
             <div class="well">Briefly describe the reason your organization should take action. Why is this important to your customers? Is
@@ -14,7 +14,7 @@
           <div class="col-md-10">
             <div class="form-group">
               <label>Reason for action description</label>
-              <textarea [(ngModel)]="reason" cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
+              <textarea [formControl]="Reason" cols="1" rows="8" class="form-control" placeholder="Scope / Description"></textarea>
             </div>
           </div>
         </div>

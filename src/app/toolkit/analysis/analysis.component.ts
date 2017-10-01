@@ -3,6 +3,18 @@ import {
     trigger, state, style, animate, transition
 } from '@angular/core';
 
+import {
+    FormBuilder,
+    FormGroup,
+    Validators,
+    AbstractControl,
+    FormControl,
+    FormArray,
+    ReactiveFormsModule
+} from '@angular/forms';
+
+import { Data } from '../../services/data/data';
+
 declare var $: any;
 @Component({
     selector: 'analysis-dialog',
@@ -14,7 +26,18 @@ export class AnalysisComponent implements OnInit {
 
     categories:any[]
 
-    constructor() {
+    myForm: FormGroup;
+    Title: AbstractControl;
+
+    constructor(private _data: Data, private fb: FormBuilder) {
+
+        this.myForm = this.fb.group({
+            'Title': ['', Validators.compose([Validators.required])]
+        })
+
+        this.Title = this.myForm.controls['Title'];
+
+    
         this.categories = [];
         this.categories.push("Defects","Overprocessing","Waiting","Non utilized talent","Tranprtation","Inventory","Motion","Excessive Processing")
      }
