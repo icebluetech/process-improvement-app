@@ -9,6 +9,7 @@ import { User } from '../../model/user';
 import { UserRole } from '../../model/userRole';
 import { Doc } from '../../model/doc';
 import { Innovation } from '../../model/innovation';
+import { InnovationViewModel } from '../../viewmodels/innovation-vm';
 import { Brainstorm } from '../../model/brainstorm';
 import { Experiment } from '../../model/experiment';
 import { InnovationCategory } from '../../model/innovationCategory';
@@ -154,7 +155,7 @@ export class Data {
       )
   }
 
-  getInnovations(): Promise<Innovation[]> {
+  getInnovations(): Promise<InnovationViewModel[]> {
 
     var url = AppSettings.HOST_NAME + "/api/Innovation";
     var headers = new Headers();

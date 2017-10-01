@@ -15,17 +15,17 @@
                             <thead>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Sponsor</th>
-                                    <th>Customer</th>
-                                    <th>Department</th>
+                                    <th>Type</th>
+                                    <th>Widget</th>
+                                    <th>Owner</th>
                                     <th>Date</th>
                                 </tr>
                                 <tbody>
                                     <tr *ngFor="let innovation of innovations">
                                         <td><a [routerLink]="['/toolkit', innovation.id]">{{innovation.title}}</a></td>
-                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.sponsor}}</a></td>
-                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.customer}}</a></td>
-                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.department}}</a></td>
+                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.type}}</a></td>
+                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.widget}}</a></td>
+                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.owner}}</a></td>
                                         <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.date}}</a></td>
                                     </tr>
                                 </tbody>

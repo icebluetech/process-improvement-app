@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 import { Data } from '../../services/data/data';
 import { Innovation } from '../../model/innovation';
+import { InnovationViewModel } from '../../viewmodels/innovation-vm';
 
 @Component({
     moduleId: module.id,
@@ -53,7 +54,7 @@ import { Innovation } from '../../model/innovation';
 })
 
 export class InnovationComponent implements OnInit {
-    innovations: Innovation[];
+    innovations: InnovationViewModel[];
 
     constructor(private _data: Data) {
         this.innovations = [];
