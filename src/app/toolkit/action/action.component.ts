@@ -3,6 +3,16 @@ import {
     trigger, state, style, animate, transition
 } from '@angular/core';
 
+import {
+    FormBuilder,
+    FormGroup,
+    Validators,
+    AbstractControl,
+    FormControl,
+    FormArray,
+    ReactiveFormsModule
+} from '@angular/forms';
+
 @Component({
     selector: 'action-dialog',
     templateUrl: 'action.component.html',
