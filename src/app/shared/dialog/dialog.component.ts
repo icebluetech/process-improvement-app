@@ -23,8 +23,11 @@ export class DialogComponent implements OnInit {
     @Input() closable = true;
     @Input() visible: boolean;
     @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @ViewChild('action-dialog') someElement;
 
-    constructor() { }
+    constructor() { 
+        var test = '';
+    }
 
     ngOnInit() { }
 

@@ -16,7 +16,7 @@ declare var $: any;
     moduleId: module.id,
     selector: 'toolkit-home',
     templateUrl: 'home.component.html',
-    styleUrls:['home.component.css'],
+    styleUrls: ['home.component.css'],
     animations: [
         trigger('cardtable1', [
             state('*', style({
@@ -65,7 +65,7 @@ declare var $: any;
 
 export class HomeComponent implements OnInit {
 
-    showDialog: boolean;
+    public showDialog: boolean;
 
     innovation: Innovation;
 
@@ -84,11 +84,6 @@ export class HomeComponent implements OnInit {
         this._data.getInnovation(id).then(res => {
             this.innovation = res;
         });
-
-        // this.innovation$ = this.route.paramMap
-        //     .switchMap((params: ParamMap) => {
-        //         return this._data.getInnovation(params.get('id'))
-        //     });
     }
 
     loadComponent(selector) {
@@ -99,7 +94,17 @@ export class HomeComponent implements OnInit {
                 const componentFactory = moduleWithComponentFactory.componentFactories
                     .find(x => x.selector === selector);
                 this.viewContainer.clear();
-                return this.viewContainer.createComponent(componentFactory);
+                let instance: any = this.viewContainer.createComponent(componentFactory).instance;
+                if (!!instance.close) {
+                    // close is eventemitter decorated with @output 
+                    instance.parent = this;
+                    instance.close.subscribe(this.closeComponent);
+                }
+                return instance;
             });
+    }
+
+    closeComponent(cmp: any) {
+       cmp.showDialog = !cmp.showDialog;
     }
 }
