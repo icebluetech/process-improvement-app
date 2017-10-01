@@ -37,17 +37,21 @@ export class FutureStateComponent implements OnInit {
     BacklogNumber: AbstractControl;
     Handoffs: AbstractControl;
     Approvals: AbstractControl;
+    ProvidedMeasure:AbstractControl;
+    TimeTakenMeasure:AbstractControl;
 
     InnovationId: number;
 
     @Output() created: EventEmitter<State> = new EventEmitter<State>();
     
 
-    constructor(private _data: Data, private fb: FormBuilder, private activatedRoute: ActivatedRoute) {
+    constructor(private _data: Data, private fb: FormBuilder) {
 
         this.myForm = this.fb.group({
             'Provided': [''],
+            'ProvidedMeasure': [''],
             'TimeTaken': [''],
+            'TimeTakenMeasure': [''],
             'Correct': [''],
             'EmpSatisfied': [''],
             'CustSatisfied': [''],
@@ -58,7 +62,9 @@ export class FutureStateComponent implements OnInit {
         })
 
         this.Provided = this.myForm.controls['Provided'];
+        this.ProvidedMeasure = this.myForm.controls['ProvidedMeasure'];
         this.TimeTaken = this.myForm.controls['TimeTaken'];
+        this.TimeTakenMeasure = this.myForm.controls['TimeTakenMeasure'];
         this.Correct = this.myForm.controls['Correct'];
         this.EmpSatisfied = this.myForm.controls['EmpSatisfied'];
         this.CustSatisfied = this.myForm.controls['CustSatisfied'];
@@ -68,21 +74,19 @@ export class FutureStateComponent implements OnInit {
         this.Approvals = this.myForm.controls['Approvals'];
     }
 
-    ngOnInit() {
-        this.activatedRoute.params.subscribe((params: Params) => {
-            this.InnovationId = params['id'];
-          });
-     }
+    ngOnInit() {     }
 
 
     onSubmit(value: string) {
         this.state = new State();
 
-        this.state.stateTypeId = 2;
+        this.state.stateTypeId = 1;
         this.state.innovationId = this.InnovationId;
 
         this.state.provided = this.Provided.value;
+        this.state.providedMeasure = this.ProvidedMeasure.value;
         this.state.timeTaken = this.TimeTaken.value;
+        this.state.timeTakenMeasure = this.TimeTakenMeasure.value;
         this.state.correct = this.Correct.value;
         this.state.empSatisfied = this.EmpSatisfied.value;
         this.state.custSatisfied = this.CustSatisfied.value;

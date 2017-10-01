@@ -45,7 +45,7 @@ export class CurrentStateComponent implements OnInit {
     @Output() created: EventEmitter<State> = new EventEmitter<State>();
     
 
-    constructor(private _data: Data, private fb: FormBuilder, private activatedRoute: ActivatedRoute) {
+    constructor(private _data: Data, private fb: FormBuilder) {
 
         this.myForm = this.fb.group({
             'Provided': [''],
@@ -74,11 +74,7 @@ export class CurrentStateComponent implements OnInit {
         this.Approvals = this.myForm.controls['Approvals'];
     }
 
-    ngOnInit() {
-        this.activatedRoute.params.subscribe((params: Params) => {
-            this.InnovationId = params['id'];
-          });
-     }
+    ngOnInit() {     }
 
 
     onSubmit(value: string) {

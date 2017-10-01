@@ -1,93 +1,95 @@
-<form>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Number</label>
-        <input type="text" class="form-control" placeholder="Widget" />
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    
+      <div style="border-right:1pt dashed grey;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Number</label>
+              <input [formControl]="Provided" type="text" class="form-control" placeholder="Number" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Unit of measure</label>
+              <input [formControl]="ProvidedMeasure" type="text" class="form-control" placeholder="Unit of measure" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Number</label>
+              <input [formControl]="TimeTaken" type="text" class="form-control" placeholder="Number" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Time</label>
+              <input [formControl]="TimeTakenMeasure" type="text" class="form-control" placeholder="Unit of measure" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Percentage (%)</label>
+              <input [formControl]="Correct" type="text" class="form-control" placeholder="Percentage" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Percentage (%)</label>
+              <input [formControl]="CustSatisfied" type="text" class="form-control" placeholder="Percentage" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Percentage (%)</label>
+              <input [formControl]="EmpSatisfied" type="text" class="form-control" placeholder="Percentage" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Number</label>
+              <input [formControl]="BacklogNumber" type="text" class="form-control" placeholder="Number" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Work</label>
+              <input [formControl]="BacklogWork" type="text" class="form-control" placeholder="Work" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Number</label>
+              <input [formControl]="Handoffs" type="text" class="form-control" placeholder="Number" />
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Number</label>
+              <input [formControl]="Approvals" type="text" class="form-control" placeholder="Number" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Unit of measure</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Number</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Time</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Percentage (%)</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Percentage (%)</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Percentage (%)</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Number</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Work</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Number</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label>Number</label>
-        <input type="text" class="form-control" placeholder="Widget" />
-      </div>
-    </div>
-  </div>
-
-</form>
+      <button type="submit" class="btn btn-info btn-fill">Save</button>
+    </form>

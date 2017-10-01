@@ -9,7 +9,7 @@ export class State {
     stateTypeId: number;
     stateType: StateType;
 
-    widgetId: string;
+    widgetId: number;
     widget: Widget;
 
     provided: number;
