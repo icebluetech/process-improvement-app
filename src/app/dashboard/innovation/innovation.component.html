@@ -17,16 +17,22 @@
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>Widget</th>
-                                    <th>Owner</th>
                                     <th>Date</th>
+                                    <th>Owner</th>
                                 </tr>
                                 <tbody>
                                     <tr *ngFor="let innovation of innovations">
                                         <td><a [routerLink]="['/toolkit', innovation.id]">{{innovation.title}}</a></td>
                                         <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.type}}</a></td>
                                         <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.widget}}</a></td>
-                                        <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.owner}}</a></td>
                                         <td><a [routerLink]="['/innovation', innovation.id]">{{innovation.date}}</a></td>
+                                        <td><a [routerLink]="['/innovation', innovation.id]">
+                                            <div class="chip">
+                                                <img src="./assets/img/faces/{{innovation.owner.avatar}}.jpg" alt="Person" width="96" height="96">              
+                                                                          {{innovation.owner.name}}
+                                                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                            </div>
+                                        </a></td>
                                     </tr>
                                 </tbody>
                         </table>

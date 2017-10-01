@@ -7,6 +7,7 @@ import { InnovationViewModel } from '../../viewmodels/innovation-vm';
     moduleId: module.id,
     selector: 'innovation-cmp',
     templateUrl: 'innovation.component.html',
+    styleUrls: ['./innovation.component.css'],
     animations: [
         trigger('cardtable1', [
             state('*', style({
