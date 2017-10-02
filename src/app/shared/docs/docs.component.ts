@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 import { Data } from '../../services/data/data';
+import { User } from '../../model/user';
 
 import { AppSettings } from '../../app.settings';
 
 @Component({
     selector: 'docs-cmp',
-    templateUrl: 'docs.component.html'
+    templateUrl: 'docs.component.html',
+    styleUrls: ['docs.component.css']
 })
 
 export class DocsComponent implements OnInit {
@@ -17,6 +19,7 @@ export class DocsComponent implements OnInit {
     attachmentsFriendly: any[];
     uploadSuccess: boolean;
     fileUploader:string;
+    user:User;
 
     constructor(private _data: Data) {
 
@@ -38,7 +41,9 @@ export class DocsComponent implements OnInit {
 
         this._data.makeFileRequest(url, [], files).subscribe((res) => {
 
-            this.attachmentsFriendly.push({name:file.name, date:new Date('YYYY-m-d'), user:'Chris Cheshire'});
+            var user = this._data.getLoggedInUser();
+
+            this.attachmentsFriendly.push({name:file.name, date:new Date().toDateString(), user:user});
 
             this.attachments.push(file);
 

@@ -4,7 +4,7 @@
 
     <form>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <label>Upload process map here:</label>
           <div class="form-group">
             <docs-cmp></docs-cmp>
@@ -12,79 +12,81 @@
         </div>
       </div>
 
-
+<br>
 
       <div class="row">
+          
+          <div class="col-md-5">
+              
+                        <label>Waste identified in the process (check all that apply)</label>
+                        <div class="content">
+                          <div class="">
+                            <table class="table">
+                              <tbody>
+                                <tr *ngFor="let category of categories">
+                                  <td style="border:none;">
+                                    <label class="checkbox">
+                                                                          <input type="checkbox" value="" data-toggle="checkbox">
+                                                                      </label>
+                                  </td>
+                                  <td style="border:none;">{{category}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
 
-        <div class="col-md-6">
+        <div class="col-md-8">
+          
+          <div class="row">
+            <div class="col-md-3">
+              <p>Value Hold</p>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Widget" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Non Value Hold</p>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Widget" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>NVA Business necessary</p>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Widget" />
+              </div>
+            </div>
+          </div>
 
-          <label>Waste identified in the process (check all that apply)</label>
-          <div class="content">
-            <div class="">
-              <table class="table">
-                <tbody>
-                  <tr *ngFor="let category of categories">
-                    <td>
-                      <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                    </td>
-                    <td>{{category}}</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="row">
+            <div class="col-md-8" style="border-top:1pt dashed grey;">
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p><strong>Total</strong></p>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Widget" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-2">
-          <p>Value Hold</p>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Widget" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">
-          <p>Non Value Hold</p>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Widget" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">
-          <p>NVA Business necessary</p>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Widget" />
-          </div>
-        </div>
-      </div>
-
-       <div class="row" >
-         <div class="col-md-8" style="border-top:1pt dashed grey;">
-           <br>
-         </div>
-       </div>
-      <div class="row">
-        <div class="col-md-2">
-          <p><strong>Total</strong></p>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Widget" />
-          </div>
-        </div>
-      </div>
-
     </form>
 
 
