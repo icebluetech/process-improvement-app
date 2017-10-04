@@ -368,7 +368,7 @@ export class Settings {
   SIDEBAR_SHOW: boolean;
 
   constructor(private _sanitizer: Sanitizer, private domSanitizer: DomSanitizer) {
-    this.SIDEBAR_COLOR = "orange";
+    this.SIDEBAR_COLOR = "blue";
     this.SIDEBAR_IMAGE = '/assets/img/sidebar-5.jpg';
 
     this.SIDEBAR_SHOW = true;

@@ -3252,6 +3252,11 @@ i {
 .popup form {
   padding: 1em; }
 
+.popup .notstarted header {
+  font-weight: bold;
+  color: #7b7878;
+  font-size: 17px; }
+
 .header-row {
   background-color: rgba(58, 197, 224, 0.65);
   margin: 0;
