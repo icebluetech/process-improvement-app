@@ -14,18 +14,21 @@ import {
 
 import { Data } from '../../services/data/data';
 import { User } from '../../model/user';
+import { ActionPlan } from '../../model/actionplan';
 
 declare var $: any;
 @Component({
     selector: 'plan-dialog',
     templateUrl: 'plan.component.html',
     styleUrls: ['plan.component.css']
-    
+
 })
 export class PlanComponent implements OnInit {
 
     myForm: FormGroup;
     Title: AbstractControl;
+    rows: ActionPlan[];
+    row:ActionPlan;
 
     constructor(private _data: Data, private fb: FormBuilder) {
 
@@ -38,20 +41,24 @@ export class PlanComponent implements OnInit {
     }
 
     ngOnInit() {
-   
-     }
+        this.rows = [];
+        this.addRow();
+    }
 
-     onUserSelected(user:User){
+    onUserSelected(user: User) {
+        this.row.user = user;
+    }
 
-     }
+    addRow(){
+        this.rows.push(new ActionPlan());
+    }
 
-     ngAfterViewChecked() {
-        // $('[data-toggle="checkbox"]').each(function () {
-        //     if ($(this).data('toggle') == 'switch') return;
+    setRow(row:ActionPlan){
+        this.row = row;
+    }
 
-        //     var $checkbox = $(this);
-        //     $checkbox.checkbox();
-        // });
+    ngAfterViewChecked() {
+
     }
 
 }

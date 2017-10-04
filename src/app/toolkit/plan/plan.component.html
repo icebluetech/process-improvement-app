@@ -15,19 +15,30 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr (click)="setRow(row)" *ngFor="let row of rows">
               <td><input type="text" class="form-control" /></td>
-           
-              <td><search-cmp [options]="{hideLabel:true}" [type]="'User'" (selected)="onUserSelected($event)"></search-cmp></td>
-            
-              <td><select class="form-control"><option>Select</option></select></td>
-            
+
+              <td class="cmp-cell">
+                <search-cmp *ngIf="!row.user" [options]="{hideLabel:true}" [type]="'User'" (selected)="onUserSelected($event)"></search-cmp>
+                <div *ngIf="row.user">
+                  <div class="chip">
+                    <img src="./assets/img/faces/{{row.user.avatar}}.jpg" alt="Person" width="96" height="96"> {{row.user.name}}
+                    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                  </div>
+                </div>
+
+              </td>
+
               <td><input type="text" class="form-control" /></td>
-            
+
+              <td><input type="text" class="form-control" /></td>
+
               <td><input type="text" class="form-control" /></td>
             </tr>
-            <tr><td><a class="btn btn-info">add new row</a></td>
-            <td colspan="4"><a class="btn btn-info pull-right">save</a></td></tr>
+            <tr>
+              <td><a (click)="addRow()" class="btn btn-info">add new row</a></td>
+              <td colspan="4"><a class="btn btn-info pull-right">save</a></td>
+            </tr>
           </tbody>
         </table>
       </form>
