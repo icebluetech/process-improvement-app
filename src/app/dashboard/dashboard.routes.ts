@@ -17,7 +17,7 @@ import { InnovationComponent } from './innovation/innovation.component';
 import { InnovationCreateComponent } from './innovation/create/innovation.create.component';
 import { UserSearchComponent } from './user/search/user.search.component';
 import { UserDetailComponent } from './user/detail/user.detail.component';
-import { SearchComponent } from '../services/search/search.component';
+
 import { UserRoleDetailComponent } from './userRole/detail/userRole.detail.component';
 
 
@@ -58,6 +58,5 @@ export const MODULE_COMPONENTS = [
     InnovationCreateComponent,
     UserSearchComponent,
     UserDetailComponent,
-    SearchComponent,
     UserRoleDetailComponent
 ]

@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label class="control-label">{{label}}</label>
+    <label *ngIf="!options.hideLabel" class="control-label">{{label}}</label>
     <input (mousedown)="showDialog = !showDialog" (keyup)="search($event)" [(ngModel)]="term" type="text" class="form-control"
         placeholder="Search" />
     <i class="fa fa-search searchIcon"></i>

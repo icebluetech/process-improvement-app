@@ -31,8 +31,10 @@ export class SearchComponent implements OnInit {
     label: string;
     results: any[];
     term: string;
+    hideLabel : boolean;
 
     @Input() type: string;
+    @Input() options: any;
     @Output() selected: EventEmitter<any> = new EventEmitter<any>();
 
     @ViewChild('container', { read: ViewContainerRef }) viewContainer;
@@ -42,9 +44,10 @@ export class SearchComponent implements OnInit {
     }
 
     ngOnInit() {
-       this.label = this.type;
-       this.label = this.label.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([A-Z])([a-z])/g, ' $1$2').replace(/\ +/g, ' ');
-       
+        this.label = this.type;
+        this.label = this.label.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([A-Z])([a-z])/g, ' $1$2').replace(/\ +/g, ' ');
+
+        this.options = this.options==undefined?{}:this.options;
     }
 
     search() {

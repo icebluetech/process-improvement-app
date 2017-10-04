@@ -13,6 +13,8 @@ import {
 } from '@angular/forms';
 
 import { Data } from '../../services/data/data';
+import { User } from '../../model/user';
+
 declare var $: any;
 @Component({
     selector: 'plan-dialog',
@@ -36,15 +38,11 @@ export class PlanComponent implements OnInit {
     }
 
     ngOnInit() {
-        $.getScript('../../../assets/js/bootstrap-checkbox-radio-switch.js');
-        $.getScript('../../../assets/js/light-bootstrap-dashboard.js');
+   
+     }
 
-        $('[data-toggle="checkbox"]').each(function () {
-            if($(this).data('toggle') == 'switch') return;
+     onUserSelected(user:User){
 
-            var $checkbox = $(this);
-            $checkbox.checkbox();
-        });
      }
 
      ngAfterViewChecked() {

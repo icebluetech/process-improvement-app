@@ -1,5 +1,5 @@
 <div class="stage2 popup">
-  <div class="">
+  <div class="notstarted">
     <header>Action Plan</header>
 
     <div class="caption">
@@ -18,7 +18,7 @@
             <tr>
               <td><input type="text" class="form-control" /></td>
            
-              <td><select class="form-control"><option>Select</option></select></td>
+              <td><search-cmp [options]="{hideLabel:true}" [type]="'User'" (selected)="onUserSelected($event)"></search-cmp></td>
             
               <td><select class="form-control"><option>Select</option></select></td>
             
