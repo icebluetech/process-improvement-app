@@ -40,6 +40,10 @@
   font-size: 1.2em;
 }
 
-.form-group{
+.row{
+  margin-right: 0px;
+}
 
+.column{
+  border-right: 1pt dashed lightgray;
 }

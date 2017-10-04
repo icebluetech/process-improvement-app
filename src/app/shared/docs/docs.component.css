@@ -33,3 +33,12 @@
 .card a{
     margin-top:1em;
 }
+
+.thumbnail {
+padding:.5em;
+margin-top:5px;
+}
+
+p{
+    padding-top:15px;
+}

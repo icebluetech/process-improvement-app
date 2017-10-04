@@ -47,6 +47,19 @@ display: flex;
     border-bottom: 1pt dashed lightgray;
 }
 
-.header-row{
+p{
+  font-size:14px;
+}
 
+.header-row{
+  background-color: white;
+  color: rgba(58, 197, 224, 0.65);
+}
+
+.form-group h4{
+  margin-left:1em;
+}
+
+.column{
+  border-right: 1pt dashed lightgray;
 }
