@@ -1,7 +1,6 @@
 import { Component, state, style, animate, transition, trigger, keyframes, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Data } from '../../../../services/data/data';
-import { CurrentStateCreateComponent } from '../create/current.create.component';
 
 @Component({
     moduleId: module.id,

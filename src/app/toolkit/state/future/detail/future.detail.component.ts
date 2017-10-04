@@ -2,7 +2,6 @@ import { Component, state, style, animate, transition, trigger, keyframes, ViewC
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Data } from '../../../../services/data/data';
 import { Brainstorm } from '../../../../model/brainstorm';
-import { FutureStateCreateComponent } from '../create/future.create.component';
 
 @Component({
     moduleId: module.id,
