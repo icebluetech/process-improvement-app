@@ -5,7 +5,7 @@ export class ActionPlan{
     id:number;
     description:string;
     user:User;
-    dueDate:string;
-    dateCompleted:string;
+    due:string;
+    completed:string;
     status:string;
 }
